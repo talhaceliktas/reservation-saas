@@ -43,5 +43,32 @@
       "login": "Iniciar Sesión",
       "getStarted": "Empezar"
     }
+  },
+
+  "Footer": {
+    "brand": {
+      "desc": "La plataforma de gestión de citas de próxima generación para su negocio."
+    },
+    "cols": {
+      "product": "Producto",
+      "company": "Empresa",
+      "legal": "Legal"
+    },
+    "links": {
+      "features": "Características",
+      "pricing": "Precios",
+      "about": "Sobre Nosotros",
+      "blog": "Blog",
+      "contact": "Contacto",
+      "privacy": "Privacidad",
+      "terms": "Términos de Servicio"
+    },
+    "newsletter": {
+      "title": "Manténgase al Día",
+      "desc": "Las últimas funciones y consejos directamente en su bandeja de entrada.",
+      "placeholder": "Su dirección de correo electrónico",
+      "button": "Suscribirse"
+    },
+    "copyright": "Todos los derechos reservados."
   }
 }

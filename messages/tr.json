@@ -44,5 +44,32 @@
       "login": "Giriş Yap",
       "getStarted": "Hemen Başla"
     }
+  },
+
+  "Footer": {
+    "brand": {
+      "desc": "İşletmeniz için yeni nesil randevu yönetim platformu."
+    },
+    "cols": {
+      "product": "Ürün",
+      "company": "Şirket",
+      "legal": "Yasal"
+    },
+    "links": {
+      "features": "Özellikler",
+      "pricing": "Fiyatlar",
+      "about": "Hakkımızda",
+      "blog": "Blog",
+      "contact": "İletişim",
+      "privacy": "Gizlilik",
+      "terms": "Kullanım Şartları"
+    },
+    "newsletter": {
+      "title": "Gelişmelerden Haberdar Ol",
+      "desc": "En son özellikler ve ipuçları gelen kutunda.",
+      "placeholder": "E-posta adresin",
+      "button": "Abone Ol"
+    },
+    "copyright": "Tüm hakları saklıdır."
   }
 }

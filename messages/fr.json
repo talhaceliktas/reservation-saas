@@ -43,5 +43,32 @@
       "login": "Connexion",
       "getStarted": "Commencer"
     }
+  },
+
+  "Footer": {
+    "brand": {
+      "desc": "La plateforme de gestion des rendez-vous de nouvelle génération pour votre entreprise."
+    },
+    "cols": {
+      "product": "Produit",
+      "company": "Entreprise",
+      "legal": "Mentions Légales"
+    },
+    "links": {
+      "features": "Fonctionnalités",
+      "pricing": "Tarifs",
+      "about": "À Propos",
+      "blog": "Blog",
+      "contact": "Contact",
+      "privacy": "Confidentialité",
+      "terms": "Conditions d'Utilisation"
+    },
+    "newsletter": {
+      "title": "Restez Informé des Nouveautés",
+      "desc": "Les dernières fonctionnalités et astuces dans votre boîte de réception.",
+      "placeholder": "Votre adresse e-mail",
+      "button": "S'abonner"
+    },
+    "copyright": "Tous droits réservés."
   }
 }

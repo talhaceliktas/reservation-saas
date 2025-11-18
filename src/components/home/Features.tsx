@@ -77,7 +77,7 @@ export default function Features() {
       className="py-24 bg-slate-50 relative overflow-hidden"
     >
       {/* Arka plan süslemesi (Opsiyonel Grid) */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] mask-image-gradient-to-b" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px] mask-image-gradient-to-b" />
 
       <div ref={containerRef} className="container relative mx-auto px-4 z-10">
         {/* Başlık Alanı */}
@@ -102,7 +102,7 @@ export default function Features() {
             >
               {/* Hover olunca arkada beliren gradient ışık */}
               <div
-                className={`absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 rounded-full bg-gradient-to-br ${feature.bgGradient} blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                className={`absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 rounded-full bg-linear-to-br ${feature.bgGradient} blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
               />
 
               {/* İkon Kutusu */}

@@ -44,5 +44,32 @@
       "login": "Log In",
       "getStarted": "Get Started"
     }
+  },
+
+  "Footer": {
+    "brand": {
+      "desc": "The next-generation appointment management platform for your business."
+    },
+    "cols": {
+      "product": "Product",
+      "company": "Company",
+      "legal": "Legal"
+    },
+    "links": {
+      "features": "Features",
+      "pricing": "Pricing",
+      "about": "About Us",
+      "blog": "Blog",
+      "contact": "Contact",
+      "privacy": "Privacy",
+      "terms": "Terms of Service"
+    },
+    "newsletter": {
+      "title": "Stay Up to Date",
+      "desc": "Latest features and tips directly in your inbox.",
+      "placeholder": "Your email address",
+      "button": "Subscribe"
+    },
+    "copyright": "All rights reserved."
   }
 }

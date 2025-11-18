@@ -49,5 +49,32 @@
       "login": "Anmelden",
       "getStarted": "Loslegen"
     }
+  },
+
+  "Footer": {
+    "brand": {
+      "desc": "Die Terminverwaltungsplattform der nächsten Generation für Ihr Unternehmen."
+    },
+    "cols": {
+      "product": "Produkt",
+      "company": "Unternehmen",
+      "legal": "Rechtliches"
+    },
+    "links": {
+      "features": "Funktionen",
+      "pricing": "Preise",
+      "about": "Über uns",
+      "blog": "Blog",
+      "contact": "Kontakt",
+      "privacy": "Datenschutz",
+      "terms": "Nutzungsbedingungen"
+    },
+    "newsletter": {
+      "title": "Bleiben Sie auf dem Laufenden",
+      "desc": "Die neuesten Funktionen und Tipps direkt in Ihrem Posteingang.",
+      "placeholder": "Ihre E-Mail-Adresse",
+      "button": "Abonnieren"
+    },
+    "copyright": "Alle Rechte vorbehalten."
   }
 }

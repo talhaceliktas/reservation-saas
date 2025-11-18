@@ -3,6 +3,7 @@ import { getMessages } from "next-intl/server";
 import { ReactNode } from "react";
 import "../../globals.css";
 import Navbar from "../../components/layout/Navbar";
+import Footer from "../../components/layout/Footer";
 
 type Props = {
   children: ReactNode;
@@ -20,6 +21,7 @@ export default async function RootLayout({ children, params }: Props) {
         <NextIntlClientProvider messages={messages}>
           <Navbar locale={locale} />
           {children}
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>
