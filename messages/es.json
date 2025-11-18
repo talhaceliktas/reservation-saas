@@ -73,6 +73,77 @@
     "copyright": "Todos los derechos reservados."
   },
 
+  "FeaturesPage": {
+    "hero": {
+      "badge": "Potente y Flexible",
+      "title": "Kit de Herramientas Completo para tu Negocio",
+      "desc": "Más que un simple calendario. BookIt proporciona todo lo que necesitas para gestionar, hacer crecer y automatizar tu negocio."
+    },
+    "bento": {
+      "dateCard": {
+        "title": "Calendario Inteligente",
+        "desc": "Gestión de arrastrar y soltar.",
+        "date": "Oct 2026",
+        "monthlyIncome": "Ingreso Mensual",
+        "weekDays": {
+          "Mon": "Lun",
+          "Tue": "Mar",
+          "Wed": "Mié",
+          "Thu": "Jue",
+          "Fri": "Vie",
+          "Sat": "Sáb",
+          "Sun": "Dom"
+        }
+      },
+      "bankCard": {
+        "title": "Pagos en Línea",
+        "desc": "Integración con Stripe & Iyzico.",
+        "cardText": "Número de Tarjeta"
+      },
+      "chartCard": {
+        "title": "Analítica",
+        "desc": "Informes de crecimiento."
+      },
+      "mobileCard": {
+        "title": "Listo para Móvil",
+        "desc": "Gestiona desde cualquier lugar.",
+        "text": "Móvil Primero"
+      },
+      "notificationCard": {
+        "date": "Martes, 12 de Septiembre",
+        "notification1": {
+          "app": "BookIt",
+          "date": "Ahora",
+          "title": "Recordatorio de Cita 📅",
+          "message": "Tiene una cita con el Sr. John mañana a las 14:00."
+        },
+        "notification2": {
+          "app": "Banco",
+          "date": "hace 2m",
+          "title": "Pago Recibido 💰",
+          "message": "Se han acreditado 450.00$ en su cuenta."
+        }
+      }
+    },
+    "details": {
+      "notifications": {
+        "title": "Recordatorios Automáticos",
+        "desc": "Acaba con las ausencias. Las notificaciones automáticas por SMS y correo electrónico aseguran que tus clientes aparezcan. Reduce las citas perdidas en un 80%.",
+        "tag": "Comunicación"
+      },
+      "customization": {
+        "title": "Marca Personalizada",
+        "desc": "Personaliza tu página de reservas con tu logotipo, colores y reglas. Tus clientes te ven a ti, no a BookIt.",
+        "tag": "Marca Blanca",
+        "themeColor": "Color del Tema"
+      }
+    },
+    "cta": {
+      "title": "¿Listo para probar?",
+      "btn": "Empezar"
+    }
+  },
+
   "NotFound": {
     "code": "404",
     "title": "Página no encontrada",

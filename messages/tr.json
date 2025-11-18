@@ -74,6 +74,77 @@
     "copyright": "Tüm hakları saklıdır."
   },
 
+  "FeaturesPage": {
+    "hero": {
+      "badge": "Güçlü & Esnek",
+      "title": "İşiniz İçin Tam Donanımlı Araç Seti",
+      "desc": "Bir takvimden çok daha fazlası. BookIt, işinizi yönetmek, büyütmek ve otomatikleştirmek için ihtiyacınız olan her şeyi sağlar."
+    },
+    "bento": {
+      "dateCard": {
+        "title": "Akıllı Takvim",
+        "desc": "Sürükle & bırak yönetimi.",
+        "date": "Ekim 2026",
+        "monthlyIncome": "Aylık Gelir",
+        "weekDays": {
+          "Mon": "Pzt",
+          "Tue": "Sal",
+          "Wed": "Çar",
+          "Thu": "Per",
+          "Fri": "Cum",
+          "Sat": "Cmt",
+          "Sun": "Paz"
+        }
+      },
+      "bankCard": {
+        "title": "Online Ödeme",
+        "desc": "Stripe & Iyzico entegrasyonu.",
+        "cardText": "Kart Numarası"
+      },
+      "chartCard": {
+        "title": "Analitik",
+        "desc": "Büyüme raporları."
+      },
+      "mobileCard": {
+        "title": "Mobil Uyumlu",
+        "desc": "Her yerden yönetin.",
+        "text": "Önce Mobil"
+      },
+      "notificationCard": {
+        "date": "Salı, 12 Eylül",
+        "notification1": {
+          "app": "BookIt",
+          "date": "Şimdi",
+          "title": "Randevu Hatırlatıcı 📅",
+          "message": "Yarın saat 14:00'te Bay John ile randevunuz var."
+        },
+        "notification2": {
+          "app": "Banka",
+          "date": "2dk önce",
+          "title": "Ödeme Alındı 💰",
+          "message": "Hesabınıza 450.00$ yatırıldı."
+        }
+      }
+    },
+    "details": {
+      "notifications": {
+        "title": "Otomatik Hatırlatmalar",
+        "desc": "Gelmeyenlere son. Otomatik SMS ve E-posta bildirimleri müşterilerinizin gelmesini sağlar. Kaçırılan randevuları %80 azaltın.",
+        "tag": "İletişim"
+      },
+      "customization": {
+        "title": "Özel Markalama",
+        "desc": "Rezervasyon sayfanızı logonuz, renkleriniz ve kurallarınızla özelleştirin. Müşterileriniz BookIt'i değil, sizi görür.",
+        "tag": "White Label",
+        "themeColor": "Tema Rengi"
+      }
+    },
+    "cta": {
+      "title": "Denemeye hazır mısın?",
+      "btn": "Hemen Başla"
+    }
+  },
+
   "NotFound": {
     "code": "404",
     "title": "Sayfa Bulunamadı",

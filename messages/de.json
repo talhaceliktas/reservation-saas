@@ -79,6 +79,77 @@
     "copyright": "Alle Rechte vorbehalten."
   },
 
+  "FeaturesPage": {
+    "hero": {
+      "badge": "Leistungsstark & Flexibel",
+      "title": "Komplettes Toolkit für Ihr Unternehmen",
+      "desc": "Mehr als nur ein Kalender. BookIt bietet alles, was Sie brauchen, um Ihr Geschäft zu verwalten, auszubauen und zu automatisieren."
+    },
+    "bento": {
+      "dateCard": {
+        "title": "Intelligenter Kalender",
+        "desc": "Drag & Drop Verwaltung.",
+        "date": "Okt 2026",
+        "monthlyIncome": "Monatliches Einkommen",
+        "weekDays": {
+          "Mon": "Mo",
+          "Tue": "Di",
+          "Wed": "Mi",
+          "Thu": "Do",
+          "Fri": "Fr",
+          "Sat": "Sa",
+          "Sun": "So"
+        }
+      },
+      "bankCard": {
+        "title": "Online-Zahlungen",
+        "desc": "Stripe & Iyzico Integration.",
+        "cardText": "Kartennummer"
+      },
+      "chartCard": {
+        "title": "Analytik",
+        "desc": "Wachstumsberichte."
+      },
+      "mobileCard": {
+        "title": "Mobil Bereit",
+        "desc": "Von überall verwalten.",
+        "text": "Mobile First"
+      },
+      "notificationCard": {
+        "date": "Dienstag, 12. September",
+        "notification1": {
+          "app": "BookIt",
+          "date": "Jetzt",
+          "title": "Terminerinnerung 📅",
+          "message": "Sie haben morgen um 14:00 Uhr einen Termin mit Herrn John."
+        },
+        "notification2": {
+          "app": "Bank",
+          "date": "vor 2m",
+          "title": "Zahlung erhalten 💰",
+          "message": "Ihrem Konto wurden 450,00$ gutgeschrieben."
+        }
+      }
+    },
+    "details": {
+      "notifications": {
+        "title": "Automatische Erinnerungen",
+        "desc": "Schluss mit Nichterscheinen. Automatische SMS- und E-Mail-Benachrichtigungen sorgen dafür, dass Ihre Kunden erscheinen. Reduzieren Sie verpasste Termine um 80%.",
+        "tag": "Kommunikation"
+      },
+      "customization": {
+        "title": "Individuelles Branding",
+        "desc": "Passen Sie Ihre Buchungsseite mit Ihrem Logo, Ihren Farben und Regeln an. Ihre Kunden sehen Sie, nicht BookIt.",
+        "tag": "White Label",
+        "themeColor": "Themenfarbe"
+      }
+    },
+    "cta": {
+      "title": "Bereit zum Ausprobieren?",
+      "btn": "Jetzt starten"
+    }
+  },
+
   "NotFound": {
     "code": "404",
     "title": "Seite nicht gefunden",

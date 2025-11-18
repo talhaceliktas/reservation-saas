@@ -81,14 +81,47 @@
       "desc": "More than just a calendar. BookIt provides everything you need to manage, grow, and automate your business."
     },
     "bento": {
-      "card1": { "title": "Smart Calendar", "desc": "Drag & drop management." },
-      "card2": {
+      "dateCard": {
+        "title": "Smart Calendar",
+        "desc": "Drag & drop management.",
+        "date": "Oct 2026",
+        "monthlyIncome": "Monthly Income",
+        "weekDays": {
+          "Mon": "Mon",
+          "Tue": "Tue",
+          "Wed": "Wed",
+          "Thu": "Thu",
+          "Fri": "Fri",
+          "Sat": "Sat",
+          "Sun": "Sun"
+        }
+      },
+      "bankCard": {
         "title": "Online Payments",
         "desc": "Stripe & Iyzico integration.",
         "cardText": "Card Number"
       },
-      "card3": { "title": "Analytics", "desc": "Growth reports." },
-      "card4": { "title": "Mobile Ready", "desc": "Manage from anywhere." }
+      "chartCard": { "title": "Analytics", "desc": "Growth reports." },
+      "mobileCard": {
+        "title": "Mobile Ready",
+        "desc": "Manage from anywhere.",
+        "text": "Mobile First"
+      },
+      "notificationCard": {
+        "date": "Tuesday, 12 September",
+        "notification1": {
+          "app": "BookIt",
+          "date": "Now",
+          "title": "Appointment Reminder 📅",
+          "message": "You have an appointment with Mr. John tomorrow at 14:00."
+        },
+        "notification2": {
+          "app": "Bank",
+          "date": "2m ago",
+          "title": "Payment Received 💰",
+          "message": "Your account has been credited with 450.00$"
+        }
+      }
     },
     "details": {
       "notifications": {
@@ -99,7 +132,8 @@
       "customization": {
         "title": "Custom Branding",
         "desc": "Customize your booking page with your logo, colors, and rules. Your customers see you, not BookIt.",
-        "tag": "White Label"
+        "tag": "White Label",
+        "themeColor": "Theme Color"
       }
     },
     "cta": {

@@ -20,10 +20,10 @@ export default function BentoGrid() {
                 <Calendar size={24} />
               </div>
               <h3 className="text-3xl font-bold text-slate-900 mb-3">
-                {t("card1.title")}
+                {t("dateCard.title")}
               </h3>
               <p className="text-slate-500 text-lg leading-relaxed">
-                {t("card1.desc")}
+                {t("dateCard.desc")}
               </p>
             </div>
             <div className="relative self-end mt-8 transform translate-x-4 translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500">
@@ -34,15 +34,17 @@ export default function BentoGrid() {
           <div className="bg-slate-900 rounded-[2.5rem] p-8 text-white overflow-hidden relative group flex flex-col h-60 justify-between">
             <div className="relative z-10 flex justify-between items-start">
               <div>
-                <h3 className="text-xl font-bold mb-1">{t("card2.title")}</h3>
-                <p className="text-slate-400 text-sm">{t("card2.desc")}</p>
+                <h3 className="text-xl font-bold mb-1">
+                  {t("bankCard.title")}
+                </h3>
+                <p className="text-slate-400 text-sm">{t("bankCard.desc")}</p>
               </div>
               <div className="bg-white/10 p-2 rounded-lg backdrop-blur-sm">
                 <CreditCard size={20} />
               </div>
             </div>
-            <div className="absolute -bottom-10 -right-10 transform scale-90 rotate-[-10deg] group-hover:rotate-0 group-hover:scale-100 transition-all duration-500">
-              <CreditCardWidget cardText={t("card2.cardText")} />
+            <div className="absolute -bottom-2 -right-10 transform scale-90 rotate-[-10deg] group-hover:rotate-0 group-hover:scale-100 transition-all duration-500">
+              <CreditCardWidget cardText={t("bankCard.cardText")} />
             </div>
           </div>
 
@@ -50,9 +52,9 @@ export default function BentoGrid() {
             <div className="flex justify-between items-start">
               <div>
                 <h3 className="text-xl font-bold text-slate-900">
-                  {t("card3.title")}
+                  {t("chartCard.title")}
                 </h3>
-                <p className="text-slate-500 text-sm">{t("card3.desc")}</p>
+                <p className="text-slate-500 text-sm">{t("chartCard.desc")}</p>
               </div>
               <div className="bg-emerald-50 p-2 rounded-lg text-emerald-600">
                 <BarChart3 size={20} />
@@ -66,11 +68,13 @@ export default function BentoGrid() {
           <div className="md:col-span-3 bg-linear-to-br from-blue-600 to-indigo-700 rounded-[2.5rem] p-10 text-white relative overflow-hidden flex flex-col md:flex-row items-center gap-12 h-auto md:h-[350px]">
             <div className="flex-1 text-left z-10">
               <div className="inline-flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full text-sm font-medium mb-6 backdrop-blur-md border border-white/10">
-                <Smartphone size={16} /> Mobile First
+                <Smartphone size={16} /> {t("mobileCard.text")}
               </div>
-              <h3 className="text-3xl font-bold mb-4">{t("card4.title")}</h3>
+              <h3 className="text-3xl font-bold mb-4">
+                {t("mobileCard.title")}
+              </h3>
               <p className="text-blue-100 text-lg max-w-lg leading-relaxed">
-                {t("card4.desc")}
+                {t("mobileCard.desc")}
               </p>
             </div>
 

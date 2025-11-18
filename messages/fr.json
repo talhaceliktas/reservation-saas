@@ -73,6 +73,77 @@
     "copyright": "Tous droits réservés."
   },
 
+  "FeaturesPage": {
+    "hero": {
+      "badge": "Puissant & Flexible",
+      "title": "Boîte à Outils Complète pour Votre Entreprise",
+      "desc": "Bien plus qu'un simple calendrier. BookIt fournit tout ce dont vous avez besoin pour gérer, développer et automatiser votre entreprise."
+    },
+    "bento": {
+      "dateCard": {
+        "title": "Calendrier Intelligent",
+        "desc": "Gestion par glisser-déposer.",
+        "date": "Oct 2026",
+        "monthlyIncome": "Revenu Mensuel",
+        "weekDays": {
+          "Mon": "Lun",
+          "Tue": "Mar",
+          "Wed": "Mer",
+          "Thu": "Jeu",
+          "Fri": "Ven",
+          "Sat": "Sam",
+          "Sun": "Dim"
+        }
+      },
+      "bankCard": {
+        "title": "Paiements en Ligne",
+        "desc": "Intégration Stripe & Iyzico.",
+        "cardText": "Numéro de Carte"
+      },
+      "chartCard": {
+        "title": "Analytique",
+        "desc": "Rapports de croissance."
+      },
+      "mobileCard": {
+        "title": "Compatible Mobile",
+        "desc": "Gérez de n'importe où.",
+        "text": "Mobile d'abord"
+      },
+      "notificationCard": {
+        "date": "Mardi 12 Septembre",
+        "notification1": {
+          "app": "BookIt",
+          "date": "Maintenant",
+          "title": "Rappel de Rendez-vous 📅",
+          "message": "Vous avez rendez-vous avec M. John demain à 14h00."
+        },
+        "notification2": {
+          "app": "Banque",
+          "date": "il y a 2m",
+          "title": "Paiement Reçu 💰",
+          "message": "Votre compte a été crédité de 450,00$."
+        }
+      }
+    },
+    "details": {
+      "notifications": {
+        "title": "Rappels Automatiques",
+        "desc": "Fini les rendez-vous manqués. Les notifications automatiques par SMS et e-mail garantissent la présence de vos clients. Réduisez les absences de 80%.",
+        "tag": "Communication"
+      },
+      "customization": {
+        "title": "Marque Personnalisée",
+        "desc": "Personnalisez votre page de réservation avec votre logo, vos couleurs et vos règles. Vos clients vous voient vous, pas BookIt.",
+        "tag": "Marque Blanche",
+        "themeColor": "Couleur du Thème"
+      }
+    },
+    "cta": {
+      "title": "Prêt à essayer ?",
+      "btn": "Commencer"
+    }
+  },
+
   "NotFound": {
     "code": "404",
     "title": "Page introuvable",
