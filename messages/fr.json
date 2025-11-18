@@ -1,5 +1,5 @@
 {
-  "HomePage": {
+  "Intro": {
     "hero": {
       "badge": "✨ Nouveau: Calendrier IA",
       "title": "Mettez vos Rendez-vous",
@@ -71,5 +71,15 @@
       "button": "S'abonner"
     },
     "copyright": "Tous droits réservés."
+  },
+
+  "NotFound": {
+    "code": "404",
+    "title": "Page introuvable",
+    "desc": "La page que vous recherchez a peut-être été déplacée, supprimée ou n'a jamais existé.",
+    "buttons": {
+      "home": "Aller à la page d'accueil",
+      "back": "Retourner"
+    }
   }
 }

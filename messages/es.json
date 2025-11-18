@@ -1,5 +1,5 @@
 {
-  "HomePage": {
+  "Intro": {
     "hero": {
       "badge": "✨ Nuevo: Calendario con IA",
       "title": "Pon tus Citas",
@@ -71,5 +71,15 @@
       "button": "Suscribirse"
     },
     "copyright": "Todos los derechos reservados."
+  },
+
+  "NotFound": {
+    "code": "404",
+    "title": "Página no encontrada",
+    "desc": "La página que busca pudo haber sido movida, eliminada o quizás nunca existió.",
+    "buttons": {
+      "home": "Ir a la página de inicio",
+      "back": "Volver"
+    }
   }
 }

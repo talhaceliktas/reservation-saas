@@ -1,5 +1,5 @@
 {
-  "HomePage": {
+  "Intro": {
     "hero": {
       "badge": "✨ New: AI Powered Scheduling",
       "title": "Put Appointments",
@@ -72,5 +72,15 @@
       "button": "Subscribe"
     },
     "copyright": "All rights reserved."
+  },
+
+  "NotFound": {
+    "code": "404",
+    "title": "Page Not Found",
+    "desc": "The page you are looking for may have been moved, deleted, or never existed.",
+    "buttons": {
+      "home": "Go to Homepage",
+      "back": "Go Back"
+    }
   }
 }

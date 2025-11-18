@@ -8,7 +8,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
 export default function Hero() {
-  const t = useTranslations("HomePage.hero");
+  const t = useTranslations("Intro.hero");
   const containerRef = useRef(null);
 
   useGSAP(

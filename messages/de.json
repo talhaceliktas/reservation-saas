@@ -1,5 +1,5 @@
 {
-  "HomePage": {
+  "Intro": {
     "hero": {
       "badge": "✨ Neu: KI-gestützter Kalender",
       "title": "Setzen Sie Termine",
@@ -77,5 +77,15 @@
       "button": "Abonnieren"
     },
     "copyright": "Alle Rechte vorbehalten."
+  },
+
+  "NotFound": {
+    "code": "404",
+    "title": "Seite nicht gefunden",
+    "desc": "Die gesuchte Seite wurde möglicherweise verschoben, gelöscht oder hat nie existiert.",
+    "buttons": {
+      "home": "Zur Startseite",
+      "back": "Zurück"
+    }
   }
 }

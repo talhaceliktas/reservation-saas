@@ -17,7 +17,7 @@ type FeatureItem = {
 };
 
 export default function Features() {
-  const t = useTranslations("HomePage.features");
+  const t = useTranslations("Intro.features");
   const containerRef = useRef<HTMLDivElement>(null);
 
   const features: FeatureItem[] = [

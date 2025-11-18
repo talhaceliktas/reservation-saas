@@ -9,7 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Stats() {
-  const t = useTranslations("HomePage.stats");
+  const t = useTranslations("Intro.stats");
   const containerRef = useRef(null);
 
   const stats = [

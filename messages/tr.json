@@ -1,5 +1,5 @@
 {
-  "HomePage": {
+  "Intro": {
     "hero": {
       "badge": "✨ Yeni: Yapay Zeka Destekli Takvim",
       "title": "Randevularınızı",
@@ -72,5 +72,15 @@
       "button": "Abone Ol"
     },
     "copyright": "Tüm hakları saklıdır."
+  },
+
+  "NotFound": {
+    "code": "404",
+    "title": "Sayfa Bulunamadı",
+    "desc": "Aradığınız sayfa taşınmış, silinmiş veya hiç var olmamış olabilir.",
+    "buttons": {
+      "home": "Ana Sayfaya Dön",
+      "back": "Geri Git"
+    }
   }
 }
