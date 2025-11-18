@@ -35,20 +35,17 @@ const themes = [
 export default function CustomBranding() {
   const t = useTranslations("FeaturesPage.details");
 
-  // Varsayılan olarak ilk rengi seçiyoruz
   const [activeTheme, setActiveTheme] = useState(themes[0]);
 
   return (
     <div className="flex-1 w-full bg-slate-50 rounded-[3rem] p-8 lg:p-12 border border-slate-100">
       <div className="bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden transform transition-all hover:shadow-2xl duration-500">
-        {/* 1. Dinamik Header Alanı (Gradient Burada Değişiyor) */}
         <div
           className={cn(
             "h-40 bg-linear-to-r relative transition-all duration-700 ease-in-out",
             activeTheme.gradient
           )}
         >
-          {/* Logo Alanı */}
           <div className="absolute -bottom-10 left-8 w-20 h-20 bg-white rounded-2xl p-1 shadow-md">
             <div className="w-full h-full bg-slate-100 rounded-xl flex items-center justify-center text-xs text-slate-400 font-bold">
               LOGO
@@ -83,7 +80,7 @@ export default function CustomBranding() {
 
           <div className="pt-6 border-t border-slate-100">
             <p className="text-xs font-bold text-slate-400 uppercase mb-3 tracking-wider">
-              {t("customization.tag")} {/* veya 'Tema Rengi' yazabilirsin */}
+              {t("customization.tag")}
             </p>
             <div className="flex gap-3">
               {themes.map((theme) => (

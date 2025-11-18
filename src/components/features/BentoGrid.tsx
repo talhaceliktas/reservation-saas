@@ -1,11 +1,9 @@
 "use client";
 import { useTranslations } from "next-intl";
 import { Calendar, BarChart3, Smartphone, CreditCard } from "lucide-react";
-import {
-  RevenueWidget,
-  CalendarWidget,
-  CreditCardWidget,
-} from "./FeatureWidgets";
+import { RevenueWidget } from "./RevenueWidget";
+import { CalendarWidget } from "./CalendarWidget";
+import { CreditCardWidget } from "./CreditCardWidget";
 
 export default function BentoGrid() {
   const t = useTranslations("FeaturesPage.bento");
