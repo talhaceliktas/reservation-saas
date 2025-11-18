@@ -7,6 +7,30 @@
       "description": "Stop the phone tag. Let customers book 24/7 with BookIt while you focus on your work.",
       "primaryButton": "Get Started",
       "secondaryButton": "View Demo"
+    },
+    "features": {
+      "title": "Features That Grow Your Business",
+      "subtitle": "More than just appointments, comprehensive management.",
+      "cards": {
+        "calendar": {
+          "title": "Smart Calendar",
+          "desc": "Dynamic structure that prevents conflicts."
+        },
+        "reminder": {
+          "title": "SMS Reminders",
+          "desc": "Automatic notifications to customers."
+        },
+        "payment": {
+          "title": "Online Payments",
+          "desc": "Get paid the moment the appointment is booked."
+        }
+      }
+    },
+    "stats": {
+      "availability": { "value": "24/7", "label": "Uninterrupted Booking" },
+      "setup": { "value": "2 Min", "label": "Fast Setup Time" },
+      "efficiency": { "value": "40%", "label": "Fewer Phone Calls" },
+      "growth": { "value": "10x", "label": "More Professional Appearance" }
     }
   },
 

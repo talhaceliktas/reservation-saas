@@ -7,6 +7,30 @@
       "description": "Telefon trafiğinden kurtulun. BookIt ile müşterileriniz 7/24 kendi randevularını oluştursun, siz işinize odaklanın.",
       "primaryButton": "Hemen Başla",
       "secondaryButton": "Demoyu İncele"
+    },
+    "features": {
+      "title": "İşletmenizi Büyüten Özellikler",
+      "subtitle": "Sadece randevu değil, tam kapsamlı yönetim.",
+      "cards": {
+        "calendar": {
+          "title": "Akıllı Takvim",
+          "desc": "Çakışmaları önleyen dinamik yapı."
+        },
+        "reminder": {
+          "title": "SMS Hatırlatma",
+          "desc": "Müşterilere otomatik bildirimler."
+        },
+        "payment": {
+          "title": "Online Ödeme",
+          "desc": "Randevu anında ödeme alın."
+        }
+      }
+    },
+    "stats": {
+      "availability": { "value": "7/24", "label": "Kesintisiz Rezervasyon" },
+      "setup": { "value": "2 Dk", "label": "Hızlı Kurulum Süresi" },
+      "efficiency": { "value": "%40", "label": "Daha Az Telefon Görüşmesi" },
+      "growth": { "value": "10x", "label": "Daha Profesyonel Görünüm" }
     }
   },
 

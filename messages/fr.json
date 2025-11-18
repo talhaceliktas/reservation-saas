@@ -7,6 +7,30 @@
       "description": "Oubliez les appels téléphoniques. Avec BookIt, vos clients réservent 24/7 pendant que vous vous concentrez sur votre travail.",
       "primaryButton": "Commencer",
       "secondaryButton": "Voir la Démo"
+    },
+    "features": {
+      "title": "Fonctionnalités Qui Développent Votre Entreprise",
+      "subtitle": "Plus que de simples rendez-vous, une gestion complète.",
+      "cards": {
+        "calendar": {
+          "title": "Agenda Intelligent",
+          "desc": "Structure dynamique qui évite les chevauchements."
+        },
+        "reminder": {
+          "title": "Rappels par SMS",
+          "desc": "Notifications automatiques aux clients."
+        },
+        "payment": {
+          "title": "Paiement en Ligne",
+          "desc": "Encaissez le paiement dès la prise de rendez-vous."
+        }
+      }
+    },
+    "stats": {
+      "availability": { "value": "24/7", "label": "Réservation Ininterrompue" },
+      "setup": { "value": "2 Min", "label": "Temps d'Installation Rapide" },
+      "efficiency": { "value": "40%", "label": "Moins d'Appels Téléphoniques" },
+      "growth": { "value": "10x", "label": "Apparence Plus Professionnelle" }
     }
   },
   "Navbar": {

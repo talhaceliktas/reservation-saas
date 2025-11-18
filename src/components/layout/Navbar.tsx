@@ -22,8 +22,6 @@ export default function Navbar({ locale }: { locale: string }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // NOT: switchLanguage fonksiyonunu sildik, artık LanguageSwitcher hallediyor.
-
   const navLinks = [
     { href: "#features", label: t("links.features") },
     { href: "#pricing", label: t("links.pricing") },
@@ -40,7 +38,6 @@ export default function Navbar({ locale }: { locale: string }) {
       )}
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
-        {/* LOGO */}
         <Link
           href={`/${locale}`}
           className="flex items-center gap-2 font-bold text-2xl text-slate-900 hover:opacity-80 transition"
@@ -51,7 +48,6 @@ export default function Navbar({ locale }: { locale: string }) {
           BookIt
         </Link>
 
-        {/* DESKTOP MENÜ */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
@@ -64,11 +60,9 @@ export default function Navbar({ locale }: { locale: string }) {
           ))}
         </nav>
 
-        {/* SAĞ TARAF (Dil Değiştirici + Butonlar) */}
         <div className="hidden md:flex items-center gap-4">
-          {/* YENİ DİL DEĞİŞTİRİCİ */}
           <LanguageSwitcher currentLocale={locale} />
-          <div className="h-6 w-px bg-slate-200" /> {/* Ayırıcı Çizgi */}
+          <div className="h-6 w-px bg-slate-200" />
           <Link href={`/${locale}/login`}>
             <Button
               variant="ghost"
@@ -82,7 +76,6 @@ export default function Navbar({ locale }: { locale: string }) {
           </Button>
         </div>
 
-        {/* MOBİL MENÜ BUTONU */}
         <button
           className="md:hidden text-slate-700"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -91,7 +84,6 @@ export default function Navbar({ locale }: { locale: string }) {
         </button>
       </div>
 
-      {/* MOBİL MENÜ İÇERİĞİ */}
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white border-b border-slate-200 shadow-xl p-4 flex flex-col gap-4 animate-in slide-in-from-top-5">
           {navLinks.map((link) => (
@@ -106,7 +98,6 @@ export default function Navbar({ locale }: { locale: string }) {
           ))}
 
           <div className="flex flex-col gap-3 mt-2">
-            {/* Mobilde Dil Seçimi */}
             <div className="flex items-center justify-between px-2 py-2 bg-slate-50 rounded-lg">
               <span className="text-sm font-medium text-slate-500">
                 Dil / Language:

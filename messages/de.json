@@ -7,6 +7,36 @@
       "description": "Vergessen Sie den Telefonstress. Mit BookIt buchen Ihre Kunden rund um die Uhr, während Sie sich auf Ihre Arbeit konzentrieren.",
       "primaryButton": "Jetzt Starten",
       "secondaryButton": "Demo Ansehen"
+    },
+    "features": {
+      "title": "Funktionen, Die Ihr Geschäft Wachsen Lassen",
+      "subtitle": "Mehr als nur Termine, umfassendes Management.",
+      "cards": {
+        "calendar": {
+          "title": "Intelligenter Kalender",
+          "desc": "Dynamische Struktur, die Konflikte verhindert."
+        },
+        "reminder": {
+          "title": "SMS-Erinnerungen",
+          "desc": "Automatische Benachrichtigungen an Kunden."
+        },
+        "payment": {
+          "title": "Online-Zahlung",
+          "desc": "Zahlung sofort bei der Terminbuchung erhalten."
+        }
+      }
+    },
+    "stats": {
+      "availability": {
+        "value": "24/7",
+        "label": "Unterbrechungsfreie Buchung"
+      },
+      "setup": { "value": "2 Min", "label": "Schnelle Einrichtungszeit" },
+      "efficiency": { "value": "40%", "label": "Weniger Telefonanrufe" },
+      "growth": {
+        "value": "10x",
+        "label": "Professionelleres Erscheinungsbild"
+      }
     }
   },
   "Navbar": {
