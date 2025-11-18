@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { Button } from "../ui/button";
 import { Menu, X, CalendarDays } from "lucide-react";
-import { cn } from "../../lib/utils";
+import { cn } from "@/lib/utils";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navbar({ locale }: { locale: string }) {

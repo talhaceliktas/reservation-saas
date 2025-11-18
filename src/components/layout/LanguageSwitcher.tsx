@@ -8,7 +8,6 @@ import {
   DropdownMenuTrigger,
 } from "../../components/ui/dropdown-menu";
 import { Button } from "../../components/ui/button";
-import { Globe } from "lucide-react";
 
 export default function LanguageSwitcher({
   currentLocale,

@@ -10,6 +10,7 @@
     },
     "features": {
       "title": "İşletmenizi Büyüten Özellikler",
+      "why": "Neden BookIt",
       "subtitle": "Sadece randevu değil, tam kapsamlı yönetim.",
       "cards": {
         "calendar": {

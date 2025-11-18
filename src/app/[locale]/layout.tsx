@@ -2,8 +2,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { ReactNode } from "react";
 import "../../globals.css";
-import Navbar from "../../components/layout/Navbar";
-import Footer from "../../components/layout/Footer";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 type Props = {
   children: ReactNode;
