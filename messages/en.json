@@ -74,6 +74,40 @@
     "copyright": "All rights reserved."
   },
 
+  "FeaturesPage": {
+    "hero": {
+      "badge": "Powerful & Flexible",
+      "title": "Complete Toolkit for Your Business",
+      "desc": "More than just a calendar. BookIt provides everything you need to manage, grow, and automate your business."
+    },
+    "bento": {
+      "card1": { "title": "Smart Calendar", "desc": "Drag & drop management." },
+      "card2": {
+        "title": "Online Payments",
+        "desc": "Stripe & Iyzico integration.",
+        "cardText": "Card Number"
+      },
+      "card3": { "title": "Analytics", "desc": "Growth reports." },
+      "card4": { "title": "Mobile Ready", "desc": "Manage from anywhere." }
+    },
+    "details": {
+      "notifications": {
+        "title": "Automated Reminders",
+        "desc": "Stop no-shows. Automated SMS and Email notifications ensure your customers show up. Reduce missed appointments by 80%.",
+        "tag": "Communication"
+      },
+      "customization": {
+        "title": "Custom Branding",
+        "desc": "Customize your booking page with your logo, colors, and rules. Your customers see you, not BookIt.",
+        "tag": "White Label"
+      }
+    },
+    "cta": {
+      "title": "Ready to try?",
+      "btn": "Get Started"
+    }
+  },
+
   "NotFound": {
     "code": "404",
     "title": "Page Not Found",

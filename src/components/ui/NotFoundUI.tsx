@@ -39,7 +39,7 @@ export default function NotFoundUI() {
     >
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-200/30 rounded-full blur-3xl -z-10" />
 
-      <h1 className="error-code text-[150px] md:text-[200px] font-black leading-none tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-slate-200 to-slate-100 select-none">
+      <h1 className="error-code text-[150px] md:text-[200px] font-black leading-none tracking-tighter text-transparent bg-clip-text bg-linear-to-b from-slate-200 to-slate-100 select-none">
         {t("code")}
       </h1>
 

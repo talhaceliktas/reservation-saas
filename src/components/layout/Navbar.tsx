@@ -23,9 +23,9 @@ export default function Navbar({ locale }: { locale: string }) {
   }, []);
 
   const navLinks = [
-    { href: "#features", label: t("links.features") },
-    { href: "#pricing", label: t("links.pricing") },
-    { href: "#about", label: t("links.about") },
+    { href: "features", label: t("links.features") },
+    { href: "pricing", label: t("links.pricing") },
+    { href: "about", label: t("links.about") },
   ];
 
   return (
