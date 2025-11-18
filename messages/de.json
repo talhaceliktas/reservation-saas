@@ -1,0 +1,23 @@
+{
+  "HomePage": {
+    "hero": {
+      "badge": "✨ Neu: KI-gestützter Kalender",
+      "title": "Setzen Sie Termine",
+      "titleHighlight": "Auf Autopilot",
+      "description": "Vergessen Sie den Telefonstress. Mit BookIt buchen Ihre Kunden rund um die Uhr, während Sie sich auf Ihre Arbeit konzentrieren.",
+      "primaryButton": "Jetzt Starten",
+      "secondaryButton": "Demo Ansehen"
+    }
+  },
+  "Navbar": {
+    "links": {
+      "features": "Funktionen",
+      "pricing": "Preise",
+      "about": "Über uns"
+    },
+    "buttons": {
+      "login": "Anmelden",
+      "getStarted": "Loslegen"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "HomePage": {
+    "hero": {
+      "badge": "✨ Nuevo: Calendario con IA",
+      "title": "Pon tus Citas",
+      "titleHighlight": "En Piloto Automático",
+      "description": "Olvídate de las llamadas. Con BookIt, tus clientes reservan 24/7 mientras tú te concentras en tu trabajo.",
+      "primaryButton": "Empezar Ahora",
+      "secondaryButton": "Ver Demo"
+    }
+  },
+  "Navbar": {
+    "links": {
+      "features": "Características",
+      "pricing": "Precios",
+      "about": "Nosotros"
+    },
+    "buttons": {
+      "login": "Iniciar Sesión",
+      "getStarted": "Empezar"
+    }
+  }
+}

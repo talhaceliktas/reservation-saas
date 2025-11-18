@@ -1,6 +1,24 @@
 {
   "HomePage": {
-    "title": "BookIt'e Hoşgeldiniz",
-    "subtitle": "Randevu almanın en kolay yolu."
+    "hero": {
+      "badge": "✨ Yeni: Yapay Zeka Destekli Takvim",
+      "title": "Randevularınızı",
+      "titleHighlight": "Otopilota Alın",
+      "description": "Telefon trafiğinden kurtulun. BookIt ile müşterileriniz 7/24 kendi randevularını oluştursun, siz işinize odaklanın.",
+      "primaryButton": "Hemen Başla",
+      "secondaryButton": "Demoyu İncele"
+    }
+  },
+
+  "Navbar": {
+    "links": {
+      "features": "Özellikler",
+      "pricing": "Fiyatlar",
+      "about": "Hakkımızda"
+    },
+    "buttons": {
+      "login": "Giriş Yap",
+      "getStarted": "Hemen Başla"
+    }
   }
 }

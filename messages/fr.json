@@ -1,0 +1,23 @@
+{
+  "HomePage": {
+    "hero": {
+      "badge": "✨ Nouveau: Calendrier IA",
+      "title": "Mettez vos Rendez-vous",
+      "titleHighlight": "En Pilote Automatique",
+      "description": "Oubliez les appels téléphoniques. Avec BookIt, vos clients réservent 24/7 pendant que vous vous concentrez sur votre travail.",
+      "primaryButton": "Commencer",
+      "secondaryButton": "Voir la Démo"
+    }
+  },
+  "Navbar": {
+    "links": {
+      "features": "Fonctionnalités",
+      "pricing": "Tarifs",
+      "about": "À propos"
+    },
+    "buttons": {
+      "login": "Connexion",
+      "getStarted": "Commencer"
+    }
+  }
+}

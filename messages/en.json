@@ -1,6 +1,24 @@
 {
   "HomePage": {
-    "title": "Welcome to BookIt",
-    "subtitle": "The easiest way to book appointments."
+    "hero": {
+      "badge": "✨ New: AI Powered Scheduling",
+      "title": "Put Appointments",
+      "titleHighlight": "On Autopilot",
+      "description": "Stop the phone tag. Let customers book 24/7 with BookIt while you focus on your work.",
+      "primaryButton": "Get Started",
+      "secondaryButton": "View Demo"
+    }
+  },
+
+  "Navbar": {
+    "links": {
+      "features": "Features",
+      "pricing": "Pricing",
+      "about": "About"
+    },
+    "buttons": {
+      "login": "Log In",
+      "getStarted": "Get Started"
+    }
   }
 }
