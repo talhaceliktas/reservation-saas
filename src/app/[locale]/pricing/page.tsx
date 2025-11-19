@@ -9,12 +9,8 @@ import {
   PricingPlan,
 } from "@/components/sections/pricing/types";
 
-// Types.ts içine time_slot'u eklemeyi unutma!
-// interface PricingPlan { ... time_slot: string; ... }
-
 const featuresList: FeatureConfig[] = [
   { key: "appointments", starter: true, pro: true, enterprise: true },
-  // String değerler artık JSON key'i işaret ediyor
   {
     key: "staff",
     starter: "features.values.2_staff",
@@ -78,7 +74,7 @@ export default function PricingSection() {
       id="pricing"
     >
       {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[40px_40px] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-12">

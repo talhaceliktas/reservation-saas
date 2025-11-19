@@ -14,11 +14,9 @@ export default function PricingCard({
   isYearly,
   features,
 }: PricingCardProps) {
-  const t = useTranslations("Pricing"); // Hook'u buraya da alabiliriz veya prop geçebiliriz.
-  // Component içinde çağırmak daha temizdir.
+  const t = useTranslations("Pricing");
 
   const price = isYearly ? plan.price_yearly : plan.price_monthly;
-  const period = t("intervals.month"); // Veya isYearly ? 'year' : 'month'
 
   return (
     <div
@@ -62,15 +60,11 @@ export default function PricingCard({
           {plan.description}
         </p>
 
-        {/* Özellikler Listesi */}
         <ul className="space-y-3 mb-8 flex-1">
           {features.map((feature) => {
-            // any casting: Tip güvenliği için map objesi kullanmak daha iyi ama hızlı çözüm için bu uygun
             const rawValue = feature[plan.id as keyof FeatureConfig];
             const hasFeature = !!rawValue;
 
-            // Değer bir string ise (örn: "features.values.2_staff") onu çevir
-            // Değilse (boolean true) sadece boş string
             const displayValue =
               typeof rawValue === "string" ? t(rawValue) : "";
 

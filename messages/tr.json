@@ -235,6 +235,38 @@
     }
   },
 
+  "Auth": {
+    "title": "Hoşgeldiniz",
+    "subtitle": "Hesabınıza erişmek için giriş yapın veya kayıt olun.",
+    "tabs": {
+      "login": "Giriş Yap",
+      "register": "Kayıt Ol"
+    },
+    "form": {
+      "email": "E-posta Adresi",
+      "password": "Şifre",
+      "fullName": "Ad Soyad",
+      "emailPlaceholder": "ornek@sirket.com",
+      "passwordPlaceholder": "******",
+      "fullNamePlaceholder": "Adınız Soyadınız"
+    },
+    "buttons": {
+      "login": "Giriş Yap",
+      "register": "Hesap Oluştur",
+      "google": "Google ile Devam Et",
+      "loading": "İşleniyor..."
+    },
+    "errors": {
+      "required": "Bu alan zorunludur.",
+      "email": "Geçerli bir e-posta adresi giriniz.",
+      "minPassword": "Şifre en az 6 karakter olmalıdır.",
+      "generic": "Bir hata oluştu, lütfen tekrar deneyin."
+    },
+    "success": {
+      "register": "Kayıt başarılı! Lütfen e-postanızı kontrol edin."
+    }
+  },
+
   "NotFound": {
     "code": "404",
     "title": "Sayfa Bulunamadı",
