@@ -1,12 +1,20 @@
 import * as z from "zod";
 
 export const loginSchema = z.object({
-  email: z.email({ message: "invalid_email" }),
-  password: z.string().min(6, { message: "min_password" }),
+  email: z.string().min(1, { message: "required" }).email({ message: "email" }),
+  password: z
+    .string()
+    .min(1, { message: "required" })
+    .min(8, { message: "minPassword" }),
 });
 
-export const registerSchema = loginSchema.extend({
-  fullName: z.string().min(2, { message: "required" }),
+export const registerSchema = z.object({
+  fullName: z.string().min(1, { message: "required" }),
+  email: z.string().min(1, { message: "required" }).email({ message: "email" }),
+  password: z
+    .string()
+    .min(1, { message: "required" })
+    .min(8, { message: "minPassword" }),
 });
 
 export type LoginInput = z.infer<typeof loginSchema>;

@@ -11,7 +11,7 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
+  // FormMessage kaldırıldı
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -47,36 +47,51 @@ export default function RegisterForm({
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        {/* AD SOYAD ALANI */}
         <FormField
           control={form.control}
           name="fullName"
-          render={({ field }) => (
+          render={({ field, fieldState }) => (
             <FormItem>
               <FormLabel>{t("form.fullName")}</FormLabel>
               <FormControl>
                 <Input placeholder={t("form.fullNamePlaceholder")} {...field} />
               </FormControl>
-              <FormMessage />
+              {/* Manuel Hata Mesajı */}
+              {fieldState.error?.message && (
+                <p className="text-sm font-medium text-red-500">
+                  {t(`errors.${fieldState.error.message}`)}
+                </p>
+              )}
             </FormItem>
           )}
         />
+
+        {/* EMAIL ALANI */}
         <FormField
           control={form.control}
           name="email"
-          render={({ field }) => (
+          render={({ field, fieldState }) => (
             <FormItem>
               <FormLabel>{t("form.email")}</FormLabel>
               <FormControl>
                 <Input placeholder={t("form.emailPlaceholder")} {...field} />
               </FormControl>
-              <FormMessage />
+              {/* Manuel Hata Mesajı */}
+              {fieldState.error?.message && (
+                <p className="text-sm font-medium text-red-500">
+                  {t(`errors.${fieldState.error.message}`)}
+                </p>
+              )}
             </FormItem>
           )}
         />
+
+        {/* PASSWORD ALANI */}
         <FormField
           control={form.control}
           name="password"
-          render={({ field }) => (
+          render={({ field, fieldState }) => (
             <FormItem>
               <FormLabel>{t("form.password")}</FormLabel>
               <FormControl>
@@ -86,10 +101,16 @@ export default function RegisterForm({
                   {...field}
                 />
               </FormControl>
-              <FormMessage />
+              {/* Manuel Hata Mesajı */}
+              {fieldState.error?.message && (
+                <p className="text-sm font-medium text-red-500">
+                  {t(`errors.${fieldState.error.message}`)}
+                </p>
+              )}
             </FormItem>
           )}
         />
+
         <Button
           type="submit"
           className="w-full bg-green-600 hover:bg-green-700"

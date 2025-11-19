@@ -11,7 +11,7 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
+  // FormMessage'ı sildik, çünkü override etmemize izin vermiyor
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -40,23 +40,31 @@ export default function LoginForm({ onError }: LoginFormProps) {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        {/* EMAIL ALANI */}
         <FormField
           control={form.control}
           name="email"
-          render={({ field }) => (
+          render={({ field, fieldState }) => (
             <FormItem>
               <FormLabel>{t("form.email")}</FormLabel>
               <FormControl>
                 <Input placeholder={t("form.emailPlaceholder")} {...field} />
               </FormControl>
-              <FormMessage />
+              {/* Manuel Hata Mesajı Gösterimi */}
+              {fieldState.error?.message && (
+                <p className="text-sm font-medium text-red-500">
+                  {t(`errors.${fieldState.error.message}`)}
+                </p>
+              )}
             </FormItem>
           )}
         />
+
+        {/* PASSWORD ALANI */}
         <FormField
           control={form.control}
           name="password"
-          render={({ field }) => (
+          render={({ field, fieldState }) => (
             <FormItem>
               <FormLabel>{t("form.password")}</FormLabel>
               <FormControl>
@@ -66,10 +74,16 @@ export default function LoginForm({ onError }: LoginFormProps) {
                   {...field}
                 />
               </FormControl>
-              <FormMessage />
+              {/* Manuel Hata Mesajı Gösterimi */}
+              {fieldState.error?.message && (
+                <p className="text-sm font-medium text-red-500">
+                  {t(`errors.${fieldState.error.message}`)}
+                </p>
+              )}
             </FormItem>
           )}
         />
+
         <Button
           type="submit"
           className="w-full bg-blue-600 hover:bg-blue-700"
