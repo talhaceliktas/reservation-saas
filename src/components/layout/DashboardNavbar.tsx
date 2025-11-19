@@ -1,13 +1,13 @@
 "use client";
 
 import { User } from "@supabase/supabase-js";
-import { createClient } from "@/lib/supabase";
+import { createClient } from "@/lib/supabase/supabase";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import { Bell, Menu, LogOut, User as UserIcon } from "lucide-react";
-import LanguageSwitcher from "./LanguageSwitcher"; // Bu bileşenin de dil prop'u veya hook kullanması gerekebilir
-import { useTranslations } from "next-intl"; // Hook import edildi
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslations } from "next-intl";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,13 +17,15 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import useFetchProfile from "../../hooks/useFetchProfile";
 
 export default function DashboardNavbar({ locale }: { locale: string }) {
-  const t = useTranslations("Navbar"); // "Navbar" namespace'ini okuyoruz
+  const t = useTranslations("Navbar");
   const router = useRouter();
   const supabase = createClient();
   const [user, setUser] = useState<User | null>(null);
 
+  // Auth kullanıcısını çek
   useEffect(() => {
     const getUser = async () => {
       const {
@@ -34,14 +36,18 @@ export default function DashboardNavbar({ locale }: { locale: string }) {
     getUser();
   }, [supabase.auth]);
 
+  // Profil verilerini ve loading durumunu çek
+  const { profile, loading } = useFetchProfile(supabase);
+
   const handleLogout = async () => {
     await supabase.auth.signOut();
     router.refresh();
     router.push(`/${locale}/login`);
   };
 
-  const getInitials = (email: string | undefined) => {
-    return email ? email.substring(0, 2).toUpperCase() : "U";
+  const getInitials = (name: string | undefined | null) => {
+    // null veya undefined kontrolü
+    return name ? name.substring(0, 2).toUpperCase() : "U";
   };
 
   return (
@@ -69,20 +75,39 @@ export default function DashboardNavbar({ locale }: { locale: string }) {
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="relative h-9 w-9 rounded-full">
-              <Avatar className="h-9 w-9 border border-slate-200">
-                <AvatarImage src={user?.user_metadata?.avatar_url} />
+              {/* ✨ GÜNCELLEME BURADA: loading durumuna göre stil değişikliği */}
+              <Avatar
+                className={`h-9 w-9 border border-slate-200 transition-all duration-300 ${
+                  loading
+                    ? "opacity-50 animate-pulse cursor-wait"
+                    : "opacity-100"
+                }`}
+              >
+                {/* Profildeki avatar varsa onu, yoksa user metadata'dakini kullan */}
+                <AvatarImage
+                  src={profile?.avatar_url || user?.user_metadata?.avatar_url}
+                />
                 <AvatarFallback className="bg-blue-100 text-blue-700">
-                  {getInitials(user?.email)}
+                  {loading ? "" : getInitials(profile?.full_name)}
                 </AvatarFallback>
               </Avatar>
             </Button>
           </DropdownMenuTrigger>
+
           <DropdownMenuContent className="w-56" align="end" forceMount>
             <DropdownMenuLabel className="font-normal">
               <div className="flex flex-col space-y-1">
-                <p className="text-sm font-medium leading-none">
-                  {/* Çeviri: Kullanıcı Adı Yoksa Varsayılan */}
-                  {user?.user_metadata?.full_name || t("userMenu.defaultName")}
+                <p
+                  className={`text-sm font-medium leading-none transition-opacity ${
+                    loading ? "opacity-50" : ""
+                  }`}
+                >
+                  {/* Loading ise "Yükleniyor..." yazabilir veya soluk gösterebilirsin */}
+                  {loading
+                    ? "..."
+                    : profile?.full_name ||
+                      user?.user_metadata?.full_name ||
+                      t("userMenu.defaultName")}
                 </p>
                 <p className="text-xs leading-none text-muted-foreground">
                   {user?.email}
@@ -95,7 +120,6 @@ export default function DashboardNavbar({ locale }: { locale: string }) {
               className="cursor-pointer"
             >
               <UserIcon className="mr-2 h-4 w-4" />
-              {/* Çeviri: Profilim */}
               <span>{t("userMenu.profile")}</span>
             </DropdownMenuItem>
             <DropdownMenuSeparator />
@@ -104,7 +128,6 @@ export default function DashboardNavbar({ locale }: { locale: string }) {
               onClick={handleLogout}
             >
               <LogOut className="mr-2 h-4 w-4" />
-              {/* Çeviri: Çıkış Yap */}
               <span>{t("userMenu.logout")}</span>
             </DropdownMenuItem>
           </DropdownMenuContent>

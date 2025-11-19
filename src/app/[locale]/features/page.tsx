@@ -13,7 +13,6 @@ export default async function Page({ params }: { params: { locale: string } }) {
       <FeaturesHero />
       <BentoGrid />
       <DetailedSection />
-
       <CTA locale={locale} />
     </main>
   );
