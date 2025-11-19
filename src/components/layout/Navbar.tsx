@@ -2,37 +2,39 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation"; // Yönlendirme için
 import { useTranslations } from "next-intl";
 import { Button } from "../ui/button";
-import { Menu, X, CalendarDays, LayoutDashboard, Loader2 } from "lucide-react"; // Dashboard ikonu eklendi
+import {
+  Menu,
+  X,
+  CalendarDays,
+  LayoutDashboard,
+  Loader2,
+  LogOut,
+} from "lucide-react"; // LogOut ikonu eklendi
 import { cn } from "@/lib/utils";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { createBrowserClient } from "@supabase/ssr"; // Supabase client
-import { User } from "@supabase/supabase-js"; // Tip tanımı
+import { User } from "@supabase/supabase-js";
+import { createClient } from "@/lib/supabase";
 
 export default function Navbar({ locale }: { locale: string }) {
   const t = useTranslations("Navbar");
+  const router = useRouter(); // Router hook'u
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Kullanıcı durumu ve yükleniyor kontrolü
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
-  // Supabase Client oluştur (Env değişkenlerinin .env.local dosyasında olduğundan emin ol)
-  const supabase = createBrowserClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  );
+  const supabase = createClient();
 
-  // Scroll ve Kullanıcı Kontrolü
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener("scroll", handleScroll);
 
-    // Kullanıcı oturumunu kontrol et
     const checkUser = async () => {
       const {
         data: { user },
@@ -45,6 +47,14 @@ export default function Navbar({ locale }: { locale: string }) {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [supabase.auth]);
+
+  // ÇIKIŞ YAPMA FONKSİYONU 🚪
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    setUser(null);
+    router.refresh(); // Sayfayı yenile ki middleware devreye girsin
+    router.push(`/${locale}`); // Anasayfaya at
+  };
 
   const navLinks = [
     { href: "features", label: t("links.features") },
@@ -62,6 +72,7 @@ export default function Navbar({ locale }: { locale: string }) {
       )}
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
+        {/* LOGO */}
         <Link
           href={`/${locale}`}
           className="flex items-center gap-2 font-bold text-2xl text-slate-900 hover:opacity-80 transition"
@@ -72,7 +83,7 @@ export default function Navbar({ locale }: { locale: string }) {
           BookIt
         </Link>
 
-        {/* Orta Menü Linkleri */}
+        {/* DESKTOP LINKLER */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
@@ -85,24 +96,36 @@ export default function Navbar({ locale }: { locale: string }) {
           ))}
         </nav>
 
-        {/* SAĞ TARAF (Desktop) */}
+        {/* DESKTOP SAĞ TARAF */}
         <div className="hidden md:flex items-center gap-4">
           <LanguageSwitcher currentLocale={locale} />
           <div className="h-6 w-px bg-slate-200" />
 
-          {/* Yükleniyor durumu için minik bir loader veya boşluk */}
           {loading ? (
             <Loader2 className="animate-spin text-slate-400" size={20} />
           ) : user ? (
-            /* KULLANICI GİRİŞ YAPMIŞSA: DASHBOARD BUTONU */
-            <Link href={`/${locale}/dashboard`}>
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-600/20 gap-2">
-                <LayoutDashboard size={18} />
-                {t("buttons.dashboard")}
+            /* KULLANICI GİRİŞ YAPMIŞSA */
+            <div className="flex items-center gap-2">
+              <Link href={`/${locale}/dashboard`}>
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-600/20 gap-2">
+                  <LayoutDashboard size={18} />
+                  {t("buttons.dashboard")}
+                </Button>
+              </Link>
+
+              {/* Çıkış Yap Butonu (Desktop - Sadece İkon) */}
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={handleLogout}
+                className="text-slate-500 hover:text-red-600 hover:bg-red-50"
+                title={t("buttons.logout")}
+              >
+                <LogOut size={20} />
               </Button>
-            </Link>
+            </div>
           ) : (
-            /* GİRİŞ YAPMAMIŞSA: LOGIN & REGISTER */
+            /* KULLANICI GİRİŞ YAPMAMIŞSA */
             <>
               <Link href={`/${locale}/login`}>
                 <Button
@@ -121,7 +144,7 @@ export default function Navbar({ locale }: { locale: string }) {
           )}
         </div>
 
-        {/* Mobil Menü Butonu */}
+        {/* MOBİL MENÜ BUTONU */}
         <button
           className="md:hidden text-slate-700"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -130,7 +153,7 @@ export default function Navbar({ locale }: { locale: string }) {
         </button>
       </div>
 
-      {/* MOBİL MENÜ */}
+      {/* MOBİL MENÜ İÇERİĞİ */}
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white border-b border-slate-200 shadow-xl p-4 flex flex-col gap-4 animate-in slide-in-from-top-5">
           {navLinks.map((link) => (
@@ -153,15 +176,28 @@ export default function Navbar({ locale }: { locale: string }) {
             </div>
 
             {user ? (
-              /* Mobil: Giriş Yapılmışsa */
-              <Link href={`/${locale}/dashboard`} className="w-full">
-                <Button className="w-full bg-blue-600 gap-2">
-                  <LayoutDashboard size={18} />
-                  {t("buttons.dashboard")}
+              <>
+                <Link href={`/${locale}/dashboard`} className="w-full">
+                  <Button className="w-full bg-blue-600 gap-2">
+                    <LayoutDashboard size={18} />
+                    {t("buttons.dashboard")}
+                  </Button>
+                </Link>
+
+                {/* Mobil Çıkış Butonu (Tam Genişlik) */}
+                <Button
+                  variant="outline"
+                  onClick={() => {
+                    handleLogout();
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="w-full text-red-600 hover:text-red-700 hover:bg-red-50 border-red-200 gap-2"
+                >
+                  <LogOut size={18} />
+                  {t("buttons.logout")}
                 </Button>
-              </Link>
+              </>
             ) : (
-              /* Mobil: Giriş Yapılmamışsa */
               <>
                 <Link href={`/${locale}/login`} className="w-full">
                   <Button variant="outline" className="w-full justify-center">

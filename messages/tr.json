@@ -44,7 +44,8 @@
     "buttons": {
       "login": "Giriş Yap",
       "getStarted": "Hemen Başla",
-      "dashboard": "Yönetim Paneli"
+      "dashboard": "Yönetim Paneli",
+      "logout": "Çıkış Yap"
     }
   },
 
