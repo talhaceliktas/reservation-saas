@@ -21,8 +21,11 @@ export function useAuth() {
       router.refresh();
       router.push("/dashboard"); // Başarılıysa panele at
       return { success: true };
-    } catch (error: any) {
-      return { success: false, error: error.message };
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        return { success: false, error: error.message };
+      }
+      return { success: false, error: "Bilinmeyen hata" };
     } finally {
       setIsLoading(false);
     }
@@ -44,8 +47,11 @@ export function useAuth() {
       if (error) throw error;
 
       return { success: true };
-    } catch (error: any) {
-      return { success: false, error: error.message };
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        return { success: false, error: error.message };
+      }
+      return { success: false, error: "Bilinmeyen hata" };
     } finally {
       setIsLoading(false);
     }
@@ -66,8 +72,11 @@ export function useAuth() {
       });
 
       if (error) throw error;
-    } catch (error: any) {
-      console.error("Google login error:", error);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        return { success: false, error: error.message };
+      }
+      return { success: false, error: "Bilinmeyen hata" };
     } finally {
     }
   };
