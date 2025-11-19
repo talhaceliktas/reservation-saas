@@ -33,11 +33,11 @@ export default function Stats() {
           y: 0,
           opacity: 1,
           duration: 0.8,
-          stagger: 0.1, // Sırayla gelsinler
+          stagger: 0.1,
           ease: "power3.out",
           scrollTrigger: {
             trigger: containerRef.current,
-            start: "top 85%", // Görünür olunca başla
+            start: "top 85%",
             toggleActions: "play none none reverse",
           },
         }
@@ -55,14 +55,12 @@ export default function Stats() {
               key={index}
               className="stat-item flex flex-col items-center justify-center text-center space-y-2"
             >
-              {/* Değer (Büyük Yazı) */}
               <span
                 className={`text-4xl md:text-5xl font-black tracking-tight ${stat.color}`}
               >
                 {t(`${stat.key}.value`)}
               </span>
 
-              {/* Açıklama (Küçük Yazı) */}
               <span className="text-sm md:text-base font-medium text-slate-500 uppercase tracking-wide">
                 {t(`${stat.key}.label`)}
               </span>

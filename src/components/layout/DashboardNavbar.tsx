@@ -5,7 +5,7 @@ import { createClient } from "@/lib/supabase";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
-import { Bell, Search, Menu, LogOut, User as UserIcon } from "lucide-react";
+import { Bell, Menu, LogOut, User as UserIcon } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
 import {
   DropdownMenu,
@@ -16,7 +16,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-import { Input } from "../ui/input";
 
 export default function DashboardNavbar({ locale }: { locale: string }) {
   const router = useRouter();
@@ -41,9 +40,7 @@ export default function DashboardNavbar({ locale }: { locale: string }) {
 
   return (
     <header className="h-16 border-b border-slate-200 bg-white w-full flex items-center px-4 md:px-8 justify-between sticky top-0 z-30">
-      {/* SOL: Mobil Menu Tetikleyici & Arama */}
       <div className="flex items-center gap-4">
-        {/* Mobilde Sidebar'ı açmak için buton (Sidebar context'ine bağlanabilir) */}
         <Button
           variant="ghost"
           size="icon"
@@ -51,22 +48,11 @@ export default function DashboardNavbar({ locale }: { locale: string }) {
         >
           <Menu size={20} />
         </Button>
-
-        {/* Basit Arama Çubuğu (Opsiyonel) */}
-        <div className="hidden md:flex items-center relative">
-          <Search size={16} className="absolute left-3 text-slate-400" />
-          <Input
-            placeholder="Ara..."
-            className="pl-9 h-9 w-64 bg-slate-50 border-slate-200 focus:bg-white transition-all"
-          />
-        </div>
       </div>
 
-      {/* SAĞ: Aksiyonlar */}
       <div className="flex items-center gap-3">
         <LanguageSwitcher currentLocale={locale} />
 
-        {/* Bildirimler */}
         <Button variant="ghost" size="icon" className="text-slate-500 relative">
           <Bell size={20} />
           <span className="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border border-white"></span>
@@ -74,7 +60,6 @@ export default function DashboardNavbar({ locale }: { locale: string }) {
 
         <div className="h-6 w-px bg-slate-200 mx-1" />
 
-        {/* Kullanıcı Menüsü */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="relative h-9 w-9 rounded-full">

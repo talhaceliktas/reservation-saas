@@ -4,8 +4,8 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, PlayCircle } from "lucide-react";
 import { useRef } from "react";
-import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { heroAnimation } from "../../../animations/heroAnimation";
 
 export default function Hero() {
   const t = useTranslations("Intro.hero");
@@ -13,32 +13,9 @@ export default function Hero() {
 
   useGSAP(
     () => {
-      const tl = gsap.timeline();
-
-      tl.from(".hero-badge", {
-        y: -20,
-        opacity: 0,
-        duration: 0.5,
-        ease: "power3.out",
-      })
-        .from(".hero-title", {
-          y: 50,
-          opacity: 0,
-          duration: 0.8,
-          stagger: 0.2,
-          ease: "back.out(1.7)",
-        })
-        .from(".hero-desc", { y: 20, opacity: 0, duration: 0.5 }, "-=0.4")
-        .from(
-          ".hero-btns",
-          {
-            scale: 0.8,
-            opacity: 0,
-            duration: 0.5,
-            ease: "elastic.out(1, 0.5)",
-          },
-          "-=0.2"
-        );
+      if (containerRef.current) {
+        heroAnimation();
+      }
     },
     { scope: containerRef }
   );
@@ -48,7 +25,6 @@ export default function Hero() {
       ref={containerRef}
       className="relative flex flex-col items-center justify-center min-h-[90vh] pt-20 bg-linear-to-b from-slate-50 to-white px-4 text-center overflow-hidden"
     >
-      {/* Blur Efektleri */}
       <div className="absolute top-20 left-20 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob" />
       <div className="absolute top-40 right-20 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000" />
 

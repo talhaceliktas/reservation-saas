@@ -104,7 +104,6 @@ export default function Features() {
                 <feature.icon className={`w-8 h-8 ${feature.color}`} />
               </div>
 
-              {/* İçerik */}
               <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
                 {t(`cards.${feature.key}.title`)}
               </h3>

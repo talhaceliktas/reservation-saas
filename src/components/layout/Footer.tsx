@@ -26,9 +26,7 @@ export default function Footer() {
   return (
     <footer className="bg-slate-900 text-slate-300 py-16 border-t border-slate-800">
       <div className="container mx-auto px-4">
-        {/* ÜST KISIM (Grid Yapısı) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          {/* 1. KOLON: Marka ve Sosyal */}
           <div className="space-y-6">
             <Link
               href="/"
@@ -55,7 +53,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* 2. KOLON: Ürün Linkleri */}
           <div>
             <h3 className="text-white font-semibold mb-6">
               {t("cols.product")}
@@ -88,7 +85,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* 3. KOLON: Şirket Linkleri */}
           <div>
             <h3 className="text-white font-semibold mb-6">
               {t("cols.company")}
@@ -129,7 +125,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* 4. KOLON: Bülten (Newsletter) */}
           <div>
             <h3 className="text-white font-semibold mb-6">
               {t("newsletter.title")}
@@ -150,7 +145,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ALT KISIM (Copyright) */}
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-slate-500 text-sm">
             &copy; {currentYear} BookIt Inc. {t("copyright")}

@@ -287,6 +287,32 @@
     }
   },
 
+  "CreateOrg": {
+    "title": "Yeni Organizasyon Oluştur",
+    "desc": "Yeni bir işletme profili oluşturun. Daha sonra ayarları düzenleyebilirsiniz.",
+    "labels": {
+      "name": "İşletme Adı",
+      "slug": "URL Kısa Adı (Slug)"
+    },
+    "placeholders": {
+      "name": "Örn: BookIt Kadıköy",
+      "slug": "kadikoy"
+    },
+    "buttons": {
+      "create": "Oluştur"
+    },
+    "errors": {
+      "min2": "En az 2 karakter olmalı",
+      "min3": "En az 3 karakter olmalı",
+      "regex": "Sadece küçük harf, rakam ve tire",
+      "generic": "Bir hata oluştu"
+    },
+    "toasts": {
+      "success": "Organizasyon başarıyla oluşturuldu!",
+      "errorPrefix": "Hata: "
+    }
+  },
+
   "NotFound": {
     "code": "404",
     "title": "Sayfa Bulunamadı",

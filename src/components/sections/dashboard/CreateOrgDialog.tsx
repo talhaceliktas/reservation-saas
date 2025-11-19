@@ -6,8 +6,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { createClient } from "@/lib/supabase";
 import { useOrg } from "@/context/org-context";
-import { Loader2 } from "lucide-react"; // 'Plus' silindi
+import { Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl"; // 1. IMPORT
 import {
   Dialog,
   DialogContent,
@@ -21,25 +22,30 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 
-const formSchema = z.object({
-  name: z.string().min(2, "En az 2 karakter olmalı"),
-  slug: z
-    .string()
-    .min(3, "En az 3 karakter olmalı")
-    .regex(/^[a-z0-9-]+$/, "Sadece küçük harf, rakam ve tire"),
-});
-
-type FormValues = z.infer<typeof formSchema>;
+// Tip tanımını dışarıda tutabiliriz ama şemayı içeri alacağız
+type FormValues = {
+  name: string;
+  slug: string;
+};
 
 export default function CreateOrgDialog({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const t = useTranslations("CreateOrg");
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const { refreshOrgs } = useOrg();
   const supabase = createClient();
+
+  const formSchema = z.object({
+    name: z.string().min(2, t("errors.min2")),
+    slug: z
+      .string()
+      .min(3, t("errors.min3"))
+      .regex(/^[a-z0-9-]+$/, t("errors.regex")),
+  });
 
   const {
     register,
@@ -73,17 +79,17 @@ export default function CreateOrgDialog({
 
       await refreshOrgs();
 
-      toast.success("Organizasyon oluşturuldu!");
+      toast.success(t("toasts.success"));
       setOpen(false);
     } catch (error: unknown) {
       console.error(error);
 
-      let errorMessage = "Bir hata oluştu";
+      let errorMessage = t("errors.generic");
       if (error instanceof Error) {
         errorMessage = error.message;
       }
 
-      toast.error("Hata: " + errorMessage);
+      toast.error(t("toasts.errorPrefix") + errorMessage);
     } finally {
       setLoading(false);
     }
@@ -94,20 +100,17 @@ export default function CreateOrgDialog({
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Yeni Organizasyon Oluştur</DialogTitle>
-          <DialogDescription>
-            Yeni bir işletme profili oluşturun. Daha sonra ayarları
-            düzenleyebilirsiniz.
-          </DialogDescription>
+          <DialogTitle>{t("title")}</DialogTitle>
+          <DialogDescription>{t("desc")}</DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit(onSubmit)} className="grid gap-4 py-4">
           <div className="grid gap-2">
-            <Label htmlFor="name">İşletme Adı</Label>
+            <Label htmlFor="name">{t("labels.name")}</Label>
             <Input
               id="name"
               {...register("name")}
               onChange={handleNameChange}
-              placeholder="Örn: BookIt Kadıköy"
+              placeholder={t("placeholders.name")}
             />
             {errors.name && (
               <span className="text-xs text-red-500">
@@ -116,7 +119,7 @@ export default function CreateOrgDialog({
             )}
           </div>
           <div className="grid gap-2">
-            <Label htmlFor="slug">URL Kısa Adı (Slug)</Label>
+            <Label htmlFor="slug">{t("labels.slug")}</Label>
             <div className="flex items-center">
               <span className="bg-slate-100 border border-r-0 border-slate-200 rounded-l-md px-3 py-2 text-sm text-slate-500">
                 bookit.com/
@@ -125,7 +128,7 @@ export default function CreateOrgDialog({
                 id="slug"
                 {...register("slug")}
                 className="rounded-l-none"
-                placeholder="kadikoy"
+                placeholder={t("placeholders.slug")}
               />
             </div>
             {errors.slug && (
@@ -141,7 +144,7 @@ export default function CreateOrgDialog({
               className="bg-blue-600 hover:bg-blue-700"
             >
               {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-              Oluştur
+              {t("buttons.create")}
             </Button>
           </DialogFooter>
         </form>

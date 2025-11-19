@@ -55,8 +55,6 @@ export default function MarketingNavbar({ locale }: { locale: string }) {
     { href: "about", label: t("links.about") },
   ];
 
-  // ... (JSX kısmı senin attığın kodun aynısı, burayı kısaltıyorum yer kaplamasın diye)
-  // Sadece class isimleri ve mantık aynı kalacak.
   return (
     <header
       className={cn(
@@ -67,7 +65,6 @@ export default function MarketingNavbar({ locale }: { locale: string }) {
       )}
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
-        {/* LOGO */}
         <Link
           href={`/${locale}`}
           className="flex items-center gap-2 font-bold text-2xl text-slate-900 hover:opacity-80 transition"
@@ -78,7 +75,6 @@ export default function MarketingNavbar({ locale }: { locale: string }) {
           BookIt
         </Link>
 
-        {/* DESKTOP LINKLER */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
@@ -91,7 +87,6 @@ export default function MarketingNavbar({ locale }: { locale: string }) {
           ))}
         </nav>
 
-        {/* DESKTOP SAĞ TARAF */}
         <div className="hidden md:flex items-center gap-4">
           <LanguageSwitcher currentLocale={locale} />
           <div className="h-6 w-px bg-slate-200" />
@@ -99,7 +94,6 @@ export default function MarketingNavbar({ locale }: { locale: string }) {
           {loading ? (
             <Loader2 className="animate-spin text-slate-400" size={20} />
           ) : user ? (
-            /* KULLANICI GİRİŞ YAPMIŞSA */
             <div className="flex items-center gap-2">
               <Link href={`/${locale}/dashboard`}>
                 <Button className="bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-600/20 gap-2">
@@ -108,7 +102,6 @@ export default function MarketingNavbar({ locale }: { locale: string }) {
                 </Button>
               </Link>
 
-              {/* Çıkış Yap Butonu (Desktop - Sadece İkon) */}
               <Button
                 variant="ghost"
                 size="icon"
@@ -120,7 +113,6 @@ export default function MarketingNavbar({ locale }: { locale: string }) {
               </Button>
             </div>
           ) : (
-            /* KULLANICI GİRİŞ YAPMAMIŞSA */
             <>
               <Link href={`/${locale}/login`}>
                 <Button
@@ -139,7 +131,6 @@ export default function MarketingNavbar({ locale }: { locale: string }) {
           )}
         </div>
 
-        {/* MOBİL MENÜ BUTONU */}
         <button
           className="md:hidden text-slate-700"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -148,7 +139,6 @@ export default function MarketingNavbar({ locale }: { locale: string }) {
         </button>
       </div>
 
-      {/* MOBİL MENÜ İÇERİĞİ */}
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white border-b border-slate-200 shadow-xl p-4 flex flex-col gap-4 animate-in slide-in-from-top-5">
           {navLinks.map((link) => (
