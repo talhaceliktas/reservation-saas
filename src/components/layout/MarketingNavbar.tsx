@@ -122,7 +122,7 @@ export default function MarketingNavbar({ locale }: { locale: string }) {
                   {t("buttons.login")}
                 </Button>
               </Link>
-              <Link href={`/${locale}/register`}>
+              <Link href={`/${locale}/login`}>
                 <Button className="bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-600/20">
                   {t("buttons.getStarted")}
                 </Button>

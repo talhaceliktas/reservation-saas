@@ -75,7 +75,6 @@ export default function DashboardNavbar({ locale }: { locale: string }) {
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="relative h-9 w-9 rounded-full">
-              {/* ✨ GÜNCELLEME BURADA: loading durumuna göre stil değişikliği */}
               <Avatar
                 className={`h-9 w-9 border border-slate-200 transition-all duration-300 ${
                   loading
@@ -83,7 +82,6 @@ export default function DashboardNavbar({ locale }: { locale: string }) {
                     : "opacity-100"
                 }`}
               >
-                {/* Profildeki avatar varsa onu, yoksa user metadata'dakini kullan */}
                 <AvatarImage
                   src={profile?.avatar_url || user?.user_metadata?.avatar_url}
                 />

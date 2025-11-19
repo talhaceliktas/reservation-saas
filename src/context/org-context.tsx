@@ -10,7 +10,6 @@ import {
 } from "react";
 import { createClient } from "@/lib/supabase/supabase";
 
-// Veritabanındaki Organization yapısı
 type Organization = {
   id: string;
   name: string;
@@ -18,8 +17,6 @@ type Organization = {
   logo_url: string | null;
 };
 
-// Supabase'den Join işlemiyle gelen ham verinin tipi
-// organization_members tablosundan organization tablosuna join atıyoruz
 type OrgMemberResponse = {
   organization: Organization;
 };
@@ -40,11 +37,6 @@ export function OrgProvider({ children }: { children: ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
 
   const supabase = createClient();
-  // router kullanılmıyordu, sildik.
-
-  // useCallback KULLANIMI:
-  // Bu fonksiyonu hafızaya sabitliyoruz. Sadece 'supabase' değişirse (ki değişmez) yenilenir.
-  // Böylece useEffect'in bağımlılık listesine (dependency array) güvenle ekleyebiliriz.
   const refreshOrgs = useCallback(async () => {
     try {
       const {
@@ -56,7 +48,6 @@ export function OrgProvider({ children }: { children: ReactNode }) {
         return;
       }
 
-      // RPC veya Join ile organizasyonları çek
       const { data, error } = await supabase
         .from("organization_members")
         .select(
@@ -74,15 +65,11 @@ export function OrgProvider({ children }: { children: ReactNode }) {
       }
 
       if (data) {
-        // Tip güvenli dönüşüm (Casting)
-        // Supabase 'data'yı bazen tam tanıyamaz, ona yol gösteriyoruz.
         const rawData = data as unknown as OrgMemberResponse[];
         const orgs = rawData.map((item) => item.organization);
 
         setOrganizations(orgs);
 
-        // Eğer aktif bir org seçili değilse ve liste varsa, ilkini seç
-        // (Burada state update yapıyoruz, ama async olduğu için sorun yok)
         setActiveOrg((current) => {
           if (!current && orgs.length > 0) return orgs[0];
           return current;

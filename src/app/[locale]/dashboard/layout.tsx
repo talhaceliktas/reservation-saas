@@ -1,4 +1,4 @@
-import Sidebar from "@/components/sections/dashboard/Sidebar";
+import Sidebar from "@/components/sections/dashboard/layout/Sidebar";
 import { ReactNode } from "react";
 import { OrgProvider } from "../../../context/org-context";
 

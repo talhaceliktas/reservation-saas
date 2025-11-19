@@ -320,7 +320,9 @@
 
   "OrgSwitcher": {
     "label": "Organisationen",
-    "create": "Organisation erstellen"
+    "create": "Organisation erstellen",
+    "placeholder": "Organisation wählen",
+    "empty": "Keine Organisation gefunden."
   },
 
   "NotFound": {

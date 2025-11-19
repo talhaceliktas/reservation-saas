@@ -320,7 +320,9 @@
 
   "OrgSwitcher": {
     "label": "Organizasyonlar",
-    "create": "Organizasyon oluştur"
+    "create": "Organizasyon oluştur",
+    "placeholder": "Organizasyona Katıl",
+    "empty": "Katıldığın bir organizasyon yok."
   },
 
   "NotFound": {
