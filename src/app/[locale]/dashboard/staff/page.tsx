@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { useStaffData } from "@/hooks/useStaffData";
+import { useStaffData } from "@/hooks/useStaffData"; // Dosya ismini kontrol et (useStaffData vs use-staff-data)
 import InviteMemberDialog from "@/dashboard/staff/InviteMemberDialog";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -25,6 +25,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Trash2, Shield, Clock } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 
+// Rol tipini manuel de tanımlayabiliriz veya hook'tan import edebiliriz
+type UserRole = "owner" | "admin" | "staff";
+
 export default function StaffPage() {
   const t = useTranslations("StaffPage");
 
@@ -39,7 +42,6 @@ export default function StaffPage() {
     revokeInvitation,
   } = useStaffData();
 
-  // Sadece Owner rollerle oynayabilir
   const isOwner = currentUserRole === "owner";
   const canManage = currentUserRole === "owner" || currentUserRole === "admin";
 
@@ -108,11 +110,14 @@ export default function StaffPage() {
                     </TableCell>
                     <TableCell>{member.profile?.email}</TableCell>
                     <TableCell>
-                      {/* Rol Düzenleme (Sadece Owner ise) */}
+                      {/* DÜZELTİLEN KISIM BURASI */}
                       {isOwner && member.role !== "owner" ? (
                         <Select
                           defaultValue={member.role}
-                          onValueChange={(val) => updateRole(member.id, val)}
+                          onValueChange={(val) =>
+                            // String gelen değeri UserRole olarak zorluyoruz
+                            updateRole(member.id, val as UserRole)
+                          }
                         >
                           <SelectTrigger className="h-8 w-auto min-w-[120px]">
                             <SelectValue />
@@ -188,7 +193,6 @@ export default function StaffPage() {
                       <TableCell>{invite.email}</TableCell>
                       <TableCell>
                         <Badge variant="outline">
-                          {/* Rol ismini çeviriyoruz */}
                           {t(`roles.${invite.role}`) || invite.role}
                         </Badge>
                       </TableCell>

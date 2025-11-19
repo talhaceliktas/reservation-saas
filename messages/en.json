@@ -3,15 +3,15 @@
     "hero": {
       "badge": "✨ New: AI-Powered Calendar",
       "title": "Put Your Appointments",
-      "titleHighlight": "On Autopilot",
-      "description": "Ditch the phone tag. Let your clients book 24/7 via BookIt while you focus on your work.",
+      "titleHighlight": "on Autopilot",
+      "description": "Get rid of the phone traffic. Let your customers book their own appointments 24/7 with BookIt, so you can focus on your business.",
       "primaryButton": "Get Started",
       "secondaryButton": "View Demo"
     },
     "features": {
       "title": "Features That Grow Your Business",
-      "why": "Why BookIt?",
-      "subtitle": "Not just scheduling, but full-scale management.",
+      "why": "Why BookIt",
+      "subtitle": "Not just appointments, full-scope management.",
       "cards": {
         "calendar": {
           "title": "Smart Calendar",
@@ -19,16 +19,16 @@
         },
         "reminder": {
           "title": "SMS Reminders",
-          "desc": "Automatic notifications for clients."
+          "desc": "Automatic notifications for customers."
         },
         "payment": {
-          "title": "Online Payments",
-          "desc": "Get paid at the time of booking."
+          "title": "Online Payment",
+          "desc": "Receive payments at the time of booking."
         }
       }
     },
     "stats": {
-      "availability": { "value": "24/7", "label": "Uninterrupted Booking" },
+      "availability": { "value": "24/7", "label": "Seamless Booking" },
       "setup": { "value": "2 Min", "label": "Fast Setup Time" },
       "efficiency": { "value": "40%", "label": "Fewer Phone Calls" },
       "growth": { "value": "10x", "label": "More Professional Look" }
@@ -56,7 +56,7 @@
 
   "Footer": {
     "brand": {
-      "desc": "Next-gen appointment management platform for your business."
+      "desc": "The next-generation appointment management platform for your business."
     },
     "cols": {
       "product": "Product",
@@ -69,12 +69,12 @@
       "about": "About Us",
       "blog": "Blog",
       "contact": "Contact",
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Use"
+      "privacy": "Privacy",
+      "terms": "Terms of Service"
     },
     "newsletter": {
-      "title": "Stay in the Loop",
-      "desc": "Latest features and tips directly to your inbox.",
+      "title": "Stay Updated",
+      "desc": "Latest features and tips directly in your inbox.",
       "placeholder": "Your email address",
       "button": "Subscribe"
     },
@@ -84,15 +84,15 @@
   "FeaturesPage": {
     "hero": {
       "badge": "Powerful & Flexible",
-      "title": "Full Toolkit for Your Business",
-      "desc": "More than just a calendar. BookIt provides everything you need to manage, grow, and automate your business."
+      "title": "A Complete Toolkit for Your Business",
+      "desc": "Much more than just a calendar. BookIt provides everything you need to manage, grow, and automate your business."
     },
     "bento": {
       "dateCard": {
         "title": "Smart Calendar",
         "desc": "Drag & drop management.",
         "date": "October 2026",
-        "monthlyIncome": "Monthly Income",
+        "monthlyIncome": "Monthly Revenue",
         "weekDays": {
           "Mon": "Mon",
           "Tue": "Tue",
@@ -118,37 +118,37 @@
         "text": "Mobile First"
       },
       "notificationCard": {
-        "date": "Tuesday, Sep 12",
+        "date": "Tuesday, September 12",
         "notification1": {
           "app": "BookIt",
           "date": "Now",
           "title": "Appointment Reminder 📅",
-          "message": "You have an appointment with Alex tomorrow at 2:00 PM."
+          "message": "You have an appointment with Mr. Emre tomorrow at 14:00."
         },
         "notification2": {
           "app": "Bank",
           "date": "2m ago",
           "title": "Payment Received 💰",
-          "message": "$450.00 has been deposited to your account."
+          "message": "$450.00 has been deposited into your account."
         }
       }
     },
     "details": {
       "notifications": {
-        "title": "Automated Reminders",
-        "desc": "End no-shows. Automatic SMS and Email notifications ensure your clients show up. Reduce missed appointments by 80%.",
+        "title": "Automatic Reminders",
+        "desc": "End no-shows. Automatic SMS and Email notifications ensure your customers show up. Reduce missed appointments by 80%.",
         "tag": "Communication"
       },
       "customization": {
         "title": "Custom Branding",
-        "desc": "Customize your booking page with your logo, colors, and rules. Clients see you, not BookIt.",
+        "desc": "Customize your booking page with your logo, colors, and rules. Your customers see you, not BookIt.",
         "tag": "White Label",
         "themeColor": "Theme Color"
       }
     },
     "cta": {
-      "title": "Ready to give it a try?",
-      "btn": "Get Started Now"
+      "title": "Ready to try it out?",
+      "btn": "Get Started"
     }
   },
 
@@ -156,42 +156,42 @@
     "title": "The Right Plan for Your Business",
     "subtitle": "Not just a calendar, but your business's digital branch. No hidden fees.",
     "intervals": {
-      "month": "mo",
-      "year": "yr",
+      "month": "month",
+      "year": "year",
       "vat": "+ VAT"
     },
     "switch": {
-      "monthly": "Monthly",
-      "yearly": "Yearly",
+      "monthly": "Monthly Plan",
+      "yearly": "Yearly Plan",
       "save_badge": "Save 18%"
     },
     "labels": {
       "total_amount": "Total Amount",
       "popular": "MOST POPULAR",
       "contact_sales": "Contact Sales",
-      "footer_text": "Custom SLAs and invoicing options available for enterprise businesses.",
-      "sales_link": "Talk to sales."
+      "footer_text": "Special SLAs and billing options available for enterprise businesses.",
+      "sales_link": "Talk to the sales team."
     },
     "plans": {
       "starter": {
         "name": "Starter",
         "description": "For new boutique businesses.",
         "time_slot": "09:00 - STARTER",
-        "price_monthly": "29",
-        "price_yearly": "290",
+        "price_monthly": "299",
+        "price_yearly": "2390",
         "cta": "Get Started"
       },
       "pro": {
         "name": "Professional",
         "description": "For growing teams and clinics.",
         "time_slot": "12:00 - PROFESSIONAL",
-        "price_monthly": "59",
-        "price_yearly": "590",
+        "price_monthly": "599",
+        "price_yearly": "4790",
         "cta": "Try for Free"
       },
       "enterprise": {
         "name": "Enterprise",
-        "description": "Multi-location chains and custom needs.",
+        "description": "Chain stores and custom needs.",
         "time_slot": "ALL DAY - ENTERPRISE",
         "price_monthly": "Custom",
         "price_yearly": "Custom",
@@ -212,33 +212,33 @@
         "10_staff": "10 Staff",
         "unlimited": "Unlimited",
         "email": "Email",
-        "live": "Live Chat",
-        "dedicated": "Dedicated Agent"
+        "live": "Live Support",
+        "dedicated": "Dedicated Representative"
       }
     }
   },
 
   "About": {
     "badge": "Who Are We?",
-    "title": "Designing time, not just appointments.",
-    "subtitle": "Using technology to simplify life, not complicate it.",
+    "title": "We design time, not just appointments.",
+    "subtitle": "We use technology not to complicate things, but to simplify life.",
     "mission": {
       "title": "Our Mission",
-      "description": "To enable the digital transformation of SMEs with tools that require no technical expertise."
+      "description": "To enable the digital transformation of small and medium-sized businesses with tools that require no technical knowledge."
     },
     "vision": {
       "title": "Our Vision",
-      "description": "To create an ecosystem where service providers worldwide can focus solely on their craft."
+      "description": "To create an ecosystem where service providers all over the world can focus solely on their work."
     },
     "story": {
       "title": "Why Did We Start?",
-      "p1": "BookIt was born from watching a business owner struggle to focus on clients due to constantly ringing phones. We believed there was a third way for those stuck between traditional agendas and complex software.",
-      "p2": "Our goal is not just to sell a booking calendar; but to offer your business's digital showcase, receptionist, and assistant in a single modern interface."
+      "p1": "BookIt was born watching a business owner unable to focus on their customer due to constantly ringing phones. We believed there was a third way for those stuck between traditional agendas and complex software.",
+      "p2": "Our goal is not just to sell a booking calendar; it is to offer your business's digital showcase, reception, and assistant in a single modern interface."
     },
     "stats": {
       "users": "Active Businesses",
-      "bookings": "Appointments Managed",
-      "uptime": "Service Uptime"
+      "bookings": "Managed Bookings",
+      "uptime": "Uptime"
     }
   },
 
@@ -254,8 +254,8 @@
       "password": "Password",
       "fullName": "Full Name",
       "emailPlaceholder": "example@company.com",
-      "passwordPlaceholder": "******",
-      "fullNamePlaceholder": "Your Name"
+      "passwordPlaceholder": "********",
+      "fullNamePlaceholder": "Your Full Name"
     },
     "buttons": {
       "login": "Log In",
@@ -266,7 +266,7 @@
     "errors": {
       "required": "This field is required.",
       "email": "Please enter a valid email address.",
-      "minPassword": "Password must be at least 8 characters.",
+      "minPassword": "Password must be at least 8 characters long.",
       "generic": "An error occurred, please try again.",
       "emailInUse": "This email address is already in use."
     },
@@ -297,11 +297,11 @@
     "desc": "Create a new business profile. You can edit settings later.",
     "labels": {
       "name": "Business Name",
-      "slug": "URL Slug"
+      "slug": "URL Short Name (Slug)"
     },
     "placeholders": {
-      "name": "Ex: BookIt Downtown",
-      "slug": "downtown"
+      "name": "Ex: BookIt New York",
+      "slug": "newyork"
     },
     "buttons": {
       "create": "Create"
@@ -309,7 +309,7 @@
     "errors": {
       "min2": "Must be at least 2 characters",
       "min3": "Must be at least 3 characters",
-      "regex": "Lowercase letters, numbers, and dashes only",
+      "regex": "Lowercase letters, numbers, and hyphens only",
       "generic": "An error occurred"
     },
     "toasts": {
@@ -321,16 +321,123 @@
   "OrgSwitcher": {
     "label": "Organizations",
     "create": "Create Organization",
-    "placeholder": "Select Organization",
-    "empty": "No organization found."
+    "placeholder": "Join Organization",
+    "empty": "You haven't joined any organizations."
+  },
+
+  "StaffPage": {
+    "header": {
+      "title": "Team Management",
+      "description": "Manage members of your organization and their permissions."
+    },
+    "tabs": {
+      "members": "Active Members",
+      "invitations": "Invitations"
+    },
+    "table": {
+      "user": "User",
+      "email": "Email",
+      "role": "Role",
+      "actions": "Actions",
+      "assignedRole": "Assigned Role",
+      "status": "Status"
+    },
+    "roles": {
+      "admin": "Admin",
+      "staff": "Staff",
+      "owner": "Owner"
+    },
+    "status": {
+      "pending": "Pending"
+    },
+    "empty": {
+      "invitations": "No pending invitations."
+    },
+    "buttons": {
+      "cancel": "Cancel"
+    },
+    "alerts": {
+      "removeConfirm": "Are you sure you want to remove this user from the organization?",
+      "unnamed": "Unnamed"
+    },
+    "toasts": {
+      "fetchError": "Error loading data.",
+      "roleUpdated": "User role updated successfully.",
+      "memberRemoved": "User removed from the organization.",
+      "invitationRevoked": "Invitation revoked.",
+      "errorPrefix": "Error:"
+    }
+  },
+
+  "InviteDialog": {
+    "trigger": "Invite Staff",
+    "title": "Invite New Member",
+    "desc": "Enter the email address to add someone to the team.",
+    "labels": {
+      "email": "Email Address",
+      "role": "Permission / Role"
+    },
+    "placeholders": {
+      "email": "example@company.com",
+      "role": "Select Role"
+    },
+    "roles": {
+      "staff": "Staff",
+      "admin": "Admin"
+    },
+    "buttons": {
+      "submit": "Send Invitation"
+    },
+    "errors": {
+      "invalidEmail": "Please enter a valid email",
+      "noOrg": "No active organization found.",
+      "generic": "An unexpected error occurred."
+    },
+    "toasts": {
+      "success": "Invitation and email sent!"
+    }
+  },
+
+  "InvitationErrors": {
+    "notFound": "Invitation not found or expired.",
+    "unauthenticated": "You need to log in.",
+    "invalid": "Invalid invitation.",
+    "emailMismatch": "Email address does not match.",
+    "emailMismatchDetail": "This invitation is for {inviteEmail}, but you are logged in as {userEmail}.",
+    "createMemberError": "Technical error while creating membership.",
+    "success": "You have successfully joined the team!"
+  },
+
+  "JoinPage": {
+    "valid": {
+      "title": "You've Been Invited!",
+      "desc": "You have received an invitation to join the <bold>{orgName}</bold> team.",
+      "invitedEmail": "Invited:",
+      "role": "Role:",
+      "buttonJoin": "Accept Invitation",
+      "buttonDecline": "Decline this invitation"
+    },
+    "invalid": {
+      "title": "Invalid Invitation",
+      "desc": "This invitation link is invalid, expired, or has already been used.",
+      "buttonHome": "Return to Home"
+    },
+    "warnings": {
+      "unauthenticated": "To accept the invitation, you must first log in or sign up.",
+      "mismatch": "Attention: You are currently logged in as <bold>{userEmail}</bold>. The invitation was sent to <bold>{inviteEmail}</bold>. Please switch to the correct account."
+    },
+    "buttons": {
+      "login": "Log In and Join",
+      "switchAccount": "Log In with Different Account"
+    }
   },
 
   "NotFound": {
     "code": "404",
     "title": "Page Not Found",
-    "desc": "The page you are looking for might have been moved, deleted, or never existed.",
+    "desc": "The page you are looking for might have been moved, deleted, or does not exist.",
     "buttons": {
-      "home": "Return Home",
+      "home": "Return to Home",
       "back": "Go Back"
     }
   }

@@ -254,7 +254,7 @@
       "password": "Şifre",
       "fullName": "Ad Soyad",
       "emailPlaceholder": "ornek@sirket.com",
-      "passwordPlaceholder": "******",
+      "passwordPlaceholder": "********",
       "fullNamePlaceholder": "Adınız Soyadınız"
     },
     "buttons": {
@@ -359,6 +359,13 @@
     "alerts": {
       "removeConfirm": "Bu kullanıcıyı organizasyondan çıkarmak istediğinize emin misiniz?",
       "unnamed": "İsimsiz"
+    },
+    "toasts": {
+      "fetchError": "Veriler yüklenirken bir hata oluştu.",
+      "roleUpdated": "Kullanıcı rolü başarıyla güncellendi.",
+      "memberRemoved": "Kullanıcı organizasyondan çıkarıldı.",
+      "invitationRevoked": "Davetiye iptal edildi.",
+      "errorPrefix": "Hata:"
     }
   },
 

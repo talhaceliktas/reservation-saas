@@ -4,12 +4,11 @@ import { useCallback, useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { useOrg } from "@/context/org-context";
 import { toast } from "sonner";
-import { PostgrestError } from "@supabase/supabase-js";
+import { useTranslations } from "next-intl"; // Çeviri eklendi
 
-// Rol Tipleri (Tekrar tekrar yazmamak için)
+// Rol Tipleri
 type UserRole = "owner" | "admin" | "staff";
 
-// Tipler
 export type Member = {
   id: string;
   user_id: string;
@@ -26,11 +25,11 @@ export type Invitation = {
   email: string;
   role: UserRole;
   created_at: string;
-  // status veritabanında yoksa UI'da hesaplanabilir veya opsiyonel olabilir
   status?: string;
 };
 
 export function useStaffData() {
+  const t = useTranslations("StaffPage.toasts"); // Çeviri hook'u
   const { activeOrg } = useOrg();
   const supabase = createClient();
 
@@ -40,7 +39,11 @@ export function useStaffData() {
   const [loading, setLoading] = useState(true);
 
   const fetchData = useCallback(async () => {
-    if (!activeOrg) return;
+    if (!activeOrg) {
+      setLoading(false);
+      return;
+    }
+
     setLoading(true);
 
     try {
@@ -50,15 +53,11 @@ export function useStaffData() {
             .from("organization_members")
             .select(
               `
-            id,
-            user_id,
-            role,
-            profile:profiles (
-              full_name,
-              email,
-              avatar_url
-            )
-          `
+              id,
+              user_id,
+              role,
+              profile:profiles ( full_name, email, avatar_url )
+            `
             )
             .eq("organization_id", activeOrg.id),
 
@@ -70,7 +69,6 @@ export function useStaffData() {
           supabase.auth.getUser(),
         ]);
 
-      // Hata Kontrolü
       if (membersResponse.error) throw membersResponse.error;
       if (invitationsResponse.error) throw invitationsResponse.error;
 
@@ -78,31 +76,19 @@ export function useStaffData() {
       const inviteData = invitationsResponse.data;
       const user = userResponse.data.user;
 
-      // 2. Benim Rolümü Bul
-      // TypeScript'e memberData'nın Member[] yapısında olduğunu söylüyoruz (Type Assertion)
-      // Eğer Supabase Type Gen kullansaydık buna gerek kalmazdı.
       const typedMembers = memberData as unknown as Member[];
       const myRecord = typedMembers.find((m) => m.user_id === user?.id);
 
       setMembers(typedMembers);
-      setInvitations(inviteData as Invitation[]); // Invitation tipine zorluyoruz
+      setInvitations(inviteData as Invitation[]);
       setCurrentUserRole(myRecord?.role || null);
     } catch (error: unknown) {
-      console.error("Veri çekme hatası:", error);
-
-      // Hata mesajını güvenli alma
-      let message = "Veriler yüklenirken bir hata oluştu.";
-      if (isPostgrestError(error)) {
-        message = error.message;
-      } else if (error instanceof Error) {
-        message = error.message;
-      }
-
-      toast.error(message);
+      console.error("Fetch error:", error);
+      toast.error(t("fetchError"));
     } finally {
       setLoading(false);
     }
-  }, [activeOrg, supabase]);
+  }, [activeOrg, supabase, t]);
 
   useEffect(() => {
     fetchData();
@@ -120,16 +106,14 @@ export function useStaffData() {
 
       if (error) throw error;
 
-      toast.success("Rol güncellendi");
+      toast.success(t("roleUpdated"));
       fetchData();
     } catch (error: unknown) {
-      const message =
-        error instanceof Error ? error.message : "Bir hata oluştu";
-      toast.error("Hata: " + message);
+      const message = error instanceof Error ? error.message : "Error";
+      toast.error(`${t("errorPrefix")} ${message}`);
     }
   };
 
-  // Üye Çıkarma
   const removeMember = async (memberId: string) => {
     try {
       const { error } = await supabase
@@ -139,16 +123,14 @@ export function useStaffData() {
 
       if (error) throw error;
 
-      toast.success("Kullanıcı organizasyondan çıkarıldı");
+      toast.success(t("memberRemoved"));
       fetchData();
     } catch (error: unknown) {
-      const message =
-        error instanceof Error ? error.message : "Bir hata oluştu";
-      toast.error("Hata: " + message);
+      const message = error instanceof Error ? error.message : "Error";
+      toast.error(`${t("errorPrefix")} ${message}`);
     }
   };
 
-  // Davet İptal Etme
   const revokeInvitation = async (inviteId: string) => {
     try {
       const { error } = await supabase
@@ -158,12 +140,11 @@ export function useStaffData() {
 
       if (error) throw error;
 
-      toast.success("Davet iptal edildi");
+      toast.success(t("invitationRevoked"));
       fetchData();
     } catch (error: unknown) {
-      const message =
-        error instanceof Error ? error.message : "Bir hata oluştu";
-      toast.error("Hata: " + message);
+      const message = error instanceof Error ? error.message : "Error";
+      toast.error(`${t("errorPrefix")} ${message}`);
     }
   };
 
@@ -177,13 +158,4 @@ export function useStaffData() {
     removeMember,
     revokeInvitation,
   };
-}
-
-function isPostgrestError(error: unknown): error is PostgrestError {
-  return (
-    typeof error === "object" &&
-    error !== null &&
-    "message" in error &&
-    "code" in error
-  );
 }

@@ -2,36 +2,36 @@
   "Intro": {
     "hero": {
       "badge": "✨ Neu: KI-gestützter Kalender",
-      "title": "Schalten Sie Ihre Termine",
+      "title": "Schalte deine Termine",
       "titleHighlight": "auf Autopilot",
-      "description": "Schluss mit dem Telefon-Pingpong. Lassen Sie Ihre Kunden rund um die Uhr über BookIt buchen, während Sie sich auf Ihr Geschäft konzentrieren.",
+      "description": "Schluss mit dem Telefonstress. Mit BookIt buchen deine Kunden rund um die Uhr selbst, damit du dich auf dein Geschäft konzentrieren kannst.",
       "primaryButton": "Jetzt starten",
       "secondaryButton": "Demo ansehen"
     },
     "features": {
-      "title": "Funktionen für Ihr Wachstum",
-      "why": "Warum BookIt?",
-      "subtitle": "Nicht nur Terminplanung, sondern umfassendes Management.",
+      "title": "Funktionen, die dein Geschäft voranbringen",
+      "why": "Warum BookIt",
+      "subtitle": "Nicht nur Termine, sondern umfassendes Management.",
       "cards": {
         "calendar": {
           "title": "Intelligenter Kalender",
-          "desc": "Dynamische Struktur zur Konfliktvermeidung."
+          "desc": "Dynamische Struktur zur Vermeidung von Konflikten."
         },
         "reminder": {
-          "title": "SMS-Erinnerungen",
-          "desc": "Automatische Benachrichtigungen für Kunden."
+          "title": "SMS-Erinnerung",
+          "desc": "Automatische Benachrichtigungen an Kunden."
         },
         "payment": {
-          "title": "Online-Zahlungen",
-          "desc": "Direkt bei der Buchung kassieren."
+          "title": "Online-Zahlung",
+          "desc": "Zahlungen direkt bei der Buchung empfangen."
         }
       }
     },
     "stats": {
       "availability": { "value": "24/7", "label": "Lückenlose Buchung" },
-      "setup": { "value": "2 Min", "label": "Schnelle Einrichtung" },
-      "efficiency": { "value": "40%", "label": "Weniger Telefonate" },
-      "growth": { "value": "10x", "label": "Professioneller Auftritt" }
+      "setup": { "value": "2 Min", "label": "Schnelle Einrichtungszeit" },
+      "efficiency": { "value": "40%", "label": "Weniger Telefonanrufe" },
+      "growth": { "value": "10x", "label": "Professionelleres Auftreten" }
     }
   },
 
@@ -56,7 +56,7 @@
 
   "Footer": {
     "brand": {
-      "desc": "Die Terminmanagement-Plattform der nächsten Generation für Ihr Unternehmen."
+      "desc": "Die Terminverwaltungsplattform der nächsten Generation für dein Unternehmen."
     },
     "cols": {
       "product": "Produkt",
@@ -73,9 +73,9 @@
       "terms": "AGB"
     },
     "newsletter": {
-      "title": "Auf dem Laufenden bleiben",
-      "desc": "Neueste Funktionen und Tipps direkt in Ihren Posteingang.",
-      "placeholder": "Ihre E-Mail-Adresse",
+      "title": "Bleib auf dem Laufenden",
+      "desc": "Die neuesten Funktionen und Tipps direkt in deinem Posteingang.",
+      "placeholder": "Deine E-Mail-Adresse",
       "button": "Abonnieren"
     },
     "copyright": "Alle Rechte vorbehalten."
@@ -84,15 +84,15 @@
   "FeaturesPage": {
     "hero": {
       "badge": "Leistungsstark & Flexibel",
-      "title": "Das komplette Toolkit für Ihr Business",
-      "desc": "Mehr als nur ein Kalender. BookIt bietet alles, was Sie brauchen, um Ihr Geschäft zu verwalten, zu vergrößern und zu automatisieren."
+      "title": "Ein komplettes Toolset für dein Geschäft",
+      "desc": "Viel mehr als nur ein Kalender. BookIt bietet alles, was du brauchst, um dein Geschäft zu verwalten, zu erweitern und zu automatisieren."
     },
     "bento": {
       "dateCard": {
-        "title": "Smarter Kalender",
+        "title": "Intelligenter Kalender",
         "desc": "Drag & Drop Verwaltung.",
         "date": "Oktober 2026",
-        "monthlyIncome": "Monatlicher Umsatz",
+        "monthlyIncome": "Monatliche Einnahmen",
         "weekDays": {
           "Mon": "Mo",
           "Tue": "Di",
@@ -118,75 +118,75 @@
         "text": "Mobile First"
       },
       "notificationCard": {
-        "date": "Dienstag, 12. Sep.",
+        "date": "Dienstag, 12. September",
         "notification1": {
           "app": "BookIt",
           "date": "Jetzt",
           "title": "Terminerinnerung 📅",
-          "message": "Sie haben morgen um 14:00 Uhr einen Termin mit Alex."
+          "message": "Sie haben morgen um 14:00 Uhr einen Termin mit Herrn Emre."
         },
         "notification2": {
           "app": "Bank",
-          "date": "vor 2 Min.",
+          "date": "vor 2 Min",
           "title": "Zahlung erhalten 💰",
-          "message": "450,00 € wurden Ihrem Konto gutgeschrieben."
+          "message": "450,00 $ wurden auf Ihr Konto eingezahlt."
         }
       }
     },
     "details": {
       "notifications": {
         "title": "Automatische Erinnerungen",
-        "desc": "Keine Terminausfälle mehr. Automatische SMS- und E-Mail-Benachrichtigungen sorgen dafür, dass Ihre Kunden erscheinen. Reduzieren Sie No-Shows um 80%.",
+        "desc": "Schluss mit No-Shows. Automatische SMS- und E-Mail-Benachrichtigungen sorgen dafür, dass deine Kunden erscheinen. Reduziere verpasste Termine um 80%.",
         "tag": "Kommunikation"
       },
       "customization": {
-        "title": "Individuelles Branding",
-        "desc": "Passen Sie Ihre Buchungsseite mit Ihrem Logo, Ihren Farben und Regeln an. Kunden sehen Sie, nicht BookIt.",
+        "title": "Eigenes Branding",
+        "desc": "Passe deine Buchungsseite mit deinem Logo, deinen Farben und Regeln an. Deine Kunden sehen dich, nicht BookIt.",
         "tag": "White Label",
-        "themeColor": "Designfarbe"
+        "themeColor": "Themenfarbe"
       }
     },
     "cta": {
-      "title": "Bereit für einen Testlauf?",
-      "btn": "Jetzt loslegen"
+      "title": "Bereit, es auszuprobieren?",
+      "btn": "Jetzt starten"
     }
   },
 
   "Pricing": {
-    "title": "Der richtige Plan für Ihr Unternehmen",
-    "subtitle": "Nicht nur ein Kalender, sondern die digitale Filiale Ihres Unternehmens. Keine versteckten Gebühren.",
+    "title": "Der richtige Plan für dein Unternehmen",
+    "subtitle": "Nicht nur ein Kalender, sondern die digitale Filiale deines Unternehmens. Keine versteckten Gebühren.",
     "intervals": {
-      "month": "Mt",
-      "year": "Jr",
+      "month": "Monat",
+      "year": "Jahr",
       "vat": "+ MwSt."
     },
     "switch": {
       "monthly": "Monatlich",
       "yearly": "Jährlich",
-      "save_badge": "18% Sparen"
+      "save_badge": "Spare 18%"
     },
     "labels": {
       "total_amount": "Gesamtbetrag",
-      "popular": "BELIEBT",
+      "popular": "BELIEBTESTE",
       "contact_sales": "Vertrieb kontaktieren",
-      "footer_text": "Individuelle SLAs und Rechnungsoptionen für Großunternehmen verfügbar.",
-      "sales_link": "Sprechen Sie mit dem Vertrieb."
+      "footer_text": "Spezielle SLAs und Abrechnungsoptionen für Großunternehmen verfügbar.",
+      "sales_link": "Kontaktiere das Vertriebsteam."
     },
     "plans": {
       "starter": {
         "name": "Starter",
         "description": "Für neue Boutique-Unternehmen.",
         "time_slot": "09:00 - STARTER",
-        "price_monthly": "29",
-        "price_yearly": "290",
+        "price_monthly": "299",
+        "price_yearly": "2390",
         "cta": "Jetzt starten"
       },
       "pro": {
         "name": "Professional",
-        "description": "Für wachsende Teams und Praxen.",
+        "description": "Für wachsende Teams und Kliniken.",
         "time_slot": "12:00 - PROFESSIONAL",
-        "price_monthly": "59",
-        "price_yearly": "590",
+        "price_monthly": "599",
+        "price_yearly": "4790",
         "cta": "Kostenlos testen"
       },
       "enterprise": {
@@ -202,7 +202,7 @@
       "keys": {
         "appointments": "Terminverwaltung",
         "staff": "Mitarbeiterlimit",
-        "sms": "SMS-Erinnerungen",
+        "sms": "SMS-Erinnerung",
         "analytics": "Erweiterte Berichte",
         "api": "API-Zugriff",
         "support": "Support-Level"
@@ -212,41 +212,41 @@
         "10_staff": "10 Mitarbeiter",
         "unlimited": "Unbegrenzt",
         "email": "E-Mail",
-        "live": "Live-Chat",
-        "dedicated": "Persönlicher Betreuer"
+        "live": "Live-Support",
+        "dedicated": "Persönlicher Ansprechpartner"
       }
     }
   },
 
   "About": {
     "badge": "Wer sind wir?",
-    "title": "Wir gestalten Zeit, nicht nur Termine.",
-    "subtitle": "Technologie nutzen, um das Leben zu vereinfachen, nicht zu verkomplizieren.",
+    "title": "Wir gestalten nicht Termine, sondern Zeit.",
+    "subtitle": "Wir nutzen Technologie nicht, um Dinge zu verkomplizieren, sondern um das Leben zu vereinfachen.",
     "mission": {
       "title": "Unsere Mission",
-      "description": "Die digitale Transformation von KMUs mit Werkzeugen zu ermöglichen, die kein technisches Fachwissen erfordern."
+      "description": "Die digitale Transformation kleiner und mittlerer Unternehmen mit Tools ermöglichen, die kein technisches Wissen erfordern."
     },
     "vision": {
       "title": "Unsere Vision",
-      "description": "Ein Ökosystem zu schaffen, in dem sich Dienstleister weltweit voll und ganz auf ihr Handwerk konzentrieren können."
+      "description": "Ein Ökosystem zu schaffen, in dem Dienstleister auf der ganzen Welt sich ausschließlich auf ihre Arbeit konzentrieren können."
     },
     "story": {
-      "title": "Warum haben wir angefangen?",
-      "p1": "BookIt entstand, als wir sahen, wie ein Geschäftsinhaber aufgrund ständig klingelnder Telefone kaum Zeit für seine Kunden hatte. Wir glaubten an einen dritten Weg für alle, die zwischen traditionellen Terminkalendern und komplexer Software feststecken.",
-      "p2": "Unser Ziel ist es nicht nur, einen Buchungskalender zu verkaufen, sondern das digitale Schaufenster, den Empfang und den Assistenten Ihres Unternehmens in einer einzigen modernen Oberfläche anzubieten."
+      "title": "Warum wir angefangen haben?",
+      "p1": "BookIt entstand, als wir einen Geschäftsinhaber beobachteten, der sich wegen ständig klingelnder Telefone nicht auf seine Kunden konzentrieren konnte. Wir glaubten daran, dass es einen dritten Weg für diejenigen gibt, die zwischen traditionellen Terminkalendern und komplexer Software feststecken.",
+      "p2": "Unser Ziel ist es nicht nur, einen Buchungskalender zu verkaufen; sondern die digitale Vitrine, den Empfang und den Assistenten deines Unternehmens in einer einzigen modernen Oberfläche anzubieten."
     },
     "stats": {
       "users": "Aktive Unternehmen",
       "bookings": "Verwaltete Termine",
-      "uptime": "Verfügbarkeit"
+      "uptime": "Betriebszeit"
     }
   },
 
   "Auth": {
     "title": "Willkommen",
-    "subtitle": "Melden Sie sich an oder registrieren Sie sich.",
+    "subtitle": "Melde dich an oder registriere dich, um auf dein Konto zuzugreifen.",
     "tabs": {
-      "login": "Einloggen",
+      "login": "Anmelden",
       "register": "Registrieren"
     },
     "form": {
@@ -254,24 +254,24 @@
       "password": "Passwort",
       "fullName": "Vor- und Nachname",
       "emailPlaceholder": "beispiel@firma.com",
-      "passwordPlaceholder": "******",
-      "fullNamePlaceholder": "Ihr Name"
+      "passwordPlaceholder": "********",
+      "fullNamePlaceholder": "Dein Name"
     },
     "buttons": {
-      "login": "Einloggen",
+      "login": "Anmelden",
       "register": "Konto erstellen",
-      "google": "Weiter mit Google",
+      "google": "Mit Google fortfahren",
       "loading": "Wird verarbeitet..."
     },
     "errors": {
       "required": "Dieses Feld ist erforderlich.",
-      "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "email": "Bitte gib eine gültige E-Mail-Adresse ein.",
       "minPassword": "Das Passwort muss mindestens 8 Zeichen lang sein.",
-      "generic": "Ein Fehler ist aufgetreten, bitte versuchen Sie es erneut.",
-      "emailInUse": "Diese E-Mail-Adresse wird bereits verwendet."
+      "generic": "Ein Fehler ist aufgetreten, bitte versuche es erneut.",
+      "emailInUse": "Diese E-Mail-Adresse wird bereits verwendet"
     },
     "success": {
-      "register": "Registrierung erfolgreich! Bitte prüfen Sie Ihre E-Mails."
+      "register": "Registrierung erfolgreich! Bitte überprüfe deine E-Mails."
     }
   },
 
@@ -294,14 +294,14 @@
 
   "CreateOrg": {
     "title": "Neue Organisation erstellen",
-    "desc": "Erstellen Sie ein neues Unternehmensprofil. Sie können die Einstellungen später bearbeiten.",
+    "desc": "Erstelle ein neues Geschäftsprofil. Du kannst die Einstellungen später bearbeiten.",
     "labels": {
       "name": "Unternehmensname",
-      "slug": "URL-Kürzel (Slug)"
+      "slug": "URL-Kurzname (Slug)"
     },
     "placeholders": {
-      "name": "Bsp: BookIt Berlin Mitte",
-      "slug": "berlin-mitte"
+      "name": "Z.B.: BookIt Berlin",
+      "slug": "berlin"
     },
     "buttons": {
       "create": "Erstellen"
@@ -321,14 +321,121 @@
   "OrgSwitcher": {
     "label": "Organisationen",
     "create": "Organisation erstellen",
-    "placeholder": "Organisation wählen",
-    "empty": "Keine Organisation gefunden."
+    "placeholder": "Organisation beitreten",
+    "empty": "Du bist keiner Organisation beigetreten."
+  },
+
+  "StaffPage": {
+    "header": {
+      "title": "Teamverwaltung",
+      "description": "Verwalte die Mitglieder deiner Organisation und deren Berechtigungen."
+    },
+    "tabs": {
+      "members": "Aktive Mitglieder",
+      "invitations": "Einladungen"
+    },
+    "table": {
+      "user": "Benutzer",
+      "email": "E-Mail",
+      "role": "Rolle",
+      "actions": "Aktionen",
+      "assignedRole": "Zugewiesene Rolle",
+      "status": "Status"
+    },
+    "roles": {
+      "admin": "Administrator (Admin)",
+      "staff": "Mitarbeiter (Staff)",
+      "owner": "Inhaber (Owner)"
+    },
+    "status": {
+      "pending": "Ausstehend"
+    },
+    "empty": {
+      "invitations": "Keine ausstehenden Einladungen."
+    },
+    "buttons": {
+      "cancel": "Abbrechen"
+    },
+    "alerts": {
+      "removeConfirm": "Bist du sicher, dass du diesen Benutzer aus der Organisation entfernen möchtest?",
+      "unnamed": "Unbenannt"
+    },
+    "toasts": {
+      "fetchError": "Fehler beim Laden der Daten.",
+      "roleUpdated": "Benutzerrolle erfolgreich aktualisiert.",
+      "memberRemoved": "Benutzer aus der Organisation entfernt.",
+      "invitationRevoked": "Einladung widerrufen.",
+      "errorPrefix": "Fehler:"
+    }
+  },
+
+  "InviteDialog": {
+    "trigger": "Mitarbeiter einladen",
+    "title": "Neues Mitglied einladen",
+    "desc": "Gib die E-Mail-Adresse ein, um jemanden zum Team hinzuzufügen.",
+    "labels": {
+      "email": "E-Mail-Adresse",
+      "role": "Berechtigung / Rolle"
+    },
+    "placeholders": {
+      "email": "beispiel@firma.com",
+      "role": "Rolle auswählen"
+    },
+    "roles": {
+      "staff": "Mitarbeiter (Staff)",
+      "admin": "Administrator (Admin)"
+    },
+    "buttons": {
+      "submit": "Einladung senden"
+    },
+    "errors": {
+      "invalidEmail": "Bitte gib eine gültige E-Mail ein",
+      "noOrg": "Keine aktive Organisation gefunden.",
+      "generic": "Ein unerwarteter Fehler ist aufgetreten."
+    },
+    "toasts": {
+      "success": "Einladung und E-Mail gesendet!"
+    }
+  },
+
+  "InvitationErrors": {
+    "notFound": "Einladung nicht gefunden oder abgelaufen.",
+    "unauthenticated": "Du musst dich anmelden.",
+    "invalid": "Ungültige Einladung.",
+    "emailMismatch": "E-Mail-Adresse stimmt nicht überein.",
+    "emailMismatchDetail": "Diese Einladung ist für {inviteEmail}, aber du bist als {userEmail} angemeldet.",
+    "createMemberError": "Technischer Fehler beim Erstellen der Mitgliedschaft.",
+    "success": "Du bist dem Team erfolgreich beigetreten!"
+  },
+
+  "JoinPage": {
+    "valid": {
+      "title": "Du wurdest eingeladen!",
+      "desc": "Du hast eine Einladung erhalten, dem Team von <bold>{orgName}</bold> beizutreten.",
+      "invitedEmail": "Eingeladen:",
+      "role": "Rolle:",
+      "buttonJoin": "Einladung annehmen",
+      "buttonDecline": "Diese Einladung ablehnen"
+    },
+    "invalid": {
+      "title": "Ungültige Einladung",
+      "desc": "Dieser Einladungslink ist ungültig, abgelaufen oder wurde bereits verwendet.",
+      "buttonHome": "Zur Startseite"
+    },
+    "warnings": {
+      "unauthenticated": "Um die Einladung anzunehmen, musst du dich erst anmelden oder registrieren.",
+      "mismatch": "Achtung: Du bist aktuell mit <bold>{userEmail}</bold> angemeldet. Die Einladung wurde jedoch an <bold>{inviteEmail}</bold> gesendet. Bitte wechsle zum richtigen Konto."
+    },
+    "buttons": {
+      "login": "Anmelden und Beitreten",
+      "switchAccount": "Mit anderem Konto anmelden"
+    }
   },
 
   "NotFound": {
     "code": "404",
     "title": "Seite nicht gefunden",
-    "desc": "Die gesuchte Seite wurde möglicherweise verschoben, gelöscht oder existierte nie.",
+    "desc": "Die gesuchte Seite wurde verschoben, gelöscht oder existiert nicht.",
     "buttons": {
       "home": "Zur Startseite",
       "back": "Zurück"

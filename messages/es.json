@@ -2,16 +2,16 @@
   "Intro": {
     "hero": {
       "badge": "✨ Nuevo: Calendario con IA",
-      "title": "Pon tus citas en",
-      "titleHighlight": "Piloto Automático",
-      "description": "Olvídate de las llamadas interminables. Deja que tus clientes reserven 24/7 con BookIt mientras tú te concentras en tu trabajo.",
-      "primaryButton": "Empezar Ahora",
-      "secondaryButton": "Ver Demo"
+      "title": "Pon tus citas",
+      "titleHighlight": "en Piloto Automático",
+      "description": "Olvídate del tráfico telefónico. Deja que tus clientes reserven sus propias citas 24/7 con BookIt, para que puedas concentrarte en tu negocio.",
+      "primaryButton": "Empezar ahora",
+      "secondaryButton": "Ver demostración"
     },
     "features": {
-      "title": "Funcionalidades que Hacen Crecer tu Negocio",
-      "why": "¿Por qué BookIt?",
-      "subtitle": "No solo agendamiento, sino gestión integral.",
+      "title": "Funcionalidades para hacer crecer tu negocio",
+      "why": "Por qué BookIt",
+      "subtitle": "No solo citas, sino una gestión completa.",
       "cards": {
         "calendar": {
           "title": "Calendario Inteligente",
@@ -19,19 +19,19 @@
         },
         "reminder": {
           "title": "Recordatorios SMS",
-          "desc": "Notificaciones automáticas a clientes."
+          "desc": "Notificaciones automáticas a los clientes."
         },
         "payment": {
-          "title": "Pagos en Línea",
-          "desc": "Cobra al momento de la reserva."
+          "title": "Pago en Línea",
+          "desc": "Recibe pagos al momento de la reserva."
         }
       }
     },
     "stats": {
-      "availability": { "value": "24/7", "label": "Reservas Ininterrumpidas" },
-      "setup": { "value": "2 Min", "label": "Configuración Rápida" },
-      "efficiency": { "value": "40%", "label": "Menos Llamadas" },
-      "growth": { "value": "10x", "label": "Imagen Más Profesional" }
+      "availability": { "value": "24/7", "label": "Reserva ininterrumpida" },
+      "setup": { "value": "2 min", "label": "Configuración rápida" },
+      "efficiency": { "value": "40%", "label": "Menos llamadas telefónicas" },
+      "growth": { "value": "10x", "label": "Imagen más profesional" }
     }
   },
 
@@ -42,10 +42,10 @@
       "about": "Nosotros"
     },
     "buttons": {
-      "login": "Entrar",
+      "login": "Iniciar Sesión",
       "getStarted": "Empezar",
-      "dashboard": "Panel",
-      "logout": "Salir"
+      "dashboard": "Panel de Control",
+      "logout": "Cerrar Sesión"
     },
     "userMenu": {
       "defaultName": "Usuario",
@@ -70,11 +70,11 @@
       "blog": "Blog",
       "contact": "Contacto",
       "privacy": "Privacidad",
-      "terms": "Términos"
+      "terms": "Términos de Uso"
     },
     "newsletter": {
-      "title": "Mantente al día",
-      "desc": "Las últimas novedades y consejos directamente en tu buzón.",
+      "title": "Mantente informado",
+      "desc": "Las últimas novedades y consejos directamente en tu bandeja de entrada.",
       "placeholder": "Tu correo electrónico",
       "button": "Suscribirse"
     },
@@ -84,15 +84,15 @@
   "FeaturesPage": {
     "hero": {
       "badge": "Potente y Flexible",
-      "title": "Kit de Herramientas Completo",
-      "desc": "Mucho más que un calendario. BookIt te da todo lo que necesitas para gestionar, crecer y automatizar tu negocio."
+      "title": "Un kit de herramientas completo para tu negocio",
+      "desc": "Mucho más que un simple calendario. BookIt te proporciona todo lo que necesitas para gestionar, hacer crecer y automatizar tu negocio."
     },
     "bento": {
       "dateCard": {
-        "title": "Calendario Smart",
+        "title": "Calendario Inteligente",
         "desc": "Gestión de arrastrar y soltar.",
         "date": "Octubre 2026",
-        "monthlyIncome": "Ingreso Mensual",
+        "monthlyIncome": "Ingresos Mensuales",
         "weekDays": {
           "Mon": "Lun",
           "Tue": "Mar",
@@ -104,8 +104,8 @@
         }
       },
       "bankCard": {
-        "title": "Pago Online",
-        "desc": "Integración con Stripe y Iyzico.",
+        "title": "Pago en Línea",
+        "desc": "Integración con Stripe e Iyzico.",
         "cardText": "Número de Tarjeta"
       },
       "chartCard": {
@@ -113,89 +113,89 @@
         "desc": "Informes de crecimiento."
       },
       "mobileCard": {
-        "title": "Móvil Primero",
-        "desc": "Gestiona desde donde sea.",
-        "text": "Mobile First"
+        "title": "Compatible con Móviles",
+        "desc": "Gestiona desde cualquier lugar.",
+        "text": "Móvil Primero"
       },
       "notificationCard": {
-        "date": "Martes, 12 Sep",
+        "date": "Martes, 12 de septiembre",
         "notification1": {
           "app": "BookIt",
           "date": "Ahora",
           "title": "Recordatorio de Cita 📅",
-          "message": "Tienes una cita con Alex mañana a las 14:00."
+          "message": "Tienes una cita con el Sr. Emre mañana a las 14:00."
         },
         "notification2": {
           "app": "Banco",
-          "date": "hace 2m",
+          "date": "hace 2 min",
           "title": "Pago Recibido 💰",
-          "message": "Se han depositado $450.00 en tu cuenta."
+          "message": "Se han depositado 450.00$ en tu cuenta."
         }
       }
     },
     "details": {
       "notifications": {
         "title": "Recordatorios Automáticos",
-        "desc": "Fin a las ausencias. Las notificaciones automáticas por SMS y correo aseguran que tus clientes asistan. Reduce las citas perdidas un 80%.",
+        "desc": "Adiós a las inasistencias. Las notificaciones automáticas por SMS y correo electrónico aseguran que tus clientes se presenten. Reduce las citas perdidas en un 80%.",
         "tag": "Comunicación"
       },
       "customization": {
         "title": "Marca Personalizada",
-        "desc": "Personaliza tu página de reservas con tu logo, colores y reglas. Tus clientes te ven a ti, no a BookIt.",
+        "desc": "Personaliza tu página de reservas con tu logotipo, colores y reglas. Tus clientes te ven a ti, no a BookIt.",
         "tag": "Marca Blanca",
         "themeColor": "Color del Tema"
       }
     },
     "cta": {
       "title": "¿Listo para probarlo?",
-      "btn": "Empezar Ahora"
+      "btn": "Empezar ahora"
     }
   },
 
   "Pricing": {
-    "title": "El Plan Ideal para tu Negocio",
-    "subtitle": "No es solo un calendario, es la sucursal digital de tu empresa. Sin tarifas ocultas.",
+    "title": "El plan adecuado para tu negocio",
+    "subtitle": "No es solo un calendario, es la sucursal digital de tu negocio. Sin tarifas ocultas.",
     "intervals": {
       "month": "mes",
       "year": "año",
       "vat": "+ IVA"
     },
     "switch": {
-      "monthly": "Mensual",
-      "yearly": "Anual",
+      "monthly": "Plan Mensual",
+      "yearly": "Plan Anual",
       "save_badge": "Ahorra 18%"
     },
     "labels": {
-      "total_amount": "Monto Total",
+      "total_amount": "Importe Total",
       "popular": "MÁS POPULAR",
       "contact_sales": "Contactar Ventas",
-      "footer_text": "SLAs personalizados y opciones de facturación disponibles para grandes empresas.",
-      "sales_link": "Habla con ventas."
+      "footer_text": "Opciones especiales de SLA y facturación disponibles para grandes empresas.",
+      "sales_link": "Habla con el equipo de ventas."
     },
     "plans": {
       "starter": {
         "name": "Inicial",
-        "description": "Para negocios boutique nuevos.",
+        "description": "Para nuevos negocios boutique.",
         "time_slot": "09:00 - INICIAL",
-        "price_monthly": "29",
-        "price_yearly": "290",
-        "cta": "Empezar"
+        "price_monthly": "299",
+        "price_yearly": "2390",
+        "cta": "Empezar ahora"
       },
       "pro": {
         "name": "Profesional",
-        "description": "Para clínicas y equipos en crecimiento.",
+        "description": "Para equipos en crecimiento y clínicas.",
         "time_slot": "12:00 - PROFESIONAL",
-        "price_monthly": "59",
-        "price_yearly": "590",
-        "cta": "Prueba Gratis"
+        "price_monthly": "599",
+        "price_yearly": "4790",
+        "cta": "Pruébalo gratis"
       },
       "enterprise": {
         "name": "Empresarial",
-        "description": "Cadenas y necesidades a medida.",
+        "description": "Cadenas de tiendas y necesidades personalizadas.",
         "time_slot": "TODO EL DÍA - EMPRESARIAL",
         "price_monthly": "A medida",
         "price_yearly": "A medida",
-        "cta": "Pedir Presupuesto"
+        "cta": "Pedir presupuesto"
       }
     },
     "features": {
@@ -211,29 +211,29 @@
         "2_staff": "2 Empleados",
         "10_staff": "10 Empleados",
         "unlimited": "Ilimitado",
-        "email": "Correo",
-        "live": "Chat en Vivo",
-        "dedicated": "Agente Dedicado"
+        "email": "Correo Electrónico",
+        "live": "Soporte en Vivo",
+        "dedicated": "Representante Dedicado"
       }
     }
   },
 
   "About": {
-    "badge": "¿Quiénes Somos?",
-    "title": "Diseñamos tiempo, no solo citas.",
-    "subtitle": "Usamos la tecnología para simplificar la vida, no para complicarla.",
+    "badge": "¿Quiénes somos?",
+    "title": "Diseñamos tiempo, no citas.",
+    "subtitle": "Usamos la tecnología no para complicar las cosas, sino para simplificar la vida.",
     "mission": {
       "title": "Nuestra Misión",
-      "description": "Facilitar la transformación digital de las PYMES con herramientas que no requieren conocimientos técnicos."
+      "description": "Permitir la transformación digital de las pequeñas y medianas empresas con herramientas que no requieren conocimientos técnicos."
     },
     "vision": {
       "title": "Nuestra Visión",
-      "description": "Crear un ecosistema donde los proveedores de servicios de todo el mundo puedan centrarse únicamente en su oficio."
+      "description": "Crear un ecosistema donde los proveedores de servicios de todo el mundo puedan concentrarse únicamente en su trabajo."
     },
     "story": {
-      "title": "¿Por Qué Empezamos?",
-      "p1": "BookIt nació al ver a un dueño de negocio luchar por atender a sus clientes debido al teléfono sonando constantemente. Creímos que había un tercer camino para quienes están atrapados entre las agendas de papel y el software complejo.",
-      "p2": "Nuestro objetivo no es solo vender un calendario de reservas; sino ofrecer el escaparate digital, recepcionista y asistente de tu negocio en una interfaz moderna."
+      "title": "¿Por qué empezamos?",
+      "p1": "BookIt nació al observar a un dueño de negocio que no podía concentrarse en su cliente debido a que los teléfonos sonaban constantemente. Creímos que había una tercera vía para aquellos atrapados entre las agendas tradicionales y el software complejo.",
+      "p2": "Nuestro objetivo no es solo vender un calendario de reservas; es ofrecer el escaparate digital, la recepción y el asistente de tu negocio en una única interfaz moderna."
     },
     "stats": {
       "users": "Negocios Activos",
@@ -246,29 +246,29 @@
     "title": "Bienvenido",
     "subtitle": "Inicia sesión o regístrate para acceder a tu cuenta.",
     "tabs": {
-      "login": "Entrar",
-      "register": "Registro"
+      "login": "Iniciar Sesión",
+      "register": "Registrarse"
     },
     "form": {
       "email": "Correo Electrónico",
       "password": "Contraseña",
       "fullName": "Nombre Completo",
       "emailPlaceholder": "ejemplo@empresa.com",
-      "passwordPlaceholder": "******",
-      "fullNamePlaceholder": "Tu Nombre"
+      "passwordPlaceholder": "********",
+      "fullNamePlaceholder": "Tu Nombre y Apellido"
     },
     "buttons": {
-      "login": "Iniciar Sesión",
+      "login": "Entrar",
       "register": "Crear Cuenta",
       "google": "Continuar con Google",
       "loading": "Procesando..."
     },
     "errors": {
       "required": "Este campo es obligatorio.",
-      "email": "Por favor, introduce un correo válido.",
+      "email": "Por favor, introduce un correo electrónico válido.",
       "minPassword": "La contraseña debe tener al menos 8 caracteres.",
       "generic": "Ocurrió un error, por favor intenta de nuevo.",
-      "emailInUse": "Este correo ya está en uso."
+      "emailInUse": "Este correo electrónico ya está en uso."
     },
     "success": {
       "register": "¡Registro exitoso! Por favor verifica tu correo."
@@ -282,26 +282,26 @@
       "system": "Sistema"
     },
     "links": {
-      "dashboard": "Vista General",
+      "dashboard": "Resumen",
       "calendar": "Calendario",
       "customers": "Clientes",
       "services": "Servicios y Precios",
       "staff": "Personal",
-      "settings": "Ajustes",
+      "settings": "Configuración",
       "support": "Ayuda y Soporte"
     }
   },
 
   "CreateOrg": {
     "title": "Crear Nueva Organización",
-    "desc": "Crea un nuevo perfil de negocio. Podrás editar los ajustes más tarde.",
+    "desc": "Crea un nuevo perfil de negocio. Puedes editar la configuración más tarde.",
     "labels": {
       "name": "Nombre del Negocio",
-      "slug": "Slug de URL (Nombre corto)"
+      "slug": "Nombre Corto URL (Slug)"
     },
     "placeholders": {
-      "name": "Ej: BookIt Centro",
-      "slug": "centro"
+      "name": "Ej: BookIt Madrid",
+      "slug": "madrid"
     },
     "buttons": {
       "create": "Crear"
@@ -321,14 +321,121 @@
   "OrgSwitcher": {
     "label": "Organizaciones",
     "create": "Crear Organización",
-    "placeholder": "Seleccionar Organización",
-    "empty": "No se encontró ninguna organización."
+    "placeholder": "Unirse a Organización",
+    "empty": "No te has unido a ninguna organización."
+  },
+
+  "StaffPage": {
+    "header": {
+      "title": "Gestión de Equipo",
+      "description": "Gestiona los miembros de tu organización y sus permisos."
+    },
+    "tabs": {
+      "members": "Miembros Activos",
+      "invitations": "Invitaciones"
+    },
+    "table": {
+      "user": "Usuario",
+      "email": "Correo",
+      "role": "Rol",
+      "actions": "Acciones",
+      "assignedRole": "Rol Asignado",
+      "status": "Estado"
+    },
+    "roles": {
+      "admin": "Administrador (Admin)",
+      "staff": "Personal (Staff)",
+      "owner": "Propietario (Owner)"
+    },
+    "status": {
+      "pending": "Pendiente"
+    },
+    "empty": {
+      "invitations": "No hay invitaciones pendientes."
+    },
+    "buttons": {
+      "cancel": "Cancelar"
+    },
+    "alerts": {
+      "removeConfirm": "¿Estás seguro de que quieres eliminar a este usuario de la organización?",
+      "unnamed": "Sin nombre"
+    },
+    "toasts": {
+      "fetchError": "Error al cargar los datos.",
+      "roleUpdated": "Rol de usuario actualizado con éxito.",
+      "memberRemoved": "Usuario eliminado de la organización.",
+      "invitationRevoked": "Invitación revocada.",
+      "errorPrefix": "Error:"
+    }
+  },
+
+  "InviteDialog": {
+    "trigger": "Invitar Personal",
+    "title": "Invitar Nuevo Miembro",
+    "desc": "Introduce el correo electrónico para añadir a alguien al equipo.",
+    "labels": {
+      "email": "Correo Electrónico",
+      "role": "Permiso / Rol"
+    },
+    "placeholders": {
+      "email": "ejemplo@empresa.com",
+      "role": "Seleccionar Rol"
+    },
+    "roles": {
+      "staff": "Personal (Staff)",
+      "admin": "Administrador (Admin)"
+    },
+    "buttons": {
+      "submit": "Enviar Invitación"
+    },
+    "errors": {
+      "invalidEmail": "Por favor, introduce un correo válido",
+      "noOrg": "No se encontró ninguna organización activa.",
+      "generic": "Ocurrió un error inesperado."
+    },
+    "toasts": {
+      "success": "¡Invitación y correo enviados!"
+    }
+  },
+
+  "InvitationErrors": {
+    "notFound": "Invitación no encontrada o caducada.",
+    "unauthenticated": "Debes iniciar sesión.",
+    "invalid": "Invitación inválida.",
+    "emailMismatch": "La dirección de correo no coincide.",
+    "emailMismatchDetail": "Esta invitación es para {inviteEmail}, pero has iniciado sesión como {userEmail}.",
+    "createMemberError": "Error técnico al crear la membresía.",
+    "success": "¡Te has unido al equipo con éxito!"
+  },
+
+  "JoinPage": {
+    "valid": {
+      "title": "¡Has sido invitado!",
+      "desc": "Has recibido una invitación para unirte al equipo de <bold>{orgName}</bold>.",
+      "invitedEmail": "Invitado:",
+      "role": "Rol:",
+      "buttonJoin": "Aceptar Invitación",
+      "buttonDecline": "Rechazar esta invitación"
+    },
+    "invalid": {
+      "title": "Invitación Inválida",
+      "desc": "Este enlace de invitación es inválido, ha caducado o ya ha sido utilizado.",
+      "buttonHome": "Volver al Inicio"
+    },
+    "warnings": {
+      "unauthenticated": "Para aceptar la invitación, primero debes iniciar sesión o registrarte.",
+      "mismatch": "Atención: Actualmente has iniciado sesión como <bold>{userEmail}</bold>. La invitación fue enviada a <bold>{inviteEmail}</bold>. Por favor, cambia a la cuenta correcta."
+    },
+    "buttons": {
+      "login": "Iniciar Sesión y Unirse",
+      "switchAccount": "Iniciar Sesión con Otra Cuenta"
+    }
   },
 
   "NotFound": {
     "code": "404",
     "title": "Página No Encontrada",
-    "desc": "La página que buscas puede haber sido movida, eliminada o nunca existió.",
+    "desc": "La página que buscas puede haber sido movida, eliminada o no existe.",
     "buttons": {
       "home": "Volver al Inicio",
       "back": "Regresar"
