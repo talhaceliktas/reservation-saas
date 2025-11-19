@@ -1,29 +1,29 @@
 {
   "Intro": {
     "hero": {
-      "badge": "✨ New: AI Powered Scheduling",
-      "title": "Put Appointments",
+      "badge": "✨ New: AI-Powered Calendar",
+      "title": "Put Your Appointments",
       "titleHighlight": "On Autopilot",
-      "description": "Stop the phone tag. Let customers book 24/7 with BookIt while you focus on your work.",
+      "description": "Ditch the phone tag. Let your clients book 24/7 via BookIt while you focus on your work.",
       "primaryButton": "Get Started",
       "secondaryButton": "View Demo"
     },
     "features": {
       "title": "Features That Grow Your Business",
-      "why": "Why BookIt",
-      "subtitle": "More than just appointments, comprehensive management.",
+      "why": "Why BookIt?",
+      "subtitle": "Not just scheduling, but full-scale management.",
       "cards": {
         "calendar": {
           "title": "Smart Calendar",
-          "desc": "Dynamic structure that prevents conflicts."
+          "desc": "Dynamic structure to prevent conflicts."
         },
         "reminder": {
           "title": "SMS Reminders",
-          "desc": "Automatic notifications to customers."
+          "desc": "Automatic notifications for clients."
         },
         "payment": {
           "title": "Online Payments",
-          "desc": "Get paid the moment the appointment is booked."
+          "desc": "Get paid at the time of booking."
         }
       }
     },
@@ -31,7 +31,7 @@
       "availability": { "value": "24/7", "label": "Uninterrupted Booking" },
       "setup": { "value": "2 Min", "label": "Fast Setup Time" },
       "efficiency": { "value": "40%", "label": "Fewer Phone Calls" },
-      "growth": { "value": "10x", "label": "More Professional Appearance" }
+      "growth": { "value": "10x", "label": "More Professional Look" }
     }
   },
 
@@ -43,13 +43,20 @@
     },
     "buttons": {
       "login": "Log In",
-      "getStarted": "Get Started"
+      "getStarted": "Get Started",
+      "dashboard": "Dashboard",
+      "logout": "Log Out"
+    },
+    "userMenu": {
+      "defaultName": "User",
+      "profile": "My Profile",
+      "logout": "Log Out"
     }
   },
 
   "Footer": {
     "brand": {
-      "desc": "The next-generation appointment management platform for your business."
+      "desc": "Next-gen appointment management platform for your business."
     },
     "cols": {
       "product": "Product",
@@ -62,12 +69,12 @@
       "about": "About Us",
       "blog": "Blog",
       "contact": "Contact",
-      "privacy": "Privacy",
-      "terms": "Terms of Service"
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Use"
     },
     "newsletter": {
-      "title": "Stay Up to Date",
-      "desc": "Latest features and tips directly in your inbox.",
+      "title": "Stay in the Loop",
+      "desc": "Latest features and tips directly to your inbox.",
       "placeholder": "Your email address",
       "button": "Subscribe"
     },
@@ -77,14 +84,14 @@
   "FeaturesPage": {
     "hero": {
       "badge": "Powerful & Flexible",
-      "title": "Complete Toolkit for Your Business",
+      "title": "Full Toolkit for Your Business",
       "desc": "More than just a calendar. BookIt provides everything you need to manage, grow, and automate your business."
     },
     "bento": {
       "dateCard": {
         "title": "Smart Calendar",
         "desc": "Drag & drop management.",
-        "date": "Oct 2026",
+        "date": "October 2026",
         "monthlyIncome": "Monthly Income",
         "weekDays": {
           "Mon": "Mon",
@@ -97,57 +104,231 @@
         }
       },
       "bankCard": {
-        "title": "Online Payments",
+        "title": "Online Payment",
         "desc": "Stripe & Iyzico integration.",
         "cardText": "Card Number"
       },
-      "chartCard": { "title": "Analytics", "desc": "Growth reports." },
+      "chartCard": {
+        "title": "Analytics",
+        "desc": "Growth reports."
+      },
       "mobileCard": {
-        "title": "Mobile Ready",
+        "title": "Mobile Friendly",
         "desc": "Manage from anywhere.",
         "text": "Mobile First"
       },
       "notificationCard": {
-        "date": "Tuesday, 12 September",
+        "date": "Tuesday, Sep 12",
         "notification1": {
           "app": "BookIt",
           "date": "Now",
           "title": "Appointment Reminder 📅",
-          "message": "You have an appointment with Mr. John tomorrow at 14:00."
+          "message": "You have an appointment with Alex tomorrow at 2:00 PM."
         },
         "notification2": {
           "app": "Bank",
           "date": "2m ago",
           "title": "Payment Received 💰",
-          "message": "Your account has been credited with 450.00$"
+          "message": "$450.00 has been deposited to your account."
         }
       }
     },
     "details": {
       "notifications": {
         "title": "Automated Reminders",
-        "desc": "Stop no-shows. Automated SMS and Email notifications ensure your customers show up. Reduce missed appointments by 80%.",
+        "desc": "End no-shows. Automatic SMS and Email notifications ensure your clients show up. Reduce missed appointments by 80%.",
         "tag": "Communication"
       },
       "customization": {
         "title": "Custom Branding",
-        "desc": "Customize your booking page with your logo, colors, and rules. Your customers see you, not BookIt.",
+        "desc": "Customize your booking page with your logo, colors, and rules. Clients see you, not BookIt.",
         "tag": "White Label",
         "themeColor": "Theme Color"
       }
     },
     "cta": {
-      "title": "Ready to try?",
-      "btn": "Get Started"
+      "title": "Ready to give it a try?",
+      "btn": "Get Started Now"
     }
+  },
+
+  "Pricing": {
+    "title": "The Right Plan for Your Business",
+    "subtitle": "Not just a calendar, but your business's digital branch. No hidden fees.",
+    "intervals": {
+      "month": "mo",
+      "year": "yr",
+      "vat": "+ VAT"
+    },
+    "switch": {
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "save_badge": "Save 18%"
+    },
+    "labels": {
+      "total_amount": "Total Amount",
+      "popular": "MOST POPULAR",
+      "contact_sales": "Contact Sales",
+      "footer_text": "Custom SLAs and invoicing options available for enterprise businesses.",
+      "sales_link": "Talk to sales."
+    },
+    "plans": {
+      "starter": {
+        "name": "Starter",
+        "description": "For new boutique businesses.",
+        "time_slot": "09:00 - STARTER",
+        "price_monthly": "29",
+        "price_yearly": "290",
+        "cta": "Get Started"
+      },
+      "pro": {
+        "name": "Professional",
+        "description": "For growing teams and clinics.",
+        "time_slot": "12:00 - PROFESSIONAL",
+        "price_monthly": "59",
+        "price_yearly": "590",
+        "cta": "Try for Free"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "description": "Multi-location chains and custom needs.",
+        "time_slot": "ALL DAY - ENTERPRISE",
+        "price_monthly": "Custom",
+        "price_yearly": "Custom",
+        "cta": "Get a Quote"
+      }
+    },
+    "features": {
+      "keys": {
+        "appointments": "Appointment Management",
+        "staff": "Staff Limit",
+        "sms": "SMS Reminders",
+        "analytics": "Advanced Reports",
+        "api": "API Access",
+        "support": "Support Level"
+      },
+      "values": {
+        "2_staff": "2 Staff",
+        "10_staff": "10 Staff",
+        "unlimited": "Unlimited",
+        "email": "Email",
+        "live": "Live Chat",
+        "dedicated": "Dedicated Agent"
+      }
+    }
+  },
+
+  "About": {
+    "badge": "Who Are We?",
+    "title": "Designing time, not just appointments.",
+    "subtitle": "Using technology to simplify life, not complicate it.",
+    "mission": {
+      "title": "Our Mission",
+      "description": "To enable the digital transformation of SMEs with tools that require no technical expertise."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To create an ecosystem where service providers worldwide can focus solely on their craft."
+    },
+    "story": {
+      "title": "Why Did We Start?",
+      "p1": "BookIt was born from watching a business owner struggle to focus on clients due to constantly ringing phones. We believed there was a third way for those stuck between traditional agendas and complex software.",
+      "p2": "Our goal is not just to sell a booking calendar; but to offer your business's digital showcase, receptionist, and assistant in a single modern interface."
+    },
+    "stats": {
+      "users": "Active Businesses",
+      "bookings": "Appointments Managed",
+      "uptime": "Service Uptime"
+    }
+  },
+
+  "Auth": {
+    "title": "Welcome",
+    "subtitle": "Log in or sign up to access your account.",
+    "tabs": {
+      "login": "Log In",
+      "register": "Sign Up"
+    },
+    "form": {
+      "email": "Email Address",
+      "password": "Password",
+      "fullName": "Full Name",
+      "emailPlaceholder": "example@company.com",
+      "passwordPlaceholder": "******",
+      "fullNamePlaceholder": "Your Name"
+    },
+    "buttons": {
+      "login": "Log In",
+      "register": "Create Account",
+      "google": "Continue with Google",
+      "loading": "Processing..."
+    },
+    "errors": {
+      "required": "This field is required.",
+      "email": "Please enter a valid email address.",
+      "minPassword": "Password must be at least 8 characters.",
+      "generic": "An error occurred, please try again.",
+      "emailInUse": "This email address is already in use."
+    },
+    "success": {
+      "register": "Registration successful! Please check your email."
+    }
+  },
+
+  "Sidebar": {
+    "groups": {
+      "main": "Main Menu",
+      "management": "Management",
+      "system": "System"
+    },
+    "links": {
+      "dashboard": "Overview",
+      "calendar": "Calendar",
+      "customers": "Customers",
+      "services": "Services & Pricing",
+      "staff": "Staff",
+      "settings": "Settings",
+      "support": "Help & Support"
+    }
+  },
+
+  "CreateOrg": {
+    "title": "Create New Organization",
+    "desc": "Create a new business profile. You can edit settings later.",
+    "labels": {
+      "name": "Business Name",
+      "slug": "URL Slug"
+    },
+    "placeholders": {
+      "name": "Ex: BookIt Downtown",
+      "slug": "downtown"
+    },
+    "buttons": {
+      "create": "Create"
+    },
+    "errors": {
+      "min2": "Must be at least 2 characters",
+      "min3": "Must be at least 3 characters",
+      "regex": "Lowercase letters, numbers, and dashes only",
+      "generic": "An error occurred"
+    },
+    "toasts": {
+      "success": "Organization created successfully!",
+      "errorPrefix": "Error: "
+    }
+  },
+
+  "OrgSwitcher": {
+    "label": "Organizations",
+    "create": "Create Organization"
   },
 
   "NotFound": {
     "code": "404",
     "title": "Page Not Found",
-    "desc": "The page you are looking for may have been moved, deleted, or never existed.",
+    "desc": "The page you are looking for might have been moved, deleted, or never existed.",
     "buttons": {
-      "home": "Go to Homepage",
+      "home": "Return Home",
       "back": "Go Back"
     }
   }

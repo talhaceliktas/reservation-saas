@@ -2,44 +2,39 @@
   "Intro": {
     "hero": {
       "badge": "✨ Neu: KI-gestützter Kalender",
-      "title": "Setzen Sie Termine",
-      "titleHighlight": "Auf Autopilot",
-      "description": "Vergessen Sie den Telefonstress. Mit BookIt buchen Ihre Kunden rund um die Uhr, während Sie sich auf Ihre Arbeit konzentrieren.",
-      "primaryButton": "Jetzt Starten",
-      "secondaryButton": "Demo Ansehen"
+      "title": "Schalten Sie Ihre Termine",
+      "titleHighlight": "auf Autopilot",
+      "description": "Schluss mit dem Telefon-Pingpong. Lassen Sie Ihre Kunden rund um die Uhr über BookIt buchen, während Sie sich auf Ihr Geschäft konzentrieren.",
+      "primaryButton": "Jetzt starten",
+      "secondaryButton": "Demo ansehen"
     },
     "features": {
-      "title": "Funktionen, Die Ihr Geschäft Wachsen Lassen",
-      "why": "Warum BookIt",
-      "subtitle": "Mehr als nur Termine, umfassendes Management.",
+      "title": "Funktionen für Ihr Wachstum",
+      "why": "Warum BookIt?",
+      "subtitle": "Nicht nur Terminplanung, sondern umfassendes Management.",
       "cards": {
         "calendar": {
           "title": "Intelligenter Kalender",
-          "desc": "Dynamische Struktur, die Konflikte verhindert."
+          "desc": "Dynamische Struktur zur Konfliktvermeidung."
         },
         "reminder": {
           "title": "SMS-Erinnerungen",
-          "desc": "Automatische Benachrichtigungen an Kunden."
+          "desc": "Automatische Benachrichtigungen für Kunden."
         },
         "payment": {
-          "title": "Online-Zahlung",
-          "desc": "Zahlung sofort bei der Terminbuchung erhalten."
+          "title": "Online-Zahlungen",
+          "desc": "Direkt bei der Buchung kassieren."
         }
       }
     },
     "stats": {
-      "availability": {
-        "value": "24/7",
-        "label": "Unterbrechungsfreie Buchung"
-      },
-      "setup": { "value": "2 Min", "label": "Schnelle Einrichtungszeit" },
-      "efficiency": { "value": "40%", "label": "Weniger Telefonanrufe" },
-      "growth": {
-        "value": "10x",
-        "label": "Professionelleres Erscheinungsbild"
-      }
+      "availability": { "value": "24/7", "label": "Lückenlose Buchung" },
+      "setup": { "value": "2 Min", "label": "Schnelle Einrichtung" },
+      "efficiency": { "value": "40%", "label": "Weniger Telefonate" },
+      "growth": { "value": "10x", "label": "Professioneller Auftritt" }
     }
   },
+
   "Navbar": {
     "links": {
       "features": "Funktionen",
@@ -48,13 +43,20 @@
     },
     "buttons": {
       "login": "Anmelden",
-      "getStarted": "Loslegen"
+      "getStarted": "Jetzt starten",
+      "dashboard": "Dashboard",
+      "logout": "Abmelden"
+    },
+    "userMenu": {
+      "defaultName": "Benutzer",
+      "profile": "Mein Profil",
+      "logout": "Abmelden"
     }
   },
 
   "Footer": {
     "brand": {
-      "desc": "Die Terminverwaltungsplattform der nächsten Generation für Ihr Unternehmen."
+      "desc": "Die Terminmanagement-Plattform der nächsten Generation für Ihr Unternehmen."
     },
     "cols": {
       "product": "Produkt",
@@ -68,11 +70,11 @@
       "blog": "Blog",
       "contact": "Kontakt",
       "privacy": "Datenschutz",
-      "terms": "Nutzungsbedingungen"
+      "terms": "AGB"
     },
     "newsletter": {
-      "title": "Bleiben Sie auf dem Laufenden",
-      "desc": "Die neuesten Funktionen und Tipps direkt in Ihrem Posteingang.",
+      "title": "Auf dem Laufenden bleiben",
+      "desc": "Neueste Funktionen und Tipps direkt in Ihren Posteingang.",
       "placeholder": "Ihre E-Mail-Adresse",
       "button": "Abonnieren"
     },
@@ -82,15 +84,15 @@
   "FeaturesPage": {
     "hero": {
       "badge": "Leistungsstark & Flexibel",
-      "title": "Komplettes Toolkit für Ihr Unternehmen",
-      "desc": "Mehr als nur ein Kalender. BookIt bietet alles, was Sie brauchen, um Ihr Geschäft zu verwalten, auszubauen und zu automatisieren."
+      "title": "Das komplette Toolkit für Ihr Business",
+      "desc": "Mehr als nur ein Kalender. BookIt bietet alles, was Sie brauchen, um Ihr Geschäft zu verwalten, zu vergrößern und zu automatisieren."
     },
     "bento": {
       "dateCard": {
-        "title": "Intelligenter Kalender",
+        "title": "Smarter Kalender",
         "desc": "Drag & Drop Verwaltung.",
-        "date": "Okt 2026",
-        "monthlyIncome": "Monatliches Einkommen",
+        "date": "Oktober 2026",
+        "monthlyIncome": "Monatlicher Umsatz",
         "weekDays": {
           "Mon": "Mo",
           "Tue": "Di",
@@ -102,7 +104,7 @@
         }
       },
       "bankCard": {
-        "title": "Online-Zahlungen",
+        "title": "Online-Zahlung",
         "desc": "Stripe & Iyzico Integration.",
         "cardText": "Kartennummer"
       },
@@ -111,49 +113,220 @@
         "desc": "Wachstumsberichte."
       },
       "mobileCard": {
-        "title": "Mobil Bereit",
+        "title": "Mobilfreundlich",
         "desc": "Von überall verwalten.",
         "text": "Mobile First"
       },
       "notificationCard": {
-        "date": "Dienstag, 12. September",
+        "date": "Dienstag, 12. Sep.",
         "notification1": {
           "app": "BookIt",
           "date": "Jetzt",
           "title": "Terminerinnerung 📅",
-          "message": "Sie haben morgen um 14:00 Uhr einen Termin mit Herrn John."
+          "message": "Sie haben morgen um 14:00 Uhr einen Termin mit Alex."
         },
         "notification2": {
           "app": "Bank",
-          "date": "vor 2m",
+          "date": "vor 2 Min.",
           "title": "Zahlung erhalten 💰",
-          "message": "Ihrem Konto wurden 450,00$ gutgeschrieben."
+          "message": "450,00 € wurden Ihrem Konto gutgeschrieben."
         }
       }
     },
     "details": {
       "notifications": {
         "title": "Automatische Erinnerungen",
-        "desc": "Schluss mit Nichterscheinen. Automatische SMS- und E-Mail-Benachrichtigungen sorgen dafür, dass Ihre Kunden erscheinen. Reduzieren Sie verpasste Termine um 80%.",
+        "desc": "Keine Terminausfälle mehr. Automatische SMS- und E-Mail-Benachrichtigungen sorgen dafür, dass Ihre Kunden erscheinen. Reduzieren Sie No-Shows um 80%.",
         "tag": "Kommunikation"
       },
       "customization": {
         "title": "Individuelles Branding",
-        "desc": "Passen Sie Ihre Buchungsseite mit Ihrem Logo, Ihren Farben und Regeln an. Ihre Kunden sehen Sie, nicht BookIt.",
+        "desc": "Passen Sie Ihre Buchungsseite mit Ihrem Logo, Ihren Farben und Regeln an. Kunden sehen Sie, nicht BookIt.",
         "tag": "White Label",
-        "themeColor": "Themenfarbe"
+        "themeColor": "Designfarbe"
       }
     },
     "cta": {
-      "title": "Bereit zum Ausprobieren?",
-      "btn": "Jetzt starten"
+      "title": "Bereit für einen Testlauf?",
+      "btn": "Jetzt loslegen"
     }
+  },
+
+  "Pricing": {
+    "title": "Der richtige Plan für Ihr Unternehmen",
+    "subtitle": "Nicht nur ein Kalender, sondern die digitale Filiale Ihres Unternehmens. Keine versteckten Gebühren.",
+    "intervals": {
+      "month": "Mt",
+      "year": "Jr",
+      "vat": "+ MwSt."
+    },
+    "switch": {
+      "monthly": "Monatlich",
+      "yearly": "Jährlich",
+      "save_badge": "18% Sparen"
+    },
+    "labels": {
+      "total_amount": "Gesamtbetrag",
+      "popular": "BELIEBT",
+      "contact_sales": "Vertrieb kontaktieren",
+      "footer_text": "Individuelle SLAs und Rechnungsoptionen für Großunternehmen verfügbar.",
+      "sales_link": "Sprechen Sie mit dem Vertrieb."
+    },
+    "plans": {
+      "starter": {
+        "name": "Starter",
+        "description": "Für neue Boutique-Unternehmen.",
+        "time_slot": "09:00 - STARTER",
+        "price_monthly": "29",
+        "price_yearly": "290",
+        "cta": "Jetzt starten"
+      },
+      "pro": {
+        "name": "Professional",
+        "description": "Für wachsende Teams und Praxen.",
+        "time_slot": "12:00 - PROFESSIONAL",
+        "price_monthly": "59",
+        "price_yearly": "590",
+        "cta": "Kostenlos testen"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "description": "Filialketten und spezielle Anforderungen.",
+        "time_slot": "GANZTÄGIG - ENTERPRISE",
+        "price_monthly": "Individuell",
+        "price_yearly": "Individuell",
+        "cta": "Angebot anfordern"
+      }
+    },
+    "features": {
+      "keys": {
+        "appointments": "Terminverwaltung",
+        "staff": "Mitarbeiterlimit",
+        "sms": "SMS-Erinnerungen",
+        "analytics": "Erweiterte Berichte",
+        "api": "API-Zugriff",
+        "support": "Support-Level"
+      },
+      "values": {
+        "2_staff": "2 Mitarbeiter",
+        "10_staff": "10 Mitarbeiter",
+        "unlimited": "Unbegrenzt",
+        "email": "E-Mail",
+        "live": "Live-Chat",
+        "dedicated": "Persönlicher Betreuer"
+      }
+    }
+  },
+
+  "About": {
+    "badge": "Wer sind wir?",
+    "title": "Wir gestalten Zeit, nicht nur Termine.",
+    "subtitle": "Technologie nutzen, um das Leben zu vereinfachen, nicht zu verkomplizieren.",
+    "mission": {
+      "title": "Unsere Mission",
+      "description": "Die digitale Transformation von KMUs mit Werkzeugen zu ermöglichen, die kein technisches Fachwissen erfordern."
+    },
+    "vision": {
+      "title": "Unsere Vision",
+      "description": "Ein Ökosystem zu schaffen, in dem sich Dienstleister weltweit voll und ganz auf ihr Handwerk konzentrieren können."
+    },
+    "story": {
+      "title": "Warum haben wir angefangen?",
+      "p1": "BookIt entstand, als wir sahen, wie ein Geschäftsinhaber aufgrund ständig klingelnder Telefone kaum Zeit für seine Kunden hatte. Wir glaubten an einen dritten Weg für alle, die zwischen traditionellen Terminkalendern und komplexer Software feststecken.",
+      "p2": "Unser Ziel ist es nicht nur, einen Buchungskalender zu verkaufen, sondern das digitale Schaufenster, den Empfang und den Assistenten Ihres Unternehmens in einer einzigen modernen Oberfläche anzubieten."
+    },
+    "stats": {
+      "users": "Aktive Unternehmen",
+      "bookings": "Verwaltete Termine",
+      "uptime": "Verfügbarkeit"
+    }
+  },
+
+  "Auth": {
+    "title": "Willkommen",
+    "subtitle": "Melden Sie sich an oder registrieren Sie sich.",
+    "tabs": {
+      "login": "Einloggen",
+      "register": "Registrieren"
+    },
+    "form": {
+      "email": "E-Mail-Adresse",
+      "password": "Passwort",
+      "fullName": "Vor- und Nachname",
+      "emailPlaceholder": "beispiel@firma.com",
+      "passwordPlaceholder": "******",
+      "fullNamePlaceholder": "Ihr Name"
+    },
+    "buttons": {
+      "login": "Einloggen",
+      "register": "Konto erstellen",
+      "google": "Weiter mit Google",
+      "loading": "Wird verarbeitet..."
+    },
+    "errors": {
+      "required": "Dieses Feld ist erforderlich.",
+      "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "minPassword": "Das Passwort muss mindestens 8 Zeichen lang sein.",
+      "generic": "Ein Fehler ist aufgetreten, bitte versuchen Sie es erneut.",
+      "emailInUse": "Diese E-Mail-Adresse wird bereits verwendet."
+    },
+    "success": {
+      "register": "Registrierung erfolgreich! Bitte prüfen Sie Ihre E-Mails."
+    }
+  },
+
+  "Sidebar": {
+    "groups": {
+      "main": "Hauptmenü",
+      "management": "Verwaltung",
+      "system": "System"
+    },
+    "links": {
+      "dashboard": "Übersicht",
+      "calendar": "Kalender",
+      "customers": "Kunden",
+      "services": "Dienstleistungen & Preise",
+      "staff": "Mitarbeiter",
+      "settings": "Einstellungen",
+      "support": "Hilfe & Support"
+    }
+  },
+
+  "CreateOrg": {
+    "title": "Neue Organisation erstellen",
+    "desc": "Erstellen Sie ein neues Unternehmensprofil. Sie können die Einstellungen später bearbeiten.",
+    "labels": {
+      "name": "Unternehmensname",
+      "slug": "URL-Kürzel (Slug)"
+    },
+    "placeholders": {
+      "name": "Bsp: BookIt Berlin Mitte",
+      "slug": "berlin-mitte"
+    },
+    "buttons": {
+      "create": "Erstellen"
+    },
+    "errors": {
+      "min2": "Muss mindestens 2 Zeichen lang sein",
+      "min3": "Muss mindestens 3 Zeichen lang sein",
+      "regex": "Nur Kleinbuchstaben, Zahlen und Bindestriche",
+      "generic": "Ein Fehler ist aufgetreten"
+    },
+    "toasts": {
+      "success": "Organisation erfolgreich erstellt!",
+      "errorPrefix": "Fehler: "
+    }
+  },
+
+  "OrgSwitcher": {
+    "label": "Organisationen",
+    "create": "Organisation erstellen"
   },
 
   "NotFound": {
     "code": "404",
     "title": "Seite nicht gefunden",
-    "desc": "Die gesuchte Seite wurde möglicherweise verschoben, gelöscht oder hat nie existiert.",
+    "desc": "Die gesuchte Seite wurde möglicherweise verschoben, gelöscht oder existierte nie.",
     "buttons": {
       "home": "Zur Startseite",
       "back": "Zurück"

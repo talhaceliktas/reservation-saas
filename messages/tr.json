@@ -46,6 +46,11 @@
       "getStarted": "Hemen Başla",
       "dashboard": "Yönetim Paneli",
       "logout": "Çıkış Yap"
+    },
+    "userMenu": {
+      "defaultName": "Kullanıcı",
+      "profile": "Profilim",
+      "logout": "Çıkış Yap"
     }
   },
 
@@ -311,6 +316,11 @@
       "success": "Organizasyon başarıyla oluşturuldu!",
       "errorPrefix": "Hata: "
     }
+  },
+
+  "OrgSwitcher": {
+    "label": "Organizasyonlar",
+    "create": "Organizasyon oluştur"
   },
 
   "NotFound": {

@@ -1,39 +1,40 @@
 {
   "Intro": {
     "hero": {
-      "badge": "✨ Nouveau: Calendrier IA",
-      "title": "Mettez vos Rendez-vous",
-      "titleHighlight": "En Pilote Automatique",
-      "description": "Oubliez les appels téléphoniques. Avec BookIt, vos clients réservent 24/7 pendant que vous vous concentrez sur votre travail.",
-      "primaryButton": "Commencer",
-      "secondaryButton": "Voir la Démo"
+      "badge": "✨ Nouveau : Calendrier assisté par IA",
+      "title": "Mettez vos rendez-vous",
+      "titleHighlight": "sur Pilote Automatique",
+      "description": "Oubliez le téléphone qui sonne sans arrêt. Laissez vos clients réserver 24/7 avec BookIt pendant que vous vous concentrez sur votre métier.",
+      "primaryButton": "Commencer maintenant",
+      "secondaryButton": "Voir la démo"
     },
     "features": {
-      "title": "Fonctionnalités Qui Développent Votre Entreprise",
-      "why": "Pourquoi BookIt",
-      "subtitle": "Plus que de simples rendez-vous, une gestion complète.",
+      "title": "Des fonctionnalités pour faire grandir votre activité",
+      "why": "Pourquoi BookIt ?",
+      "subtitle": "Pas seulement un agenda, mais une gestion complète.",
       "cards": {
         "calendar": {
-          "title": "Agenda Intelligent",
-          "desc": "Structure dynamique qui évite les chevauchements."
+          "title": "Calendrier Intelligent",
+          "desc": "Structure dynamique pour éviter les conflits."
         },
         "reminder": {
-          "title": "Rappels par SMS",
-          "desc": "Notifications automatiques aux clients."
+          "title": "Rappels SMS",
+          "desc": "Notifications automatiques pour les clients."
         },
         "payment": {
-          "title": "Paiement en Ligne",
-          "desc": "Encaissez le paiement dès la prise de rendez-vous."
+          "title": "Paiement en ligne",
+          "desc": "Encaissez dès la prise de rendez-vous."
         }
       }
     },
     "stats": {
-      "availability": { "value": "24/7", "label": "Réservation Ininterrompue" },
-      "setup": { "value": "2 Min", "label": "Temps d'Installation Rapide" },
-      "efficiency": { "value": "40%", "label": "Moins d'Appels Téléphoniques" },
-      "growth": { "value": "10x", "label": "Apparence Plus Professionnelle" }
+      "availability": { "value": "24/7", "label": "Réservation en continu" },
+      "setup": { "value": "2 Min", "label": "Installation rapide" },
+      "efficiency": { "value": "40%", "label": "D'appels en moins" },
+      "growth": { "value": "10x", "label": "Image plus professionnelle" }
     }
   },
+
   "Navbar": {
     "links": {
       "features": "Fonctionnalités",
@@ -42,31 +43,38 @@
     },
     "buttons": {
       "login": "Connexion",
-      "getStarted": "Commencer"
+      "getStarted": "Commencer",
+      "dashboard": "Tableau de bord",
+      "logout": "Déconnexion"
+    },
+    "userMenu": {
+      "defaultName": "Utilisateur",
+      "profile": "Mon Profil",
+      "logout": "Déconnexion"
     }
   },
 
   "Footer": {
     "brand": {
-      "desc": "La plateforme de gestion des rendez-vous de nouvelle génération pour votre entreprise."
+      "desc": "La plateforme de gestion de rendez-vous nouvelle génération pour votre entreprise."
     },
     "cols": {
       "product": "Produit",
-      "company": "Entreprise",
-      "legal": "Mentions Légales"
+      "company": "Société",
+      "legal": "Légal"
     },
     "links": {
       "features": "Fonctionnalités",
       "pricing": "Tarifs",
-      "about": "À Propos",
+      "about": "À propos",
       "blog": "Blog",
       "contact": "Contact",
       "privacy": "Confidentialité",
-      "terms": "Conditions d'Utilisation"
+      "terms": "CGU"
     },
     "newsletter": {
-      "title": "Restez Informé des Nouveautés",
-      "desc": "Les dernières fonctionnalités et astuces dans votre boîte de réception.",
+      "title": "Restez informé",
+      "desc": "Les dernières nouveautés et astuces directement dans votre boîte mail.",
       "placeholder": "Votre adresse e-mail",
       "button": "S'abonner"
     },
@@ -76,14 +84,14 @@
   "FeaturesPage": {
     "hero": {
       "badge": "Puissant & Flexible",
-      "title": "Boîte à Outils Complète pour Votre Entreprise",
-      "desc": "Bien plus qu'un simple calendrier. BookIt fournit tout ce dont vous avez besoin pour gérer, développer et automatiser votre entreprise."
+      "title": "La boîte à outils complète pour votre activité",
+      "desc": "Bien plus qu'un simple calendrier. BookIt vous fournit tout ce dont vous avez besoin pour gérer, développer et automatiser votre entreprise."
     },
     "bento": {
       "dateCard": {
-        "title": "Calendrier Intelligent",
+        "title": "Calendrier Smart",
         "desc": "Gestion par glisser-déposer.",
-        "date": "Oct 2026",
+        "date": "Octobre 2026",
         "monthlyIncome": "Revenu Mensuel",
         "weekDays": {
           "Mon": "Lun",
@@ -96,61 +104,232 @@
         }
       },
       "bankCard": {
-        "title": "Paiements en Ligne",
+        "title": "Paiement en ligne",
         "desc": "Intégration Stripe & Iyzico.",
-        "cardText": "Numéro de Carte"
+        "cardText": "Numéro de carte"
       },
       "chartCard": {
         "title": "Analytique",
         "desc": "Rapports de croissance."
       },
       "mobileCard": {
-        "title": "Compatible Mobile",
-        "desc": "Gérez de n'importe où.",
-        "text": "Mobile d'abord"
+        "title": "Mobile Friendly",
+        "desc": "Gérez tout, où que vous soyez.",
+        "text": "Mobile First"
       },
       "notificationCard": {
-        "date": "Mardi 12 Septembre",
+        "date": "Mardi 12 Sept.",
         "notification1": {
           "app": "BookIt",
           "date": "Maintenant",
-          "title": "Rappel de Rendez-vous 📅",
-          "message": "Vous avez rendez-vous avec M. John demain à 14h00."
+          "title": "Rappel de RDV 📅",
+          "message": "Vous avez rendez-vous avec Alex demain à 14h00."
         },
         "notification2": {
           "app": "Banque",
-          "date": "il y a 2m",
+          "date": "il y a 2 min",
           "title": "Paiement Reçu 💰",
-          "message": "Votre compte a été crédité de 450,00$."
+          "message": "450,00 € ont été versés sur votre compte."
         }
       }
     },
     "details": {
       "notifications": {
         "title": "Rappels Automatiques",
-        "desc": "Fini les rendez-vous manqués. Les notifications automatiques par SMS et e-mail garantissent la présence de vos clients. Réduisez les absences de 80%.",
+        "desc": "Fini les oublis. Les notifications automatiques par SMS et e-mail garantissent la présence de vos clients. Réduisez les rendez-vous manqués de 80%.",
         "tag": "Communication"
       },
       "customization": {
-        "title": "Marque Personnalisée",
-        "desc": "Personnalisez votre page de réservation avec votre logo, vos couleurs et vos règles. Vos clients vous voient vous, pas BookIt.",
+        "title": "Image de Marque",
+        "desc": "Personnalisez votre page de réservation avec votre logo, vos couleurs et vos règles. Vos clients voient votre marque, pas BookIt.",
         "tag": "Marque Blanche",
-        "themeColor": "Couleur du Thème"
+        "themeColor": "Couleur du thème"
       }
     },
     "cta": {
       "title": "Prêt à essayer ?",
-      "btn": "Commencer"
+      "btn": "Commencer maintenant"
     }
+  },
+
+  "Pricing": {
+    "title": "Le forfait idéal pour votre entreprise",
+    "subtitle": "Pas seulement un calendrier, mais la vitrine digitale de votre activité. Sans frais cachés.",
+    "intervals": {
+      "month": "mois",
+      "year": "an",
+      "vat": "+ TVA"
+    },
+    "switch": {
+      "monthly": "Mensuel",
+      "yearly": "Annuel",
+      "save_badge": "-18% d'économie"
+    },
+    "labels": {
+      "total_amount": "Montant total",
+      "popular": "LE PLUS POPULAIRE",
+      "contact_sales": "Contacter les ventes",
+      "footer_text": "SLA personnalisés et options de facturation disponibles pour les grandes entreprises.",
+      "sales_link": "Parler aux ventes."
+    },
+    "plans": {
+      "starter": {
+        "name": "Starter",
+        "description": "Pour les nouvelles petites entreprises.",
+        "time_slot": "09:00 - STARTER",
+        "price_monthly": "29",
+        "price_yearly": "290",
+        "cta": "Commencer"
+      },
+      "pro": {
+        "name": "Professionnel",
+        "description": "Pour les équipes et cliniques en croissance.",
+        "time_slot": "12:00 - PROFESSIONNEL",
+        "price_monthly": "59",
+        "price_yearly": "590",
+        "cta": "Essai Gratuit"
+      },
+      "enterprise": {
+        "name": "Entreprise",
+        "description": "Chaînes et besoins sur mesure.",
+        "time_slot": "JOURNÉE - ENTREPRISE",
+        "price_monthly": "Sur mesure",
+        "price_yearly": "Sur mesure",
+        "cta": "Demander un devis"
+      }
+    },
+    "features": {
+      "keys": {
+        "appointments": "Gestion des RDV",
+        "staff": "Limite de personnel",
+        "sms": "Rappels SMS",
+        "analytics": "Rapports avancés",
+        "api": "Accès API",
+        "support": "Niveau de support"
+      },
+      "values": {
+        "2_staff": "2 Collaborateurs",
+        "10_staff": "10 Collaborateurs",
+        "unlimited": "Illimité",
+        "email": "E-mail",
+        "live": "Chat en direct",
+        "dedicated": "Agent dédié"
+      }
+    }
+  },
+
+  "About": {
+    "badge": "Qui sommes-nous ?",
+    "title": "Nous concevons du temps, pas juste des rendez-vous.",
+    "subtitle": "Utiliser la technologie pour simplifier la vie, pas pour la compliquer.",
+    "mission": {
+      "title": "Notre Mission",
+      "description": "Permettre la transformation numérique des PME avec des outils qui ne nécessitent aucune expertise technique."
+    },
+    "vision": {
+      "title": "Notre Vision",
+      "description": "Créer un écosystème où les prestataires de services du monde entier peuvent se concentrer uniquement sur leur métier."
+    },
+    "story": {
+      "title": "Pourquoi avons-nous commencé ?",
+      "p1": "BookIt est né en observant un commerçant lutter pour servir ses clients à cause d'un téléphone qui sonnait sans cesse. Nous avons cru qu'il existait une troisième voie pour ceux coincés entre les agendas papier et les logiciels complexes.",
+      "p2": "Notre objectif n'est pas seulement de vendre un calendrier de réservation, mais d'offrir la vitrine numérique, le réceptionniste et l'assistant de votre entreprise dans une interface moderne unique."
+    },
+    "stats": {
+      "users": "Entreprises actives",
+      "bookings": "Rendez-vous gérés",
+      "uptime": "Temps de disponibilité"
+    }
+  },
+
+  "Auth": {
+    "title": "Bienvenue",
+    "subtitle": "Connectez-vous ou inscrivez-vous pour accéder à votre compte.",
+    "tabs": {
+      "login": "Connexion",
+      "register": "Inscription"
+    },
+    "form": {
+      "email": "Adresse e-mail",
+      "password": "Mot de passe",
+      "fullName": "Nom complet",
+      "emailPlaceholder": "exemple@societe.com",
+      "passwordPlaceholder": "******",
+      "fullNamePlaceholder": "Votre Nom"
+    },
+    "buttons": {
+      "login": "Se connecter",
+      "register": "Créer un compte",
+      "google": "Continuer avec Google",
+      "loading": "Traitement..."
+    },
+    "errors": {
+      "required": "Ce champ est obligatoire.",
+      "email": "Veuillez entrer une adresse e-mail valide.",
+      "minPassword": "Le mot de passe doit contenir au moins 8 caractères.",
+      "generic": "Une erreur est survenue, veuillez réessayer.",
+      "emailInUse": "Cette adresse e-mail est déjà utilisée."
+    },
+    "success": {
+      "register": "Inscription réussie ! Veuillez vérifier votre e-mail."
+    }
+  },
+
+  "Sidebar": {
+    "groups": {
+      "main": "Menu Principal",
+      "management": "Gestion",
+      "system": "Système"
+    },
+    "links": {
+      "dashboard": "Vue d'ensemble",
+      "calendar": "Calendrier",
+      "customers": "Clients",
+      "services": "Services & Tarifs",
+      "staff": "Personnel",
+      "settings": "Paramètres",
+      "support": "Aide & Support"
+    }
+  },
+
+  "CreateOrg": {
+    "title": "Créer une nouvelle organisation",
+    "desc": "Créez un nouveau profil d'entreprise. Vous pourrez modifier les paramètres plus tard.",
+    "labels": {
+      "name": "Nom de l'entreprise",
+      "slug": "Identifiant URL (Slug)"
+    },
+    "placeholders": {
+      "name": "Ex: BookIt Paris Centre",
+      "slug": "paris-centre"
+    },
+    "buttons": {
+      "create": "Créer"
+    },
+    "errors": {
+      "min2": "Doit contenir au moins 2 caractères",
+      "min3": "Doit contenir au moins 3 caractères",
+      "regex": "Lettres minuscules, chiffres et tirets uniquement",
+      "generic": "Une erreur est survenue"
+    },
+    "toasts": {
+      "success": "Organisation créée avec succès !",
+      "errorPrefix": "Erreur : "
+    }
+  },
+
+  "OrgSwitcher": {
+    "label": "Organisations",
+    "create": "Créer une organisation"
   },
 
   "NotFound": {
     "code": "404",
-    "title": "Page introuvable",
+    "title": "Page non trouvée",
     "desc": "La page que vous recherchez a peut-être été déplacée, supprimée ou n'a jamais existé.",
     "buttons": {
-      "home": "Aller à la page d'accueil",
-      "back": "Retourner"
+      "home": "Retour à l'accueil",
+      "back": "Retourner en arrière"
     }
   }
 }
