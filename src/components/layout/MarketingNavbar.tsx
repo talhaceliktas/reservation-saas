@@ -16,7 +16,7 @@ import {
 import { cn } from "@/lib/utils";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { User } from "@supabase/supabase-js";
-import { createClient } from "@/lib/supabase/supabase";
+import { createClient } from "@/lib/supabase/client";
 
 export default function MarketingNavbar({ locale }: { locale: string }) {
   const t = useTranslations("Navbar");

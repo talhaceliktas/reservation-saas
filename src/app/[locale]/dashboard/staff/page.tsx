@@ -22,11 +22,12 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Trash2, Shield, Clock, Loader2 } from "lucide-react";
+import { Trash2, Shield, Clock } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export default function StaffPage() {
-  const t = useTranslations("StaffPage"); // Çevirileri sonra ekleriz
+  const t = useTranslations("StaffPage");
+
   const {
     members,
     invitations,
@@ -55,10 +56,10 @@ export default function StaffPage() {
       {/* HEADER */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900">Ekip Yönetimi</h1>
-          <p className="text-slate-500">
-            Organizasyonunuzdaki üyeleri ve yetkilerini yönetin.
-          </p>
+          <h1 className="text-2xl font-bold text-slate-900">
+            {t("header.title")}
+          </h1>
+          <p className="text-slate-500">{t("header.description")}</p>
         </div>
         {canManage && <InviteMemberDialog onSuccess={refresh} />}
       </div>
@@ -66,10 +67,10 @@ export default function StaffPage() {
       <Tabs defaultValue="members" className="w-full">
         <TabsList>
           <TabsTrigger value="members">
-            Aktif Üyeler ({members.length})
+            {t("tabs.members")} ({members.length})
           </TabsTrigger>
           <TabsTrigger value="invitations">
-            Davetiyeler ({invitations.length})
+            {t("tabs.invitations")} ({invitations.length})
           </TabsTrigger>
         </TabsList>
 
@@ -79,10 +80,12 @@ export default function StaffPage() {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Kullanıcı</TableHead>
-                  <TableHead>E-Posta</TableHead>
-                  <TableHead>Rol</TableHead>
-                  <TableHead className="text-right">İşlemler</TableHead>
+                  <TableHead>{t("table.user")}</TableHead>
+                  <TableHead>{t("table.email")}</TableHead>
+                  <TableHead>{t("table.role")}</TableHead>
+                  <TableHead className="text-right">
+                    {t("table.actions")}
+                  </TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -98,23 +101,29 @@ export default function StaffPage() {
                               .toUpperCase() || "U"}
                           </AvatarFallback>
                         </Avatar>
-                        <span>{member.profile?.full_name || "İsimsiz"}</span>
+                        <span>
+                          {member.profile?.full_name || t("alerts.unnamed")}
+                        </span>
                       </div>
                     </TableCell>
                     <TableCell>{member.profile?.email}</TableCell>
                     <TableCell>
-                      {/* Rol Badge veya Select */}
+                      {/* Rol Düzenleme (Sadece Owner ise) */}
                       {isOwner && member.role !== "owner" ? (
                         <Select
                           defaultValue={member.role}
                           onValueChange={(val) => updateRole(member.id, val)}
                         >
-                          <SelectTrigger className="h-8 w-32">
+                          <SelectTrigger className="h-8 w-auto min-w-[120px]">
                             <SelectValue />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="admin">Admin</SelectItem>
-                            <SelectItem value="staff">Staff</SelectItem>
+                            <SelectItem value="admin">
+                              {t("roles.admin")}
+                            </SelectItem>
+                            <SelectItem value="staff">
+                              {t("roles.staff")}
+                            </SelectItem>
                           </SelectContent>
                         </Select>
                       ) : (
@@ -126,7 +135,8 @@ export default function StaffPage() {
                           {member.role === "owner" && (
                             <Shield className="w-3 h-3 mr-1 inline" />
                           )}
-                          {member.role.toUpperCase()}
+                          {t(`roles.${member.role}`) ||
+                            member.role.toUpperCase()}
                         </Badge>
                       )}
                     </TableCell>
@@ -136,11 +146,7 @@ export default function StaffPage() {
                           variant="ghost"
                           size="icon"
                           onClick={() => {
-                            if (
-                              confirm(
-                                "Bu kullanıcıyı çıkarmak istediğinize emin misiniz?"
-                              )
-                            ) {
+                            if (confirm(t("alerts.removeConfirm"))) {
                               removeMember(member.id);
                             }
                           }}
@@ -162,16 +168,18 @@ export default function StaffPage() {
           <div className="rounded-md border bg-white">
             {invitations.length === 0 ? (
               <div className="p-8 text-center text-slate-500">
-                Bekleyen davetiye yok.
+                {t("empty.invitations")}
               </div>
             ) : (
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>E-Posta</TableHead>
-                    <TableHead>Atanan Rol</TableHead>
-                    <TableHead>Durum</TableHead>
-                    <TableHead className="text-right">İşlemler</TableHead>
+                    <TableHead>{t("table.email")}</TableHead>
+                    <TableHead>{t("table.assignedRole")}</TableHead>
+                    <TableHead>{t("table.status")}</TableHead>
+                    <TableHead className="text-right">
+                      {t("table.actions")}
+                    </TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -179,14 +187,17 @@ export default function StaffPage() {
                     <TableRow key={invite.id}>
                       <TableCell>{invite.email}</TableCell>
                       <TableCell>
-                        <Badge variant="outline">{invite.role}</Badge>
+                        <Badge variant="outline">
+                          {/* Rol ismini çeviriyoruz */}
+                          {t(`roles.${invite.role}`) || invite.role}
+                        </Badge>
                       </TableCell>
                       <TableCell>
                         <Badge
                           variant="secondary"
                           className="bg-yellow-100 text-yellow-700 hover:bg-yellow-100 gap-1"
                         >
-                          <Clock size={12} /> Bekliyor
+                          <Clock size={12} /> {t("status.pending")}
                         </Badge>
                       </TableCell>
                       <TableCell className="text-right">
@@ -197,7 +208,7 @@ export default function StaffPage() {
                             onClick={() => revokeInvitation(invite.id)}
                             className="text-red-600 hover:text-red-700 hover:bg-red-50"
                           >
-                            İptal Et
+                            {t("buttons.cancel")}
                           </Button>
                         )}
                       </TableCell>

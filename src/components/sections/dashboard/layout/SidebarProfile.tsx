@@ -6,7 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import useFetchProfile from "../../../../hooks/useFetchProfile";
-import { createClient } from "../../../../lib/supabase/supabase";
+import { createClient } from "../../../../lib/supabase/client";
 
 export default function SidebarProfile({ locale }: { locale: string }) {
   const router = useRouter();

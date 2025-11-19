@@ -325,6 +325,106 @@
     "empty": "Katıldığın bir organizasyon yok."
   },
 
+  "StaffPage": {
+    "header": {
+      "title": "Ekip Yönetimi",
+      "description": "Organizasyonunuzdaki üyeleri ve yetkilerini yönetin."
+    },
+    "tabs": {
+      "members": "Aktif Üyeler",
+      "invitations": "Davetiyeler"
+    },
+    "table": {
+      "user": "Kullanıcı",
+      "email": "E-Posta",
+      "role": "Rol",
+      "actions": "İşlemler",
+      "assignedRole": "Atanan Rol",
+      "status": "Durum"
+    },
+    "roles": {
+      "admin": "Yönetici (Admin)",
+      "staff": "Personel (Staff)",
+      "owner": "Kurucu (Owner)"
+    },
+    "status": {
+      "pending": "Bekliyor"
+    },
+    "empty": {
+      "invitations": "Bekleyen davetiye yok."
+    },
+    "buttons": {
+      "cancel": "İptal Et"
+    },
+    "alerts": {
+      "removeConfirm": "Bu kullanıcıyı organizasyondan çıkarmak istediğinize emin misiniz?",
+      "unnamed": "İsimsiz"
+    }
+  },
+
+  "InviteDialog": {
+    "trigger": "Personel Davet Et",
+    "title": "Yeni Üye Davet Et",
+    "desc": "Ekibe yeni birini eklemek için e-posta adresini girin.",
+    "labels": {
+      "email": "E-Posta Adresi",
+      "role": "Yetki / Rol"
+    },
+    "placeholders": {
+      "email": "ornek@sirket.com",
+      "role": "Rol Seç"
+    },
+    "roles": {
+      "staff": "Personel (Staff)",
+      "admin": "Yönetici (Admin)"
+    },
+    "buttons": {
+      "submit": "Davet Gönder"
+    },
+    "errors": {
+      "invalidEmail": "Geçerli bir e-posta giriniz",
+      "noOrg": "Aktif bir organizasyon bulunamadı.",
+      "generic": "Beklenmedik bir hata oluştu."
+    },
+    "toasts": {
+      "success": "Davetiye ve e-posta gönderildi!"
+    }
+  },
+
+  "InvitationErrors": {
+    "notFound": "Davet bulunamadı veya süresi dolmuş.",
+    "unauthenticated": "Giriş yapmanız gerekiyor.",
+    "invalid": "Geçersiz davet.",
+    "emailMismatch": "E-posta adresi eşleşmiyor.",
+    "emailMismatchDetail": "Bu davet {inviteEmail} adresi için, ancak siz {userEmail} ile giriş yaptınız.",
+    "createMemberError": "Üyelik oluşturulurken teknik bir hata oluştu.",
+    "success": "Ekibe başarıyla katıldınız!"
+  },
+
+  "JoinPage": {
+    "valid": {
+      "title": "Davet Edildiniz!",
+      "desc": "<bold>{orgName}</bold> ekibine katılmanız için bir davetiye aldınız.",
+      "invitedEmail": "Davet Edilen:",
+      "role": "Rol:",
+      "buttonJoin": "Daveti Kabul Et",
+      "buttonDecline": "Bu daveti reddet"
+    },
+    "invalid": {
+      "title": "Geçersiz Davetiye",
+      "desc": "Bu davetiye bağlantısı geçersiz, süresi dolmuş veya daha önce kullanılmış.",
+      "buttonHome": "Anasayfaya Dön"
+    },
+    "warnings": {
+      "unauthenticated": "Daveti kabul etmek için önce giriş yapmalı veya kayıt olmalısınız.",
+      "mismatch": "Dikkat: Şu an <bold>{userEmail}</bold> hesabıyla giriş yaptınız. Davetiye ise <bold>{inviteEmail}</bold> adresine gönderilmiş. Lütfen doğru hesaba geçiş yapın."
+    },
+    "buttons": {
+      "login": "Giriş Yap ve Katıl",
+      "switchAccount": "Farklı Hesapla Giriş Yap"
+    }
+  },
+
   "NotFound": {
     "code": "404",
     "title": "Sayfa Bulunamadı",

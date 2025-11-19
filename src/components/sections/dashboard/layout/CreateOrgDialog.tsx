@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { createClient } from "@/lib/supabase/supabase";
+import { createClient } from "@/lib/supabase/client";
 import { useOrg } from "@/context/org-context";
 import { Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";

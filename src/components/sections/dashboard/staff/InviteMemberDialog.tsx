@@ -4,10 +4,11 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { createClient } from "@/lib/supabase/supabase";
 import { useOrg } from "@/context/org-context";
+import { createInvitationAction } from "@/actions/create-invitation";
 import { Loader2, Mail, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl"; // 1. Import
 import {
   Dialog,
   DialogContent,
@@ -28,23 +29,23 @@ import {
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 
-// Form Şeması
-const inviteSchema = z.object({
-  email: z.string().email("Geçerli bir e-posta giriniz"),
-  role: z.enum(["admin", "staff", "owner"]),
-});
-
-type InviteFormValues = z.infer<typeof inviteSchema>;
-
 export default function InviteMemberDialog({
   onSuccess,
 }: {
   onSuccess: () => void;
 }) {
+  const t = useTranslations("InviteDialog"); // 2. Hook Başlat
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const { activeOrg } = useOrg();
-  const supabase = createClient();
+
+  // 3. Zod Şemasını İçeri Taşıdık (Çeviriye erişmek için)
+  const inviteSchema = z.object({
+    email: z.string().email(t("errors.invalidEmail")),
+    role: z.enum(["admin", "staff", "owner"]),
+  });
+
+  type InviteFormValues = z.infer<typeof inviteSchema>;
 
   const {
     register,
@@ -58,30 +59,34 @@ export default function InviteMemberDialog({
   });
 
   const onSubmit = async (values: InviteFormValues) => {
-    if (!activeOrg) return;
+    if (!activeOrg) {
+      toast.error(t("errors.noOrg"));
+      return;
+    }
+
     setLoading(true);
 
+    // FormData oluşturma
+    const formData = new FormData();
+    formData.append("email", values.email);
+    formData.append("role", values.role);
+    formData.append("orgId", activeOrg.id);
+
     try {
-      // Davetiye tablosuna ekle
-      const { error } = await supabase.from("invitations").insert({
-        organization_id: activeOrg.id,
-        email: values.email,
-        role: values.role,
-      });
+      const result = await createInvitationAction(null, formData);
 
-      if (error) throw error;
-
-      toast.success("Davet gönderildi!");
-      setOpen(false);
-      reset();
-      onSuccess(); // Listeyi yenilemesi için üst bileşene haber ver
-    } catch (error: any) {
-      // Unique constraint hatası (zaten davetli)
-      if (error.code === "23505") {
-        toast.error("Bu e-posta zaten davet edilmiş.");
+      if (result?.error) {
+        // Backend'den gelen hata mesajını basıyoruz.
+        // Eğer backend bir kod dönüyorsa burada t(result.error) yapabiliriz.
+        toast.error(result.error);
       } else {
-        toast.error("Hata: " + error.message);
+        toast.success(t("toasts.success"));
+        setOpen(false);
+        reset();
+        onSuccess(); // Tabloyu yenile
       }
+    } catch {
+      toast.error(t("errors.generic"));
     } finally {
       setLoading(false);
     }
@@ -92,23 +97,21 @@ export default function InviteMemberDialog({
       <DialogTrigger asChild>
         <Button className="bg-blue-600 hover:bg-blue-700 gap-2">
           <Plus size={16} />
-          Personel Davet Et
+          {t("trigger")}
         </Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Yeni Üye Davet Et</DialogTitle>
-          <DialogDescription>
-            Ekibe yeni birini eklemek için e-posta adresini girin.
-          </DialogDescription>
+          <DialogTitle>{t("title")}</DialogTitle>
+          <DialogDescription>{t("desc")}</DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit(onSubmit)} className="grid gap-4 py-4">
           <div className="grid gap-2">
-            <Label>E-Posta Adresi</Label>
+            <Label>{t("labels.email")}</Label>
             <div className="relative">
               <Mail className="absolute left-3 top-2.5 h-4 w-4 text-slate-400" />
               <Input
-                placeholder="ornek@sirket.com"
+                placeholder={t("placeholders.email")}
                 className="pl-9"
                 {...register("email")}
               />
@@ -119,17 +122,20 @@ export default function InviteMemberDialog({
           </div>
 
           <div className="grid gap-2">
-            <Label>Yetki / Rol</Label>
+            <Label>{t("labels.role")}</Label>
             <Select
-              onValueChange={(val: any) => setValue("role", val)}
+              // Type assertion ile "any" kullanımından kaçındık
+              onValueChange={(val) =>
+                setValue("role", val as "admin" | "staff" | "owner")
+              }
               defaultValue="staff"
             >
               <SelectTrigger>
-                <SelectValue placeholder="Rol Seç" />
+                <SelectValue placeholder={t("placeholders.role")} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="staff">Personel (Staff)</SelectItem>
-                <SelectItem value="admin">Yönetici (Admin)</SelectItem>
+                <SelectItem value="staff">{t("roles.staff")}</SelectItem>
+                <SelectItem value="admin">{t("roles.admin")}</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -137,7 +143,7 @@ export default function InviteMemberDialog({
           <DialogFooter>
             <Button type="submit" disabled={loading} className="bg-blue-600">
               {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-              Davet Gönder
+              {t("buttons.submit")}
             </Button>
           </DialogFooter>
         </form>

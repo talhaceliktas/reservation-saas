@@ -1,15 +1,19 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { createClient } from "@/lib/supabase/supabase";
+import { createClient } from "@/lib/supabase/client";
 import { useOrg } from "@/context/org-context";
 import { toast } from "sonner";
+import { PostgrestError } from "@supabase/supabase-js";
+
+// Rol Tipleri (Tekrar tekrar yazmamak için)
+type UserRole = "owner" | "admin" | "staff";
 
 // Tipler
 export type Member = {
   id: string;
   user_id: string;
-  role: "owner" | "admin" | "staff";
+  role: UserRole;
   profile: {
     full_name: string;
     email: string;
@@ -20,9 +24,10 @@ export type Member = {
 export type Invitation = {
   id: string;
   email: string;
-  role: "owner" | "admin" | "staff";
+  role: UserRole;
   created_at: string;
-  status: string;
+  // status veritabanında yoksa UI'da hesaplanabilir veya opsiyonel olabilir
+  status?: string;
 };
 
 export function useStaffData() {
@@ -31,7 +36,7 @@ export function useStaffData() {
 
   const [members, setMembers] = useState<Member[]>([]);
   const [invitations, setInvitations] = useState<Invitation[]>([]);
-  const [currentUserRole, setCurrentUserRole] = useState<string | null>(null);
+  const [currentUserRole, setCurrentUserRole] = useState<UserRole | null>(null);
   const [loading, setLoading] = useState(true);
 
   const fetchData = useCallback(async () => {
@@ -39,59 +44,74 @@ export function useStaffData() {
     setLoading(true);
 
     try {
-      // 1. Mevcut Üyeleri Çek
-      const { data: memberData, error: memberError } = await supabase
-        .from("organization_members")
-        .select(
+      const [membersResponse, invitationsResponse, userResponse] =
+        await Promise.all([
+          supabase
+            .from("organization_members")
+            .select(
+              `
+            id,
+            user_id,
+            role,
+            profile:profiles (
+              full_name,
+              email,
+              avatar_url
+            )
           `
-          id,
-          user_id,
-          role,
-          profile:profiles (
-            full_name,
-            email,
-            avatar_url
-          )
-        `
-        )
-        .eq("organization_id", activeOrg.id);
+            )
+            .eq("organization_id", activeOrg.id),
 
-      if (memberError) throw memberError;
+          supabase
+            .from("invitations")
+            .select("*")
+            .eq("organization_id", activeOrg.id),
 
-      // 2. Davetiyeleri Çek
-      const { data: inviteData, error: inviteError } = await supabase
-        .from("invitations")
-        .select("*")
-        .eq("organization_id", activeOrg.id);
+          supabase.auth.getUser(),
+        ]);
 
-      if (inviteError) throw inviteError;
+      // Hata Kontrolü
+      if (membersResponse.error) throw membersResponse.error;
+      if (invitationsResponse.error) throw invitationsResponse.error;
 
-      // 3. Benim Rolüm Ne? (Yetki kontrolü için)
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      const myRecord = memberData.find((m) => m.user_id === user?.id);
+      const memberData = membersResponse.data;
+      const inviteData = invitationsResponse.data;
+      const user = userResponse.data.user;
 
-      setMembers(memberData as unknown as Member[]);
-      setInvitations(inviteData as Invitation[]);
+      // 2. Benim Rolümü Bul
+      // TypeScript'e memberData'nın Member[] yapısında olduğunu söylüyoruz (Type Assertion)
+      // Eğer Supabase Type Gen kullansaydık buna gerek kalmazdı.
+      const typedMembers = memberData as unknown as Member[];
+      const myRecord = typedMembers.find((m) => m.user_id === user?.id);
+
+      setMembers(typedMembers);
+      setInvitations(inviteData as Invitation[]); // Invitation tipine zorluyoruz
       setCurrentUserRole(myRecord?.role || null);
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Veri çekme hatası:", error);
-      toast.error("Veriler yüklenirken bir hata oluştu.");
+
+      // Hata mesajını güvenli alma
+      let message = "Veriler yüklenirken bir hata oluştu.";
+      if (isPostgrestError(error)) {
+        message = error.message;
+      } else if (error instanceof Error) {
+        message = error.message;
+      }
+
+      toast.error(message);
     } finally {
       setLoading(false);
     }
   }, [activeOrg, supabase]);
 
-  // Sayfa yüklenince veya organizasyon değişince çalıştır
   useEffect(() => {
     fetchData();
   }, [fetchData]);
 
   // --- FONKSİYONLAR ---
 
-  // Rol Güncelleme (Sadece Owner/Admin yapabilir - RLS de korur ama UI da korumalı)
-  const updateRole = async (memberId: string, newRole: string) => {
+  // Rol Güncelleme
+  const updateRole = async (memberId: string, newRole: UserRole) => {
     try {
       const { error } = await supabase
         .from("organization_members")
@@ -101,9 +121,11 @@ export function useStaffData() {
       if (error) throw error;
 
       toast.success("Rol güncellendi");
-      fetchData(); // Listeyi yenile
-    } catch (error: any) {
-      toast.error("Hata: " + error.message);
+      fetchData();
+    } catch (error: unknown) {
+      const message =
+        error instanceof Error ? error.message : "Bir hata oluştu";
+      toast.error("Hata: " + message);
     }
   };
 
@@ -119,8 +141,10 @@ export function useStaffData() {
 
       toast.success("Kullanıcı organizasyondan çıkarıldı");
       fetchData();
-    } catch (error: any) {
-      toast.error("Hata: " + error.message);
+    } catch (error: unknown) {
+      const message =
+        error instanceof Error ? error.message : "Bir hata oluştu";
+      toast.error("Hata: " + message);
     }
   };
 
@@ -136,8 +160,10 @@ export function useStaffData() {
 
       toast.success("Davet iptal edildi");
       fetchData();
-    } catch (error: any) {
-      toast.error("Hata: " + error.message);
+    } catch (error: unknown) {
+      const message =
+        error instanceof Error ? error.message : "Bir hata oluştu";
+      toast.error("Hata: " + message);
     }
   };
 
@@ -151,4 +177,13 @@ export function useStaffData() {
     removeMember,
     revokeInvitation,
   };
+}
+
+function isPostgrestError(error: unknown): error is PostgrestError {
+  return (
+    typeof error === "object" &&
+    error !== null &&
+    "message" in error &&
+    "code" in error
+  );
 }

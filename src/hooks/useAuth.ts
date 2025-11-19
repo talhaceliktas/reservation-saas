@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createClient } from "@/lib/supabase/supabase";
+import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
 import { LoginInput, RegisterInput } from "@/lib/validations/auth";
 import { checkEmailExists } from "../actions/auth-check";
