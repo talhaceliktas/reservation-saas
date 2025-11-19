@@ -1,7 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
-import FeaturesHero from "@/components/features/FeaturesHero";
-import BentoGrid from "@/components/features/BentoGrid";
-import DetailedSection from "@/components/features/DetailedSection";
+import FeaturesHero from "@/components/sections/features/FeaturesHero";
+import BentoGrid from "@/components/sections/features/BentoGrid";
+import DetailedSection from "@/components/sections/features/DetailedSection";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 import Link from "next/link";

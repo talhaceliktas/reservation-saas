@@ -145,6 +145,96 @@
     }
   },
 
+  "Pricing": {
+    "title": "İşletmeniz İçin En Doğru Plan",
+    "subtitle": "Sadece bir takvim değil, işletmenizin dijital şubesi. Gizli ücret yok.",
+    "intervals": {
+      "month": "ay",
+      "year": "yıl",
+      "vat": "+ KDV"
+    },
+    "switch": {
+      "monthly": "Aylık Plan",
+      "yearly": "Yıllık Plan",
+      "save_badge": "%18 Kar Et"
+    },
+    "labels": {
+      "total_amount": "Toplam Tutar",
+      "popular": "EN ÇOK TERCİH EDİLEN",
+      "contact_sales": "Satışla Görüş",
+      "footer_text": "Kurumsal işletmeler için özel SLA ve faturalandırma seçenekleri mevcuttur.",
+      "sales_link": "Satış ekibiyle görüşün."
+    },
+    "plans": {
+      "starter": {
+        "name": "Başlangıç",
+        "description": "Yeni başlayan butik işletmeler için.",
+        "time_slot": "09:00 - BAŞLANGIÇ",
+        "price_monthly": "299",
+        "price_yearly": "2390",
+        "cta": "Hemen Başla"
+      },
+      "pro": {
+        "name": "Profesyonel",
+        "description": "Büyüyen ekipler ve klinikler için.",
+        "time_slot": "12:00 - PROFESYONEL",
+        "price_monthly": "599",
+        "price_yearly": "4790",
+        "cta": "Ücretsiz Dene"
+      },
+      "enterprise": {
+        "name": "Kurumsal",
+        "description": "Zincir şubeler ve özel ihtiyaçlar.",
+        "time_slot": "TÜM GÜN - KURUMSAL",
+        "price_monthly": "Özel",
+        "price_yearly": "Özel",
+        "cta": "Teklif Al"
+      }
+    },
+    "features": {
+      "keys": {
+        "appointments": "Randevu Yönetimi",
+        "staff": "Personel Limiti",
+        "sms": "SMS Hatırlatma",
+        "analytics": "Gelişmiş Raporlar",
+        "api": "API Erişimi",
+        "support": "Destek Seviyesi"
+      },
+      "values": {
+        "2_staff": "2 Personel",
+        "10_staff": "10 Personel",
+        "unlimited": "Sınırsız",
+        "email": "E-posta",
+        "live": "Canlı Destek",
+        "dedicated": "Özel Temsilci"
+      }
+    }
+  },
+
+  "About": {
+    "badge": "Biz Kimiz?",
+    "title": "Randevuları değil, zamanı tasarlıyoruz.",
+    "subtitle": "Teknolojiyi karmaşıklaştırmak için değil, hayatı sadeleştirmek için kullanıyoruz.",
+    "mission": {
+      "title": "Misyonumuz",
+      "description": "Küçük ve orta ölçekli işletmelerin dijital dönüşümünü, teknik bilgi gerektirmeyen araçlarla sağlamak."
+    },
+    "vision": {
+      "title": "Vizyonumuz",
+      "description": "Dünyanın her yerindeki hizmet sağlayıcıların, sadece işlerine odaklanabileceği bir ekosistem yaratmak."
+    },
+    "story": {
+      "title": "Neden Başladık?",
+      "p1": "BookIt, sürekli çalan telefonlar yüzünden müşterisine odaklanamayan bir işletmeciyi izlerken doğdu. Geleneksel ajandaların ve karmaşık yazılımların arasında sıkışıp kalanlar için üçüncü bir yol olduğuna inandık.",
+      "p2": "Amacımız sadece bir rezervasyon takvimi satmak değil; işletmenizin dijital dünyadaki vitrinini, resepsiyonunu ve asistanını tek bir modern arayüzde sunmaktır."
+    },
+    "stats": {
+      "users": "Aktif İşletme",
+      "bookings": "Yönetilen Randevu",
+      "uptime": "Hizmet Süresi"
+    }
+  },
+
   "NotFound": {
     "code": "404",
     "title": "Sayfa Bulunamadı",
