@@ -270,6 +270,23 @@
     }
   },
 
+  "Sidebar": {
+    "groups": {
+      "main": "Ana Menü",
+      "management": "Yönetim",
+      "system": "Sistem"
+    },
+    "links": {
+      "dashboard": "Genel Bakış",
+      "calendar": "Takvim",
+      "customers": "Müşteriler",
+      "services": "Hizmetler & Fiyat",
+      "staff": "Personel",
+      "settings": "Ayarlar",
+      "support": "Yardım & Destek"
+    }
+  },
+
   "NotFound": {
     "code": "404",
     "title": "Sayfa Bulunamadı",
