@@ -2,6 +2,7 @@ import { useState } from "react";
 import { createClient } from "@/lib/supabase";
 import { useRouter } from "next/navigation";
 import { LoginInput, RegisterInput } from "@/lib/validations/auth";
+import { checkEmailExists } from "../actions/auth-check";
 
 export function useAuth() {
   const [isLoading, setIsLoading] = useState(false);
@@ -19,7 +20,7 @@ export function useAuth() {
       if (error) throw error;
 
       router.refresh();
-      router.push("/dashboard"); // Başarılıysa panele at
+      router.push("/dashboard");
       return { success: true };
     } catch (error: unknown) {
       if (error instanceof Error) {
@@ -34,6 +35,12 @@ export function useAuth() {
   const register = async (data: RegisterInput) => {
     setIsLoading(true);
     try {
+      const emailExists = await checkEmailExists(data.email);
+
+      if (emailExists) {
+        throw new Error("emailInUse");
+      }
+
       const { error } = await supabase.auth.signUp({
         email: data.email,
         password: data.password,
@@ -48,10 +55,19 @@ export function useAuth() {
 
       return { success: true };
     } catch (error: unknown) {
+      let errorMessage = "generic";
+
       if (error instanceof Error) {
-        return { success: false, error: error.message };
+        if (error.message === "emailInUse") {
+          errorMessage = "emailInUse";
+        } else if (error.message.includes("already registered")) {
+          errorMessage = "emailInUse";
+        } else {
+          console.error("Kayıt hatası:", error.message);
+        }
       }
-      return { success: false, error: "Bilinmeyen hata" };
+
+      return { success: false, error: errorMessage };
     } finally {
       setIsLoading(false);
     }

@@ -38,12 +38,13 @@
   "Navbar": {
     "links": {
       "features": "Özellikler",
-      "pricing": "Fiyatlar",
-      "about": "Hakkımızda"
+      "pricing": "Fiyatlandırma",
+      "about": "Hakkında"
     },
     "buttons": {
       "login": "Giriş Yap",
-      "getStarted": "Hemen Başla"
+      "getStarted": "Hemen Başla",
+      "dashboard": "Yönetim Paneli"
     }
   },
 
@@ -260,7 +261,8 @@
       "required": "Bu alan zorunludur.",
       "email": "Geçerli bir e-posta adresi giriniz.",
       "minPassword": "Şifre en az 8 karakter olmalıdır.",
-      "generic": "Bir hata oluştu, lütfen tekrar deneyin."
+      "generic": "Bir hata oluştu, lütfen tekrar deneyin.",
+      "emailInUse": "Bu e-posta adresi zaten kullanımda"
     },
     "success": {
       "register": "Kayıt başarılı! Lütfen e-postanızı kontrol edin."

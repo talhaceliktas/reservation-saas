@@ -36,11 +36,19 @@ export default function RegisterForm({
 
   async function onSubmit(values: RegisterInput) {
     const res = await register(values);
+
     if (res.success) {
       onSuccess(t("success.register"));
       form.reset();
     } else {
-      onError(t("errors.generic"));
+      if (res.error === "emailInUse") {
+        form.setError("email", {
+          type: "manual",
+          message: "emailInUse",
+        });
+      } else {
+        onError(t("errors.generic"));
+      }
     }
   }
 
