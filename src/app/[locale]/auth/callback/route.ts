@@ -2,7 +2,6 @@ import { createServerClient, type CookieOptions } from "@supabase/ssr";
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 
-// 1. Params'ı buraya ekledik (Next.js 15'te Promise olarak gelir)
 export async function GET(
   request: Request,
   { params }: { params: Promise<{ locale: string }> }
@@ -11,7 +10,6 @@ export async function GET(
   const code = searchParams.get("code");
   const next = searchParams.get("next") ?? "/dashboard";
 
-  // 2. Mevcut dili URL parametrelerinden çekiyoruz
   const { locale } = await params;
 
   if (code) {
@@ -38,12 +36,9 @@ export async function GET(
     const { error } = await supabase.auth.exchangeCodeForSession(code);
 
     if (!error) {
-      // 3. DÜZELTME: Yönlendirmeye 'locale' ekliyoruz
-      // Örn: localhost:3000/tr/dashboard
       return NextResponse.redirect(`${origin}/${locale}${next}`);
     }
   }
 
-  // Hata durumunda da login sayfasına dil koduyla geri gönderiyoruz
   return NextResponse.redirect(`${origin}/${locale}/login?error=auth`);
 }

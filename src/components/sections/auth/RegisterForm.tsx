@@ -11,7 +11,6 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  // FormMessage kaldırıldı
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -55,7 +54,6 @@ export default function RegisterForm({
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-        {/* AD SOYAD ALANI */}
         <FormField
           control={form.control}
           name="fullName"
@@ -65,7 +63,6 @@ export default function RegisterForm({
               <FormControl>
                 <Input placeholder={t("form.fullNamePlaceholder")} {...field} />
               </FormControl>
-              {/* Manuel Hata Mesajı */}
               {fieldState.error?.message && (
                 <p className="text-sm font-medium text-red-500">
                   {t(`errors.${fieldState.error.message}`)}
@@ -75,7 +72,6 @@ export default function RegisterForm({
           )}
         />
 
-        {/* EMAIL ALANI */}
         <FormField
           control={form.control}
           name="email"
@@ -85,7 +81,6 @@ export default function RegisterForm({
               <FormControl>
                 <Input placeholder={t("form.emailPlaceholder")} {...field} />
               </FormControl>
-              {/* Manuel Hata Mesajı */}
               {fieldState.error?.message && (
                 <p className="text-sm font-medium text-red-500">
                   {t(`errors.${fieldState.error.message}`)}
@@ -95,7 +90,6 @@ export default function RegisterForm({
           )}
         />
 
-        {/* PASSWORD ALANI */}
         <FormField
           control={form.control}
           name="password"
@@ -109,7 +103,6 @@ export default function RegisterForm({
                   {...field}
                 />
               </FormControl>
-              {/* Manuel Hata Mesajı */}
               {fieldState.error?.message && (
                 <p className="text-sm font-medium text-red-500">
                   {t(`errors.${fieldState.error.message}`)}

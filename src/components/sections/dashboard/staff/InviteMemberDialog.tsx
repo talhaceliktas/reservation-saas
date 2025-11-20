@@ -8,7 +8,7 @@ import { useOrg } from "@/context/org-context";
 import { createInvitationAction } from "@/actions/create-invitation";
 import { Loader2, Mail, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useTranslations } from "next-intl"; // 1. Import
+import { useTranslations } from "next-intl";
 import {
   Dialog,
   DialogContent,
@@ -34,12 +34,11 @@ export default function InviteMemberDialog({
 }: {
   onSuccess: () => void;
 }) {
-  const t = useTranslations("InviteDialog"); // 2. Hook Başlat
+  const t = useTranslations("InviteDialog");
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const { activeOrg } = useOrg();
 
-  // 3. Zod Şemasını İçeri Taşıdık (Çeviriye erişmek için)
   const inviteSchema = z.object({
     email: z.string().email(t("errors.invalidEmail")),
     role: z.enum(["admin", "staff", "owner"]),
@@ -66,7 +65,6 @@ export default function InviteMemberDialog({
 
     setLoading(true);
 
-    // FormData oluşturma
     const formData = new FormData();
     formData.append("email", values.email);
     formData.append("role", values.role);
@@ -76,14 +74,12 @@ export default function InviteMemberDialog({
       const result = await createInvitationAction(null, formData);
 
       if (result?.error) {
-        // Backend'den gelen hata mesajını basıyoruz.
-        // Eğer backend bir kod dönüyorsa burada t(result.error) yapabiliriz.
         toast.error(result.error);
       } else {
         toast.success(t("toasts.success"));
         setOpen(false);
         reset();
-        onSuccess(); // Tabloyu yenile
+        onSuccess();
       }
     } catch {
       toast.error(t("errors.generic"));
@@ -124,7 +120,6 @@ export default function InviteMemberDialog({
           <div className="grid gap-2">
             <Label>{t("labels.role")}</Label>
             <Select
-              // Type assertion ile "any" kullanımından kaçındık
               onValueChange={(val) =>
                 setValue("role", val as "admin" | "staff" | "owner")
               }

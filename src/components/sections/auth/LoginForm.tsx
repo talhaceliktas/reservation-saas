@@ -11,7 +11,6 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  // FormMessage'ı sildik, çünkü override etmemize izin vermiyor
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -40,7 +39,6 @@ export default function LoginForm({ onError }: LoginFormProps) {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-        {/* EMAIL ALANI */}
         <FormField
           control={form.control}
           name="email"
@@ -50,7 +48,6 @@ export default function LoginForm({ onError }: LoginFormProps) {
               <FormControl>
                 <Input placeholder={t("form.emailPlaceholder")} {...field} />
               </FormControl>
-              {/* Manuel Hata Mesajı Gösterimi */}
               {fieldState.error?.message && (
                 <p className="text-sm font-medium text-red-500">
                   {t(`errors.${fieldState.error.message}`)}
@@ -60,7 +57,6 @@ export default function LoginForm({ onError }: LoginFormProps) {
           )}
         />
 
-        {/* PASSWORD ALANI */}
         <FormField
           control={form.control}
           name="password"
@@ -74,7 +70,6 @@ export default function LoginForm({ onError }: LoginFormProps) {
                   {...field}
                 />
               </FormControl>
-              {/* Manuel Hata Mesajı Gösterimi */}
               {fieldState.error?.message && (
                 <p className="text-sm font-medium text-red-500">
                   {t(`errors.${fieldState.error.message}`)}

@@ -6,7 +6,6 @@ import InvitationEmail from "@/components/emails/InvitationEmail";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// Action'dan dönecek cevap tipi
 export type CreateInvitationState = {
   error?: string;
   success?: boolean;
@@ -17,32 +16,27 @@ export async function createInvitationAction(
   prevState: CreateInvitationState,
   formData: FormData
 ): Promise<CreateInvitationState> {
-  // FormData'dan güvenli veri çekimi
   const email = formData.get("email")?.toString();
   const role = formData.get("role")?.toString();
   const orgId = formData.get("orgId")?.toString();
 
-  // Basit validasyon
   if (!email || !role || !orgId) {
-    return { error: "Eksik bilgi gönderildi." };
+    return { error: "Missing required information." };
   }
 
-  // Rol tipi kontrolü (Type Guard)
   if (!["admin", "staff", "owner"].includes(role)) {
-    return { error: "Geçersiz rol tipi." };
+    return { error: "Invalid role type." };
   }
 
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
   const supabase = await createClient();
 
-  // 1. Yetki Kontrolü
   const {
     data: { user },
   } = await supabase.auth.getUser();
 
-  if (!user) return { error: "Oturum açmanız gerekiyor." };
+  if (!user) return { error: "Authentication required." };
 
-  // 2. Profil ve Organizasyon Bilgisi
   const { data: inviterProfile } = await supabase
     .from("profiles")
     .select("full_name")
@@ -55,15 +49,14 @@ export async function createInvitationAction(
     .eq("id", orgId)
     .single();
 
-  if (!org) return { error: "Organizasyon bulunamadı." };
+  if (!org) return { error: "Organization not found." };
 
-  // 3. Veritabanına Kayıt
   const { data: invitation, error: dbError } = await supabase
     .from("invitations")
     .insert({
       organization_id: orgId,
       email: email,
-      role: role, // Artık string değil, enum uyumlu
+      role: role,
       invited_by: user.id,
     })
     .select("token")
@@ -71,33 +64,31 @@ export async function createInvitationAction(
 
   if (dbError) {
     if (dbError.code === "23505") {
-      return { error: "Bu e-posta zaten davet edilmiş." };
+      return { error: "This email has already been invited." };
     }
     return { error: dbError.message };
   }
 
-  // 4. E-Posta Gönderimi
   try {
-    const inviteLink = `${baseUrl}/tr/join?token=${invitation.token}`;
+    const inviteLink = `${baseUrl}/join?token=${invitation.token}`;
 
     await resend.emails.send({
       from: "BookIt <onboarding@resend.dev>",
       to: email,
-      subject: `${inviterProfile?.full_name} sizi ${org.name} ekibine davet etti`,
+      subject: `${inviterProfile?.full_name} invited you to join ${org.name}`,
       react: InvitationEmail({
         orgName: org.name,
-        inviterName: inviterProfile?.full_name || "Bir yönetici",
+        inviterName: inviterProfile?.full_name || "An administrator",
         role: role,
         inviteLink: inviteLink,
       }),
     });
 
-    return { success: true, message: "Davetiye gönderildi!" };
+    return { success: true, message: "Invitation sent successfully!" };
   } catch (emailError) {
     console.error(emailError);
-    // Hata tipini güvenli kontrol etme
     const errorMessage =
-      emailError instanceof Error ? emailError.message : "Mail gönderilemedi";
-    return { error: `Veritabanına eklendi ama mail hatası: ${errorMessage}` };
+      emailError instanceof Error ? emailError.message : "Failed to send email";
+    return { error: `Added to database but email error: ${errorMessage}` };
   }
 }

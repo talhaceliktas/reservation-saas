@@ -13,7 +13,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-// Kendi oluşturduğumuz parçalar
 import LoginForm from "@/components/sections/auth/LoginForm";
 import RegisterForm from "@/components/sections/auth/RegisterForm";
 import GoogleAuthButton from "@/components/sections/auth/GoogleAuthButton";
@@ -22,20 +21,17 @@ export default function AuthPage() {
   const t = useTranslations("Auth");
   const [activeTab, setActiveTab] = useState("login");
 
-  // Global hata/başarı mesajı
   const [message, setMessage] = useState<{
     type: "success" | "error";
     text: string;
   } | null>(null);
 
-  // Mesaj gösterme yardımcıları
   const handleError = (text: string) => setMessage({ type: "error", text });
   const handleSuccess = (text: string) => setMessage({ type: "success", text });
   const clearMessage = () => setMessage(null);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-50 px-4 py-12 relative overflow-hidden">
-      {/* Arka Plan Blob Efektleri */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
         <div className="absolute top-[20%] left-[10%] w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
         <div className="absolute top-[20%] right-[10%] w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
@@ -59,7 +55,7 @@ export default function AuthPage() {
             value={activeTab}
             onValueChange={(val) => {
               setActiveTab(val);
-              clearMessage(); // Sekme değişince mesajı temizle
+              clearMessage();
             }}
             className="w-full"
           >
@@ -68,7 +64,6 @@ export default function AuthPage() {
               <TabsTrigger value="register">{t("tabs.register")}</TabsTrigger>
             </TabsList>
 
-            {/* Bildirim Alanı */}
             {message && (
               <div
                 className={`p-3 mb-4 text-sm rounded-md animate-in fade-in slide-in-from-top-2 ${
@@ -90,7 +85,6 @@ export default function AuthPage() {
             </TabsContent>
           </Tabs>
 
-          {/* Veya Ayırıcı */}
           <div className="relative my-6">
             <div className="absolute inset-0 flex items-center">
               <span className="w-full border-t border-slate-200" />
@@ -100,7 +94,6 @@ export default function AuthPage() {
             </div>
           </div>
 
-          {/* Google Butonu */}
           <GoogleAuthButton />
         </CardContent>
       </Card>

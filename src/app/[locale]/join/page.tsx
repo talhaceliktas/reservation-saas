@@ -1,5 +1,5 @@
 import { getInvitationDetails } from "@/actions/invitations";
-import { signOutAction } from "@/actions/auth"; // Yeni oluşturduğumuz action
+import { signOutAction } from "@/actions/auth";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -14,7 +14,7 @@ import { CheckCircle2, XCircle, LogIn } from "lucide-react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import JoinButton from "./JoinButton";
-import { getTranslations } from "next-intl/server"; // Server-side çeviri
+import { getTranslations } from "next-intl/server";
 
 export default async function JoinPage({
   searchParams,
@@ -25,23 +25,19 @@ export default async function JoinPage({
 }) {
   const { token } = await searchParams;
   const { locale } = await params;
-  const t = await getTranslations("JoinPage"); // Çeviri fonksiyonu
+  const t = await getTranslations("JoinPage");
 
-  // 1. Token yoksa anasayfaya at
   if (!token) {
     redirect(`/${locale}`);
   }
 
-  // 2. Davet detaylarını çek
   const { data: invite, error } = await getInvitationDetails(token);
 
-  // 3. Kullanıcı giriş yapmış mı kontrol et
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
 
-  // --- HATA DURUMU (Geçersiz/Süresi dolmuş) ---
   if (error || !invite) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4">
@@ -67,7 +63,6 @@ export default async function JoinPage({
   const isEmailMismatch =
     user && user.email?.toLowerCase() !== invite.email.toLowerCase();
 
-  // --- BAŞARILI DURUM ---
   return (
     <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4">
       <Card className="w-full max-w-md text-center shadow-xl border-slate-100">
@@ -77,7 +72,6 @@ export default async function JoinPage({
           </div>
           <CardTitle className="text-2xl">{t("valid.title")}</CardTitle>
           <CardDescription className="text-lg mt-2">
-            {/* Rich Text: Organizasyon ismini kalın yap */}
             {t.rich("valid.desc", {
               orgName: invite.organization.name,
               bold: (chunks) => (
@@ -101,14 +95,12 @@ export default async function JoinPage({
             </div>
           </div>
 
-          {/* DURUM 1: Kullanıcı Giriş Yapmamış */}
           {!user && (
             <div className="text-amber-700 text-sm bg-amber-50 p-3 rounded border border-amber-200">
               {t("warnings.unauthenticated")}
             </div>
           )}
 
-          {/* DURUM 2: Yanlış Hesapla Giriş Yapmış */}
           {isEmailMismatch && user.email && (
             <div className="text-red-600 text-sm bg-red-50 p-3 rounded border border-red-200 text-left">
               {t.rich("warnings.mismatch", {
@@ -122,7 +114,6 @@ export default async function JoinPage({
 
         <CardFooter className="flex flex-col gap-3">
           {!user ? (
-            // Giriş yapmamışsa -> Login (Geri dönüş linkiyle)
             <Link
               href={`/${locale}/login?next=/join?token=${token}`}
               className="w-full"
@@ -133,7 +124,6 @@ export default async function JoinPage({
               </Button>
             </Link>
           ) : isEmailMismatch ? (
-            // Yanlış hesapsa -> Çıkış yap butonu
             <form action={signOutAction} className="w-full">
               <Button
                 variant="outline"
@@ -144,7 +134,6 @@ export default async function JoinPage({
               </Button>
             </form>
           ) : (
-            // Doğru hesapsa -> Katıl Butonu
             <JoinButton token={token} locale={locale} />
           )}
 

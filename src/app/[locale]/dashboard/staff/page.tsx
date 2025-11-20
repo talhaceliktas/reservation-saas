@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { useStaffData } from "@/hooks/useStaffData"; // Dosya ismini kontrol et (useStaffData vs use-staff-data)
+import { useStaffData } from "@/hooks/useStaffData";
 import InviteMemberDialog from "@/dashboard/staff/InviteMemberDialog";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -25,7 +25,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Trash2, Shield, Clock } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 
-// Rol tipini manuel de tanımlayabiliriz veya hook'tan import edebiliriz
 type UserRole = "owner" | "admin" | "staff";
 
 export default function StaffPage() {

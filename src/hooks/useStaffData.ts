@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { useOrg } from "@/context/org-context";
 import { toast } from "sonner";
-import { useTranslations } from "next-intl"; // Çeviri eklendi
+import { useTranslations } from "next-intl";
 
 // Rol Tipleri
 type UserRole = "owner" | "admin" | "staff";
@@ -29,7 +29,7 @@ export type Invitation = {
 };
 
 export function useStaffData() {
-  const t = useTranslations("StaffPage.toasts"); // Çeviri hook'u
+  const t = useTranslations("StaffPage.toasts");
   const { activeOrg } = useOrg();
   const supabase = createClient();
 
