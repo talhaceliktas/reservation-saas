@@ -37,8 +37,11 @@ export function OrgProvider({ children }: { children: ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
 
   const supabase = createClient();
+
   const refreshOrgs = useCallback(async () => {
     try {
+      setIsLoading(true);
+
       const {
         data: { user },
       } = await supabase.auth.getUser();
@@ -59,10 +62,7 @@ export function OrgProvider({ children }: { children: ReactNode }) {
         )
         .eq("user_id", user.id);
 
-      if (error) {
-        console.error("Organizasyonlar çekilemedi:", error);
-        throw error;
-      }
+      if (error) throw error;
 
       if (data) {
         const rawData = data as unknown as OrgMemberResponse[];
@@ -70,17 +70,26 @@ export function OrgProvider({ children }: { children: ReactNode }) {
 
         setOrganizations(orgs);
 
-        setActiveOrg((current) => {
-          if (!current && orgs.length > 0) return orgs[0];
-          return current;
-        });
+        const savedOrgId = localStorage.getItem("selectedOrgId");
+        const foundOrg = orgs.find((o) => o.id === savedOrgId);
+
+        if (foundOrg) {
+          setActiveOrg(foundOrg);
+        } else if (orgs.length > 0) {
+          setActiveOrg(orgs[0]);
+        }
       }
     } catch (err) {
       console.error("Context Error:", err);
     } finally {
       setIsLoading(false);
     }
-  }, [supabase]); // Dependency array
+  }, []);
+
+  const handleSetActiveOrg = (org: Organization) => {
+    setActiveOrg(org);
+    localStorage.setItem("selectedOrgId", org.id);
+  };
 
   useEffect(() => {
     refreshOrgs();
@@ -88,7 +97,13 @@ export function OrgProvider({ children }: { children: ReactNode }) {
 
   return (
     <OrgContext.Provider
-      value={{ organizations, activeOrg, setActiveOrg, isLoading, refreshOrgs }}
+      value={{
+        organizations,
+        activeOrg,
+        setActiveOrg: handleSetActiveOrg,
+        isLoading,
+        refreshOrgs,
+      }}
     >
       {children}
     </OrgContext.Provider>

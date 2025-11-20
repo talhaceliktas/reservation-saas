@@ -142,7 +142,7 @@
       "customization": {
         "title": "Özel Markalama",
         "desc": "Rezervasyon sayfanızı logonuz, renkleriniz ve kurallarınızla özelleştirin. Müşterileriniz BookIt'i değil, sizi görür.",
-        "tag": "White Label",
+        "tag": "Renk Paleti",
         "themeColor": "Tema Rengi"
       }
     },
