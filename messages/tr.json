@@ -268,7 +268,8 @@
       "email": "Geçerli bir e-posta adresi giriniz.",
       "minPassword": "Şifre en az 8 karakter olmalıdır.",
       "generic": "Bir hata oluştu, lütfen tekrar deneyin.",
-      "emailInUse": "Bu e-posta adresi zaten kullanımda"
+      "emailInUse": "Bu e-posta adresi zaten kullanımda",
+      "provideBot": "Lütfen robot olmadığınızı doğrulayın."
     },
     "success": {
       "register": "Kayıt başarılı! Lütfen e-postanızı kontrol edin."

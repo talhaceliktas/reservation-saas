@@ -310,7 +310,8 @@
       "min2": "Muss mindestens 2 Zeichen lang sein",
       "min3": "Muss mindestens 3 Zeichen lang sein",
       "regex": "Nur Kleinbuchstaben, Zahlen und Bindestriche",
-      "generic": "Ein Fehler ist aufgetreten"
+      "generic": "Ein Fehler ist aufgetreten",
+      "provideBot": "Bitte bestätigen Sie, dass Sie kein Roboter sind."
     },
     "toasts": {
       "success": "Organisation erfolgreich erstellt!",

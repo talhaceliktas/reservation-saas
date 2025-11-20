@@ -268,7 +268,8 @@
       "email": "Please enter a valid email address.",
       "minPassword": "Password must be at least 8 characters long.",
       "generic": "An error occurred, please try again.",
-      "emailInUse": "This email address is already in use."
+      "emailInUse": "This email address is already in use.",
+      "provideBot": "Please verify that you are not a robot."
     },
     "success": {
       "register": "Registration successful! Please check your email."

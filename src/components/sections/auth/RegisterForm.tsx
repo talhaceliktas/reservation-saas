@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react"; // Eklendi
 import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -15,6 +16,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
+import { Turnstile } from "@marsidev/react-turnstile"; // Eklendi
 
 interface RegisterFormProps {
   onSuccess: (msg: string) => void;
@@ -27,6 +29,7 @@ export default function RegisterForm({
 }: RegisterFormProps) {
   const t = useTranslations("Auth");
   const { register, isLoading } = useAuth();
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
   const form = useForm<RegisterInput>({
     resolver: zodResolver(registerSchema),
@@ -34,11 +37,17 @@ export default function RegisterForm({
   });
 
   async function onSubmit(values: RegisterInput) {
-    const res = await register(values);
+    if (!captchaToken) {
+      onError(t("errors.provideBot"));
+      return;
+    }
+
+    const res = await register(values, captchaToken);
 
     if (res.success) {
       onSuccess(t("success.register"));
       form.reset();
+      setCaptchaToken(null);
     } else {
       if (res.error === "emailInUse") {
         form.setError("email", {
@@ -112,10 +121,21 @@ export default function RegisterForm({
           )}
         />
 
+        {/* Turnstile Bileşeni Eklendi */}
+        <div className="flex justify-center">
+          <Turnstile
+            siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+            onSuccess={(token) => setCaptchaToken(token)}
+            options={{
+              theme: "light",
+            }}
+          />
+        </div>
+
         <Button
           type="submit"
           className="w-full bg-green-600 hover:bg-green-700"
-          disabled={isLoading}
+          disabled={isLoading || !captchaToken} // Token yoksa buton disable
         >
           {isLoading ? (
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />

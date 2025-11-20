@@ -9,12 +9,15 @@ export function useAuth() {
   const supabase = createClient();
   const router = useRouter();
 
-  const login = async (data: LoginInput) => {
+  const login = async (data: LoginInput, captchaToken: string) => {
     setIsLoading(true);
     try {
       const { error } = await supabase.auth.signInWithPassword({
         email: data.email,
         password: data.password,
+        options: {
+          captchaToken: captchaToken,
+        },
       });
 
       if (error) throw error;
@@ -32,7 +35,7 @@ export function useAuth() {
     }
   };
 
-  const register = async (data: RegisterInput) => {
+  const register = async (data: RegisterInput, captchaToken: string) => {
     setIsLoading(true);
     try {
       const emailExists = await checkEmailExists(data.email);
@@ -45,6 +48,7 @@ export function useAuth() {
         email: data.email,
         password: data.password,
         options: {
+          captchaToken: captchaToken,
           data: {
             full_name: data.fullName,
           },

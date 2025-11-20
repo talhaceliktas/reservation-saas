@@ -271,7 +271,8 @@
       "email": "Veuillez entrer une adresse e-mail valide.",
       "minPassword": "Le mot de passe doit contenir au moins 8 caractères.",
       "generic": "Une erreur s'est produite, veuillez réessayer.",
-      "emailInUse": "Cette adresse e-mail est déjà utilisée."
+      "emailInUse": "Cette adresse e-mail est déjà utilisée.",
+      "provideBot": "Veuillez vérifier que vous n'êtes pas un robot."
     },
     "success": {
       "register": "Inscription réussie ! Veuillez vérifier vos e-mails."

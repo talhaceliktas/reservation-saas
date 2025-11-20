@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react"; // Eklendi
 import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -15,6 +16,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
+import { Turnstile } from "@marsidev/react-turnstile"; // Eklendi
 
 interface LoginFormProps {
   onError: (msg: string) => void;
@@ -23,6 +25,7 @@ interface LoginFormProps {
 export default function LoginForm({ onError }: LoginFormProps) {
   const t = useTranslations("Auth");
   const { login, isLoading } = useAuth();
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null); // Token state
 
   const form = useForm<LoginInput>({
     resolver: zodResolver(loginSchema),
@@ -30,9 +33,19 @@ export default function LoginForm({ onError }: LoginFormProps) {
   });
 
   async function onSubmit(values: LoginInput) {
-    const res = await login(values);
+    // Captcha kontrolü
+    if (!captchaToken) {
+      onError(t("errors.provideBot")); // İstenilen hata mesajı
+      return;
+    }
+
+    // Token login fonksiyonuna iletiliyor
+    const res = await login(values, captchaToken);
+
     if (!res.success) {
       onError(t("errors.generic"));
+      // Başarısız olursa yeni token almak gerekebilir, Turnstile bunu genelde kendi yönetir
+      // ama manuel sıfırlama gerekirse ref kullanılabilir.
     }
   }
 
@@ -79,10 +92,21 @@ export default function LoginForm({ onError }: LoginFormProps) {
           )}
         />
 
+        {/* Turnstile Bileşeni Eklendi */}
+        <div className="flex justify-center">
+          <Turnstile
+            siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+            onSuccess={(token) => setCaptchaToken(token)}
+            options={{
+              theme: "light",
+            }}
+          />
+        </div>
+
         <Button
           type="submit"
           className="w-full bg-blue-600 hover:bg-blue-700"
-          disabled={isLoading}
+          disabled={isLoading || !captchaToken} // Token yoksa buton pasif
         >
           {isLoading ? (
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />

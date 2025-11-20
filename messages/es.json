@@ -268,7 +268,8 @@
       "email": "Por favor, introduce un correo electrónico válido.",
       "minPassword": "La contraseña debe tener al menos 8 caracteres.",
       "generic": "Ocurrió un error, por favor intenta de nuevo.",
-      "emailInUse": "Este correo electrónico ya está en uso."
+      "emailInUse": "Este correo electrónico ya está en uso.",
+      "provideBot": "Por favor, verifique que no es un robot."
     },
     "success": {
       "register": "¡Registro exitoso! Por favor verifica tu correo."
