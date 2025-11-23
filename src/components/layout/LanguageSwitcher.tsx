@@ -8,6 +8,7 @@ import {
   DropdownMenuTrigger,
 } from "../../components/ui/dropdown-menu";
 import { Button } from "../../components/ui/button";
+import Image from "next/image";
 
 export default function LanguageSwitcher({
   currentLocale,
@@ -17,31 +18,35 @@ export default function LanguageSwitcher({
   const router = useRouter();
   const pathname = usePathname();
 
-  // Diller ve Bayraklar (Emoji olarak en hafifi)
+  // Languages with flag images from flagcdn.com
   const languages = [
-    { code: "tr", name: "Türkçe", flag: "🇹🇷" },
-    { code: "en", name: "English", flag: "🇺🇸" },
-    { code: "es", name: "Español", flag: "🇪🇸" },
-    { code: "de", name: "Deutsch", flag: "🇩🇪" },
-    { code: "fr", name: "Français", flag: "🇫🇷" },
+    { code: "tr", name: "Türkçe", flagCode: "tr" },
+    { code: "en", name: "English", flagCode: "gb" },
+    { code: "es", name: "Español", flagCode: "es" },
+    { code: "de", name: "Deutsch", flagCode: "de" },
+    { code: "fr", name: "Français", flagCode: "fr" },
   ];
 
   const switchLanguage = (newLocale: string) => {
-    // Mevcut yolu yeni dil koduyla değiştir
-    // Örn: /tr/about -> /fr/about
     const newPath = pathname.replace(`/${currentLocale}`, `/${newLocale}`);
     router.push(newPath);
   };
 
-  // Şu anki dilin bayrağını bul
-  const currentFlag =
-    languages.find((l) => l.code === currentLocale)?.flag || "🌐";
+  const currentLanguage = languages.find((l) => l.code === currentLocale);
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="icon" className="rounded-full w-10 h-10">
-          <span className="text-lg">{currentFlag}</span>
+          {currentLanguage && (
+            <Image
+              src={`https://flagcdn.com/w40/${currentLanguage.flagCode}.png`}
+              alt={currentLanguage.name}
+              width={24}
+              height={18}
+              className="rounded-sm"
+            />
+          )}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
@@ -49,9 +54,15 @@ export default function LanguageSwitcher({
           <DropdownMenuItem
             key={lang.code}
             onClick={() => switchLanguage(lang.code)}
-            className="cursor-pointer gap-2"
+            className="cursor-pointer gap-3"
           >
-            <span className="text-lg">{lang.flag}</span>
+            <Image
+              src={`https://flagcdn.com/w40/${lang.flagCode}.png`}
+              alt={lang.name}
+              width={24}
+              height={18}
+              className="rounded-sm"
+            />
             <span>{lang.name}</span>
           </DropdownMenuItem>
         ))}

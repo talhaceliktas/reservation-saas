@@ -3,6 +3,8 @@ import { getMessages, setRequestLocale } from "next-intl/server";
 import { ReactNode } from "react";
 import { routing } from "@/i18n/routing";
 import "../../globals.css";
+import Navbar from "../../components/layout/Navbar";
+import Footer from "../../components/layout/Footer";
 
 type Props = {
   children: ReactNode;
@@ -24,7 +26,9 @@ export default async function RootLayout({ children, params }: Props) {
     <html lang={locale}>
       <body>
         <NextIntlClientProvider messages={messages}>
+          <Navbar locale={locale} />
           {children}
+          <Footer locale={locale} />
         </NextIntlClientProvider>
       </body>
     </html>
