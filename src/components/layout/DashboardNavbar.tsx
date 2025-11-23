@@ -5,7 +5,7 @@ import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
-import { Bell, Menu, LogOut, User as UserIcon } from "lucide-react";
+import { Bell, LogOut, User as UserIcon } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslations } from "next-intl";
 import {
@@ -18,6 +18,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import useFetchProfile from "../../hooks/useFetchProfile";
+
+import MobileSidebar from "../sections/dashboard/layout/MobileSidebar";
 
 export default function DashboardNavbar({ locale }: { locale: string }) {
   const t = useTranslations("Navbar");
@@ -53,13 +55,9 @@ export default function DashboardNavbar({ locale }: { locale: string }) {
   return (
     <header className="h-16 border-b border-slate-200 bg-white w-full flex items-center px-4 md:px-8 justify-between sticky top-0 z-30">
       <div className="flex items-center gap-4">
-        <Button
-          variant="ghost"
-          size="icon"
-          className="lg:hidden text-slate-500"
-        >
-          <Menu size={20} />
-        </Button>
+        <div className="lg:hidden">
+          <MobileSidebar locale={locale} />
+        </div>
       </div>
 
       <div className="flex items-center gap-3">

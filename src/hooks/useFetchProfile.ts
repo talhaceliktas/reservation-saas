@@ -25,9 +25,13 @@ export default function useFetchProfile(supabase: SupabaseClient) {
           .single();
 
         setProfile({
-          full_name: profileData?.full_name || "İsimsiz Kullanıcı",
+          full_name:
+            profileData?.full_name ||
+            user.user_metadata?.full_name ||
+            "İsimsiz Kullanıcı",
           email: user.email || "",
-          avatar_url: profileData?.avatar_url || null,
+          avatar_url:
+            profileData?.avatar_url || user.user_metadata?.avatar_url || null,
         });
       }
       setLoading(false);

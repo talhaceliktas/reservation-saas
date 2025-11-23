@@ -9,6 +9,7 @@ import {
   ReactNode,
 } from "react";
 import { createClient } from "@/lib/supabase/client";
+import { useRouter } from "next/navigation";
 
 type Organization = {
   id: string;
@@ -35,6 +36,7 @@ export function OrgProvider({ children }: { children: ReactNode }) {
   const [organizations, setOrganizations] = useState<Organization[]>([]);
   const [activeOrg, setActiveOrg] = useState<Organization | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const router = useRouter();
 
   const [supabase] = useState(() => createClient());
 
@@ -92,6 +94,7 @@ export function OrgProvider({ children }: { children: ReactNode }) {
     setActiveOrg(org);
     localStorage.setItem("selectedOrgId", org.id);
     document.cookie = `selectedOrgId=${org.id}; path=/; max-age=31536000; SameSite=Lax`;
+    router.refresh();
   };
 
   useEffect(() => {
