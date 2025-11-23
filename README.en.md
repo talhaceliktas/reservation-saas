@@ -8,13 +8,13 @@
 [![Supabase](https://img.shields.io/badge/Supabase-Database-3ecf8e?style=for-the-badge&logo=supabase)](https://supabase.com/)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
-[🇹🇷 Türkçe](README.tr.md) | [🇬🇧 English](README.md) | [🇩🇪 Deutsch](README.de.md) | [🇪🇸 Español](README.es.md) | [🇫🇷 Français](README.fr.md)
+[🇹🇷 Türkçe](README.md) | [🇬🇧 English](README.en.md) | [🇩🇪 Deutsch](README.de.md) | [🇪🇸 Español](README.es.md) | [🇫🇷 Français](README.fr.md)
 
 </div>
 
 ---
 
-## BookIt - Reservation SaaS Platform
+## 🇬🇧 BookIt - Reservation SaaS Platform
 
 BookIt is a modern, full-stack reservation and appointment management platform designed for small and medium-sized businesses. It allows businesses to manage their services, staff, and appointments while providing a seamless booking experience for their customers.
 
