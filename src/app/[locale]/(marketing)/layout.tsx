@@ -15,7 +15,7 @@ export default async function MarketingLayout({
     <>
       <Navbar locale={locale} />
       {children}
-      <Footer />
+      <Footer locale={locale} />
     </>
   );
 }
