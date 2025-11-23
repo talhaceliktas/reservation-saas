@@ -433,6 +433,49 @@
     }
   },
 
+  "ServicesPage": {
+    "title": "Hizmetler",
+    "subtitle": "Hizmetlerinizi ve fiyatlandırmanızı yönetin.",
+    "addService": "Hizmet Ekle",
+    "editService": "Hizmet Düzenle",
+    "deleteService": "Hizmet Sil",
+    "form": {
+      "name": "Hizmet Adı",
+      "description": "Açıklama",
+      "duration": "Süre (dk)",
+      "price": "Fiyat",
+      "currency": "Para Birimi",
+      "save": "Değişiklikleri Kaydet",
+      "create": "Hizmet Oluştur",
+      "cancel": "İptal",
+      "placeholders": {
+        "name": "Örn: Saç Kesimi",
+        "description": "Hizmet açıklaması...",
+        "selectCurrency": "Para birimi seçin"
+      }
+    },
+    "table": {
+      "name": "Hizmet Adı",
+      "description": "Açıklama",
+      "duration": "Süre",
+      "price": "Fiyat",
+      "actions": "İşlemler",
+      "empty": "Henüz hizmet eklenmemiş."
+    },
+    "toasts": {
+      "created": "Hizmet başarıyla oluşturuldu",
+      "updated": "Hizmet başarıyla güncellendi",
+      "deleted": "Hizmet başarıyla silindi",
+      "error": "Bir hata oluştu"
+    },
+    "validation": {
+      "nameMin": "İsim en az 2 karakter olmalıdır.",
+      "durationMin": "Süre en az 1 dakika olmalıdır.",
+      "priceMin": "Fiyat pozitif bir sayı olmalıdır.",
+      "currencyRequired": "Para birimi zorunludur."
+    }
+  },
+
   "NotFound": {
     "code": "404",
     "title": "Sayfa Bulunamadı",

@@ -433,6 +433,49 @@
     }
   },
 
+  "ServicesPage": {
+    "title": "Dienstleistungen",
+    "subtitle": "Verwalten Sie Ihre Dienstleistungen und Preise.",
+    "addService": "Dienstleistung hinzufügen",
+    "editService": "Dienstleistung bearbeiten",
+    "deleteService": "Dienstleistung löschen",
+    "form": {
+      "name": "Name",
+      "description": "Beschreibung",
+      "duration": "Dauer (Min)",
+      "price": "Preis",
+      "currency": "Währung",
+      "save": "Änderungen speichern",
+      "create": "Dienstleistung erstellen",
+      "cancel": "Abbrechen",
+      "placeholders": {
+        "name": "z.B. Haarschnitt",
+        "description": "Dienstleistungsbeschreibung...",
+        "selectCurrency": "Währung wählen"
+      }
+    },
+    "table": {
+      "name": "Name",
+      "description": "Beschreibung",
+      "duration": "Dauer",
+      "price": "Preis",
+      "actions": "Aktionen",
+      "empty": "Keine Dienstleistungen gefunden."
+    },
+    "toasts": {
+      "created": "Dienstleistung erfolgreich erstellt",
+      "updated": "Dienstleistung erfolgreich aktualisiert",
+      "deleted": "Dienstleistung erfolgreich gelöscht",
+      "error": "Etwas ist schief gelaufen"
+    },
+    "validation": {
+      "nameMin": "Name muss mindestens 2 Zeichen lang sein.",
+      "durationMin": "Dauer muss mindestens 1 Minute betragen.",
+      "priceMin": "Preis muss eine positive Zahl sein.",
+      "currencyRequired": "Währung ist erforderlich."
+    }
+  },
+
   "NotFound": {
     "code": "404",
     "title": "Seite nicht gefunden",

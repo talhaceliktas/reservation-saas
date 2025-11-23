@@ -36,7 +36,7 @@ export function OrgProvider({ children }: { children: ReactNode }) {
   const [activeOrg, setActiveOrg] = useState<Organization | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  const supabase = createClient();
+  const [supabase] = useState(() => createClient());
 
   const refreshOrgs = useCallback(async () => {
     try {
@@ -75,8 +75,10 @@ export function OrgProvider({ children }: { children: ReactNode }) {
 
         if (foundOrg) {
           setActiveOrg(foundOrg);
+          document.cookie = `selectedOrgId=${foundOrg.id}; path=/; max-age=31536000; SameSite=Lax`;
         } else if (orgs.length > 0) {
           setActiveOrg(orgs[0]);
+          document.cookie = `selectedOrgId=${orgs[0].id}; path=/; max-age=31536000; SameSite=Lax`;
         }
       }
     } catch (err) {
@@ -84,11 +86,12 @@ export function OrgProvider({ children }: { children: ReactNode }) {
     } finally {
       setIsLoading(false);
     }
-  }, []);
+  }, [supabase]);
 
   const handleSetActiveOrg = (org: Organization) => {
     setActiveOrg(org);
     localStorage.setItem("selectedOrgId", org.id);
+    document.cookie = `selectedOrgId=${org.id}; path=/; max-age=31536000; SameSite=Lax`;
   };
 
   useEffect(() => {

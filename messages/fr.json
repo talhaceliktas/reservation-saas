@@ -436,6 +436,49 @@
     }
   },
 
+  "ServicesPage": {
+    "title": "Services",
+    "subtitle": "Gérez vos services et tarifs.",
+    "addService": "Ajouter un service",
+    "editService": "Modifier le service",
+    "deleteService": "Supprimer le service",
+    "form": {
+      "name": "Nom",
+      "description": "Description",
+      "duration": "Durée (min)",
+      "price": "Prix",
+      "currency": "Devise",
+      "save": "Enregistrer les modifications",
+      "create": "Créer un service",
+      "cancel": "Annuler",
+      "placeholders": {
+        "name": "ex. Coupe de cheveux",
+        "description": "Description du service...",
+        "selectCurrency": "Sélectionner la devise"
+      }
+    },
+    "table": {
+      "name": "Nom",
+      "description": "Description",
+      "duration": "Durée",
+      "price": "Prix",
+      "actions": "Actions",
+      "empty": "Aucun service trouvé."
+    },
+    "toasts": {
+      "created": "Service créé avec succès",
+      "updated": "Service mis à jour avec succès",
+      "deleted": "Service supprimé avec succès",
+      "error": "Une erreur s'est produite"
+    },
+    "validation": {
+      "nameMin": "Le nom doit contenir au moins 2 caractères.",
+      "durationMin": "La durée doit être d'au moins 1 minute.",
+      "priceMin": "Le prix doit être un nombre positif.",
+      "currencyRequired": "La devise est requise."
+    }
+  },
+
   "NotFound": {
     "code": "404",
     "title": "Page non trouvée",

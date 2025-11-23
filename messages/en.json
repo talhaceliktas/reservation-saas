@@ -433,6 +433,49 @@
     }
   },
 
+  "ServicesPage": {
+    "title": "Services",
+    "subtitle": "Manage your services and pricing.",
+    "addService": "Add Service",
+    "editService": "Edit Service",
+    "deleteService": "Delete Service",
+    "form": {
+      "name": "Name",
+      "description": "Description",
+      "duration": "Duration (min)",
+      "price": "Price",
+      "currency": "Currency",
+      "save": "Save Changes",
+      "create": "Create Service",
+      "cancel": "Cancel",
+      "placeholders": {
+        "name": "e.g. Haircut",
+        "description": "Service description...",
+        "selectCurrency": "Select currency"
+      }
+    },
+    "table": {
+      "name": "Name",
+      "description": "Description",
+      "duration": "Duration",
+      "price": "Price",
+      "actions": "Actions",
+      "empty": "No services found."
+    },
+    "toasts": {
+      "created": "Service created successfully",
+      "updated": "Service updated successfully",
+      "deleted": "Service deleted successfully",
+      "error": "Something went wrong"
+    },
+    "validation": {
+      "nameMin": "Name must be at least 2 characters.",
+      "durationMin": "Duration must be at least 1 minute.",
+      "priceMin": "Price must be a positive number.",
+      "currencyRequired": "Currency is required."
+    }
+  },
+
   "NotFound": {
     "code": "404",
     "title": "Page Not Found",
