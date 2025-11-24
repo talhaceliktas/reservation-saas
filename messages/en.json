@@ -484,5 +484,25 @@
       "home": "Return to Home",
       "back": "Go Back"
     }
+  },
+  "Availability": {
+    "title": "Weekly Schedule",
+    "description": "Set your weekly availability for appointments.",
+    "save": "Save Changes",
+    "unavailable": "Unavailable",
+    "success": "Availability updated successfully",
+    "error": "Failed to update availability",
+    "validation": {
+      "startTimeBeforeEndTime": "Start time must be before end time"
+    },
+    "days": {
+      "sunday": "Sunday",
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday"
+    }
   }
 }

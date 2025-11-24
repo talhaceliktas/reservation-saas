@@ -484,5 +484,25 @@
       "home": "Volver al Inicio",
       "back": "Regresar"
     }
+  },
+  "Availability": {
+    "title": "Horario Semanal",
+    "description": "Establezca su disponibilidad semanal para citas.",
+    "save": "Guardar Cambios",
+    "unavailable": "No disponible",
+    "success": "Disponibilidad actualizada con éxito",
+    "error": "Error al actualizar la disponibilidad",
+    "validation": {
+      "startTimeBeforeEndTime": "La hora de inicio debe ser anterior a la hora de finalización"
+    },
+    "days": {
+      "sunday": "Domingo",
+      "monday": "Lunes",
+      "tuesday": "Martes",
+      "wednesday": "Miércoles",
+      "thursday": "Jueves",
+      "friday": "Viernes",
+      "saturday": "Sábado"
+    }
   }
 }

@@ -484,5 +484,25 @@
       "home": "Ana Sayfaya Dön",
       "back": "Geri Git"
     }
+  },
+  "Availability": {
+    "title": "Haftalık Program",
+    "description": "Randevular için haftalık müsaitliğinizi ayarlayın.",
+    "save": "Değişiklikleri Kaydet",
+    "unavailable": "Müsait Değil",
+    "success": "Müsaitlik durumu başarıyla güncellendi",
+    "error": "Müsaitlik durumu güncellenemedi",
+    "validation": {
+      "startTimeBeforeEndTime": "Başlangıç saati bitiş saatinden önce olmalıdır"
+    },
+    "days": {
+      "sunday": "Pazar",
+      "monday": "Pazartesi",
+      "tuesday": "Salı",
+      "wednesday": "Çarşamba",
+      "thursday": "Perşembe",
+      "friday": "Cuma",
+      "saturday": "Cumartesi"
+    }
   }
 }

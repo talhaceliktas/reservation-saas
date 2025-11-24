@@ -484,5 +484,25 @@
       "home": "Zur Startseite",
       "back": "Zurück"
     }
+  },
+  "Availability": {
+    "title": "Wochenplan",
+    "description": "Legen Sie Ihre wöchentliche Verfügbarkeit für Termine fest.",
+    "save": "Änderungen speichern",
+    "unavailable": "Nicht verfügbar",
+    "success": "Verfügbarkeit erfolgreich aktualisiert",
+    "error": "Fehler beim Aktualisieren der Verfügbarkeit",
+    "validation": {
+      "startTimeBeforeEndTime": "Die Startzeit muss vor der Endzeit liegen"
+    },
+    "days": {
+      "sunday": "Sonntag",
+      "monday": "Montag",
+      "tuesday": "Dienstag",
+      "wednesday": "Mittwoch",
+      "thursday": "Donnerstag",
+      "friday": "Freitag",
+      "saturday": "Samstag"
+    }
   }
 }
