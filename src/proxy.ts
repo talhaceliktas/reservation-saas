@@ -9,7 +9,7 @@ const intlMiddleware = createMiddleware({
   localePrefix: "always",
 });
 
-export default async function middleware(request: NextRequest) {
+export default async function proxy(request: NextRequest) {
   const response = intlMiddleware(request);
 
   return await updateSession(request, response);
