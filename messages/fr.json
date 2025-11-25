@@ -507,5 +507,85 @@
       "friday": "Vendredi",
       "saturday": "Samedi"
     }
+  },
+  "OrganizationPage": {
+    "hero": {
+      "verified": "Entreprise Vérifiée",
+      "description": "Découvrez des services premium conçus spécialement pour vous. Réservez votre rendez-vous en ligne avec nos meilleurs professionnels.",
+      "reviews": "Avis",
+      "openToday": "Ouvert aujourd’hui : 09:00 - 18:00",
+      "bookAppointment": "Prendre un Rendez-vous",
+      "location": "Istanbul, Turquie"
+    },
+    "services": {
+      "title": "Nos Services Premium",
+      "description": "Choisissez parmi notre large gamme de services professionnels. Nous garantissons la meilleure qualité et la satisfaction de chaque client.",
+      "durationMin": "min",
+      "bookNow": "Réserver Maintenant",
+      "noServices": "Aucun service disponible",
+      "checkBack": "Veuillez revenir plus tard."
+    },
+    "about": {
+      "title": "À Propos de Nous",
+      "description": "Nous nous engageons à fournir la meilleure expérience de service. Notre équipe de professionnels est là pour vous aider à être au meilleur de vous-même."
+    },
+    "contact": {
+      "title": "Contact"
+    },
+    "hours": {
+      "title": "Heures d’Ouverture",
+      "monFri": "Lun - Ven",
+      "sat": "Samedi",
+      "sun": "Dimanche",
+      "closed": "Fermé"
+    }
+  },
+  "BookingWizard": {
+    "steps": {
+      "service": "Choisir un Service",
+      "staff": "Choisir un Professionnel",
+      "datetime": "Choisir la Date & l’Heure",
+      "details": "Vos Informations",
+      "confirmed": "Rendez-vous Confirmé",
+      "progress": "Étape {step} sur 5"
+    },
+    "staff": {
+      "role": "Professionnel"
+    },
+    "datetime": {
+      "availableSlots": "Créneaux Disponibles",
+      "noSlots": "Aucun créneau disponible pour cette date."
+    },
+    "summary": {
+      "title": "Résumé du Rendez-vous",
+      "service": "Service :",
+      "professional": "Professionnel :",
+      "date": "Date :",
+      "time": "Heure :",
+      "price": "Prix :"
+    },
+    "form": {
+      "fullName": "Nom Complet",
+      "email": "E-mail",
+      "phone": "Numéro de Téléphone"
+    },
+    "success": {
+      "title": "Rendez-vous Confirmé !",
+      "description": "Votre rendez-vous a été planifié avec succès. Nous avons envoyé un e-mail de confirmation à {email}.",
+      "bookAnother": "Prendre un Nouveau Rendez-vous"
+    },
+    "actions": {
+      "back": "Retour",
+      "continue": "Continuer",
+      "confirm": "Confirmer le Rendez-vous"
+    },
+    "errors": {
+      "loadStaff": "Impossible de charger les professionnels",
+      "loadSlots": "Impossible de charger les créneaux horaires",
+      "bookError": "Échec lors de la prise de rendez-vous. Veuillez réessayer."
+    },
+    "toasts": {
+      "success": "Rendez-vous réservé avec succès !"
+    }
   }
 }

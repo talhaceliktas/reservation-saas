@@ -504,5 +504,85 @@
       "friday": "Friday",
       "saturday": "Saturday"
     }
+  },
+  "OrganizationPage": {
+    "hero": {
+      "verified": "Verified Business",
+      "description": "Experience premium services tailored just for you. Book your appointment online with our top-rated professionals.",
+      "reviews": "Reviews",
+      "openToday": "Open today: 09:00 - 18:00",
+      "bookAppointment": "Book Appointment",
+      "location": "Istanbul, Turkey"
+    },
+    "services": {
+      "title": "Our Premium Services",
+      "description": "Choose from our wide range of professional services. We ensure the best quality and satisfaction for every customer.",
+      "durationMin": "min",
+      "bookNow": "Book Now",
+      "noServices": "No services available",
+      "checkBack": "Please check back later."
+    },
+    "about": {
+      "title": "About Us",
+      "description": "We are dedicated to providing the best service experience. Our team of professionals is here to help you look and feel your best."
+    },
+    "contact": {
+      "title": "Contact"
+    },
+    "hours": {
+      "title": "Opening Hours",
+      "monFri": "Mon - Fri",
+      "sat": "Saturday",
+      "sun": "Sunday",
+      "closed": "Closed"
+    }
+  },
+  "BookingWizard": {
+    "steps": {
+      "service": "Select Service",
+      "staff": "Choose Professional",
+      "datetime": "Select Date & Time",
+      "details": "Your Details",
+      "confirmed": "Booking Confirmed",
+      "progress": "Step {step} of 5"
+    },
+    "staff": {
+      "role": "Professional"
+    },
+    "datetime": {
+      "availableSlots": "Available Slots",
+      "noSlots": "No slots available for this date."
+    },
+    "summary": {
+      "title": "Booking Summary",
+      "service": "Service:",
+      "professional": "Professional:",
+      "date": "Date:",
+      "time": "Time:",
+      "price": "Price:"
+    },
+    "form": {
+      "fullName": "Full Name",
+      "email": "Email",
+      "phone": "Phone Number"
+    },
+    "success": {
+      "title": "Booking Confirmed!",
+      "description": "Your appointment has been successfully scheduled. We have sent a confirmation email to {email}.",
+      "bookAnother": "Book Another Appointment"
+    },
+    "actions": {
+      "back": "Back",
+      "continue": "Continue",
+      "confirm": "Confirm Booking"
+    },
+    "errors": {
+      "loadStaff": "Failed to load staff members",
+      "loadSlots": "Failed to load time slots",
+      "bookError": "Failed to book appointment. Please try again."
+    },
+    "toasts": {
+      "success": "Appointment booked successfully!"
+    }
   }
 }

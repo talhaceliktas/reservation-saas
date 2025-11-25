@@ -504,5 +504,85 @@
       "friday": "Viernes",
       "saturday": "Sábado"
     }
+  },
+  "OrganizationPage": {
+    "hero": {
+      "verified": "Negocio Verificado",
+      "description": "Experimente servicios premium hechos especialmente para usted. Reserve su cita en línea con nuestros profesionales mejor valorados.",
+      "reviews": "Reseñas",
+      "openToday": "Abierto hoy: 09:00 - 18:00",
+      "bookAppointment": "Reservar Cita",
+      "location": "Estambul, Turquía"
+    },
+    "services": {
+      "title": "Nuestros Servicios Premium",
+      "description": "Elija entre nuestra amplia variedad de servicios profesionales. Garantizamos la mejor calidad y satisfacción para cada cliente.",
+      "durationMin": "min",
+      "bookNow": "Reservar Ahora",
+      "noServices": "No hay servicios disponibles",
+      "checkBack": "Por favor, vuelva más tarde."
+    },
+    "about": {
+      "title": "Sobre Nosotros",
+      "description": "Estamos dedicados a ofrecer la mejor experiencia de servicio. Nuestro equipo de profesionales está aquí para ayudarle a lucir y sentirse lo mejor posible."
+    },
+    "contact": {
+      "title": "Contacto"
+    },
+    "hours": {
+      "title": "Horario de Atención",
+      "monFri": "Lun - Vie",
+      "sat": "Sábado",
+      "sun": "Domingo",
+      "closed": "Cerrado"
+    }
+  },
+  "BookingWizard": {
+    "steps": {
+      "service": "Seleccionar Servicio",
+      "staff": "Elegir Profesional",
+      "datetime": "Seleccionar Fecha y Hora",
+      "details": "Tus Datos",
+      "confirmed": "Reserva Confirmada",
+      "progress": "Paso {step} de 5"
+    },
+    "staff": {
+      "role": "Profesional"
+    },
+    "datetime": {
+      "availableSlots": "Horarios Disponibles",
+      "noSlots": "No hay horarios disponibles para esta fecha."
+    },
+    "summary": {
+      "title": "Resumen de la Reserva",
+      "service": "Servicio:",
+      "professional": "Profesional:",
+      "date": "Fecha:",
+      "time": "Hora:",
+      "price": "Precio:"
+    },
+    "form": {
+      "fullName": "Nombre Completo",
+      "email": "Correo Electrónico",
+      "phone": "Número de Teléfono"
+    },
+    "success": {
+      "title": "¡Reserva Confirmada!",
+      "description": "Tu cita ha sido programada exitosamente. Hemos enviado un correo de confirmación a {email}.",
+      "bookAnother": "Reservar Otra Cita"
+    },
+    "actions": {
+      "back": "Atrás",
+      "continue": "Continuar",
+      "confirm": "Confirmar Reserva"
+    },
+    "errors": {
+      "loadStaff": "No se pudieron cargar los profesionales",
+      "loadSlots": "No se pudieron cargar los horarios",
+      "bookError": "No se pudo completar la reserva. Inténtelo nuevamente."
+    },
+    "toasts": {
+      "success": "¡Cita reservada con éxito!"
+    }
   }
 }

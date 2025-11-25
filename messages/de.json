@@ -504,5 +504,85 @@
       "friday": "Freitag",
       "saturday": "Samstag"
     }
+  },
+  "OrganizationPage": {
+    "hero": {
+      "verified": "Verifiziertes Unternehmen",
+      "description": "Erleben Sie Premium-Dienstleistungen, die speziell für Sie entwickelt wurden. Buchen Sie Ihren Termin online mit unseren topbewerteten Fachkräften.",
+      "reviews": "Bewertungen",
+      "openToday": "Heute geöffnet: 09:00 - 18:00",
+      "bookAppointment": "Termin Buchen",
+      "location": "Istanbul, Türkei"
+    },
+    "services": {
+      "title": "Unsere Premium-Dienstleistungen",
+      "description": "Wählen Sie aus unserem breiten Angebot an professionellen Dienstleistungen. Wir garantieren höchste Qualität und Kundenzufriedenheit.",
+      "durationMin": "Min",
+      "bookNow": "Jetzt Buchen",
+      "noServices": "Keine Dienstleistungen verfügbar",
+      "checkBack": "Bitte versuchen Sie es später erneut."
+    },
+    "about": {
+      "title": "Über Uns",
+      "description": "Wir sind bestrebt, das beste Serviceerlebnis zu bieten. Unser professionelles Team hilft Ihnen dabei, sich gut zu fühlen und gut auszusehen."
+    },
+    "contact": {
+      "title": "Kontakt"
+    },
+    "hours": {
+      "title": "Öffnungszeiten",
+      "monFri": "Mo - Fr",
+      "sat": "Samstag",
+      "sun": "Sonntag",
+      "closed": "Geschlossen"
+    }
+  },
+  "BookingWizard": {
+    "steps": {
+      "service": "Dienstleistung Wählen",
+      "staff": "Fachkraft Wählen",
+      "datetime": "Datum & Uhrzeit Wählen",
+      "details": "Ihre Angaben",
+      "confirmed": "Termin Bestätigt",
+      "progress": "Schritt {step} von 5"
+    },
+    "staff": {
+      "role": "Fachkraft"
+    },
+    "datetime": {
+      "availableSlots": "Verfügbare Zeiten",
+      "noSlots": "Keine verfügbaren Zeiten für dieses Datum."
+    },
+    "summary": {
+      "title": "Terminübersicht",
+      "service": "Dienstleistung:",
+      "professional": "Fachkraft:",
+      "date": "Datum:",
+      "time": "Uhrzeit:",
+      "price": "Preis:"
+    },
+    "form": {
+      "fullName": "Vollständiger Name",
+      "email": "E-Mail",
+      "phone": "Telefonnummer"
+    },
+    "success": {
+      "title": "Termin Bestätigt!",
+      "description": "Ihr Termin wurde erfolgreich geplant. Eine Bestätigungs-E-Mail wurde an {email} gesendet.",
+      "bookAnother": "Weiteren Termin Buchen"
+    },
+    "actions": {
+      "back": "Zurück",
+      "continue": "Weiter",
+      "confirm": "Termin Bestätigen"
+    },
+    "errors": {
+      "loadStaff": "Fachkräfte konnten nicht geladen werden",
+      "loadSlots": "Zeitfenster konnten nicht geladen werden",
+      "bookError": "Der Termin konnte nicht gebucht werden. Bitte versuchen Sie es erneut."
+    },
+    "toasts": {
+      "success": "Termin erfolgreich gebucht!"
+    }
   }
 }

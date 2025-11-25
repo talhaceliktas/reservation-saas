@@ -18,6 +18,7 @@ import {
 import BookingWizard from "@/components/booking/BookingWizard";
 import { notFound } from "next/navigation";
 import { Clock, Star, MapPin, Phone, Mail } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 
 interface PageProps {
   params: Promise<{
@@ -29,6 +30,7 @@ interface PageProps {
 export default async function OrganizationPage({ params }: PageProps) {
   const { slug } = await params;
   const organization = await getOrganizationBySlug(slug);
+  const t = await getTranslations("OrganizationPage");
 
   if (!organization) {
     notFound();
@@ -53,26 +55,25 @@ export default async function OrganizationPage({ params }: PageProps) {
                   {organization.name}
                 </h1>
                 <Badge className="bg-blue-500/20 text-blue-200 hover:bg-blue-500/30 border-blue-500/50">
-                  Verified Business
+                  {t("hero.verified")}
                 </Badge>
               </div>
               <p className="text-lg text-slate-300 max-w-2xl">
-                Experience premium services tailored just for you. Book your
-                appointment online with our top-rated professionals.
+                {t("hero.description")}
               </p>
               <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm text-slate-400">
                 <div className="flex items-center gap-1">
                   <Star className="text-yellow-400 fill-yellow-400" size={16} />
-                  <span className="text-white font-medium">4.9</span> (120+
-                  Reviews)
+                  <span className="text-white font-medium">4.9</span> (120+{" "}
+                  {t("hero.reviews")})
                 </div>
                 <div className="flex items-center gap-1">
                   <MapPin size={16} />
-                  <span>Istanbul, Turkey</span>
+                  <span>{t("hero.location")}</span>
                 </div>
                 <div className="flex items-center gap-1">
                   <Clock size={16} />
-                  <span>Open today: 09:00 - 18:00</span>
+                  <span>{t("hero.openToday")}</span>
                 </div>
               </div>
             </div>
@@ -83,11 +84,13 @@ export default async function OrganizationPage({ params }: PageProps) {
                   size="lg"
                   className="bg-white text-blue-900 hover:bg-blue-50 font-semibold px-8 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
                 >
-                  Book Appointment
+                  {t("hero.bookAppointment")}
                 </Button>
               </DialogTrigger>
               <DialogContent className="sm:max-w-4xl p-0 overflow-hidden bg-transparent border-none shadow-none">
-                <DialogTitle className="sr-only">Book Appointment</DialogTitle>
+                <DialogTitle className="sr-only">
+                  {t("hero.bookAppointment")}
+                </DialogTitle>
                 <BookingWizard
                   organizationId={organization.id}
                   services={organization.services}
@@ -102,11 +105,10 @@ export default async function OrganizationPage({ params }: PageProps) {
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-slate-900 mb-4">
-            Our Premium Services
+            {t("services.title")}
           </h2>
           <p className="text-slate-500 max-w-2xl mx-auto">
-            Choose from our wide range of professional services. We ensure the
-            best quality and satisfaction for every customer.
+            {t("services.description")}
           </p>
         </div>
 
@@ -122,7 +124,7 @@ export default async function OrganizationPage({ params }: PageProps) {
                     variant="outline"
                     className="bg-blue-50 text-blue-700 border-blue-100"
                   >
-                    {service.duration} min
+                    {service.duration} {t("services.durationMin")}
                   </Badge>
                   <div className="text-2xl font-bold text-slate-900">
                     {service.price}{" "}
@@ -144,12 +146,12 @@ export default async function OrganizationPage({ params }: PageProps) {
                 <Dialog>
                   <DialogTrigger asChild>
                     <Button className="w-full bg-slate-900 hover:bg-blue-600 transition-colors group-hover:shadow-md">
-                      Book Now
+                      {t("services.bookNow")}
                     </Button>
                   </DialogTrigger>
                   <DialogContent className="sm:max-w-4xl p-0 overflow-hidden bg-transparent border-none shadow-none">
                     <DialogTitle className="sr-only">
-                      Book {service.name}
+                      {t("hero.bookAppointment")} - {service.name}
                     </DialogTitle>
                     <BookingWizard
                       organizationId={organization.id}
@@ -169,9 +171,9 @@ export default async function OrganizationPage({ params }: PageProps) {
               <Clock size={32} />
             </div>
             <h3 className="text-lg font-medium text-slate-900">
-              No services available
+              {t("services.noServices")}
             </h3>
-            <p className="text-slate-500">Please check back later.</p>
+            <p className="text-slate-500">{t("services.checkBack")}</p>
           </div>
         )}
       </div>
@@ -181,15 +183,13 @@ export default async function OrganizationPage({ params }: PageProps) {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
             <div>
-              <h3 className="font-bold text-lg mb-4">About Us</h3>
+              <h3 className="font-bold text-lg mb-4">{t("about.title")}</h3>
               <p className="text-slate-500 leading-relaxed">
-                We are dedicated to providing the best service experience. Our
-                team of professionals is here to help you look and feel your
-                best.
+                {t("about.description")}
               </p>
             </div>
             <div>
-              <h3 className="font-bold text-lg mb-4">Contact</h3>
+              <h3 className="font-bold text-lg mb-4">{t("contact.title")}</h3>
               <ul className="space-y-3 text-slate-500">
                 <li className="flex items-center justify-center md:justify-start gap-2">
                   <Phone size={18} className="text-blue-600" />
@@ -206,19 +206,19 @@ export default async function OrganizationPage({ params }: PageProps) {
               </ul>
             </div>
             <div>
-              <h3 className="font-bold text-lg mb-4">Opening Hours</h3>
+              <h3 className="font-bold text-lg mb-4">{t("hours.title")}</h3>
               <ul className="space-y-2 text-slate-500">
                 <li className="flex justify-between max-w-xs mx-auto md:mx-0">
-                  <span>Mon - Fri</span>
+                  <span>{t("hours.monFri")}</span>
                   <span>09:00 - 18:00</span>
                 </li>
                 <li className="flex justify-between max-w-xs mx-auto md:mx-0">
-                  <span>Saturday</span>
+                  <span>{t("hours.sat")}</span>
                   <span>10:00 - 16:00</span>
                 </li>
                 <li className="flex justify-between max-w-xs mx-auto md:mx-0">
-                  <span>Sunday</span>
-                  <span className="text-red-500">Closed</span>
+                  <span>{t("hours.sun")}</span>
+                  <span className="text-red-500">{t("hours.closed")}</span>
                 </li>
               </ul>
             </div>

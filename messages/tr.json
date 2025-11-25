@@ -504,5 +504,85 @@
       "friday": "Cuma",
       "saturday": "Cumartesi"
     }
+  },
+  "OrganizationPage": {
+    "hero": {
+      "verified": "Doğrulanmış İşletme",
+      "description": "Size özel hazırlanmış premium hizmetleri deneyimleyin. En iyi uzmanlarımızla çevrimiçi randevu oluşturun.",
+      "reviews": "Yorumlar",
+      "openToday": "Bugün açık: 09:00 - 18:00",
+      "bookAppointment": "Randevu Al",
+      "location": "İstanbul, Türkiye"
+    },
+    "services": {
+      "title": "Premium Hizmetlerimiz",
+      "description": "Geniş profesyonel hizmet yelpazemizden seçim yapın. Her müşteriye en iyi kaliteyi ve memnuniyeti sunuyoruz.",
+      "durationMin": "dk",
+      "bookNow": "Hemen Randevu Al",
+      "noServices": "Hizmet bulunmuyor",
+      "checkBack": "Lütfen daha sonra tekrar kontrol edin."
+    },
+    "about": {
+      "title": "Hakkımızda",
+      "description": "En iyi hizmet deneyimini sunmaya kendimizi adadık. Profesyonel ekibimiz, en iyi hissetmeniz için burada."
+    },
+    "contact": {
+      "title": "İletişim"
+    },
+    "hours": {
+      "title": "Çalışma Saatleri",
+      "monFri": "Pzt - Cum",
+      "sat": "Cumartesi",
+      "sun": "Pazar",
+      "closed": "Kapalı"
+    }
+  },
+  "BookingWizard": {
+    "steps": {
+      "service": "Hizmeti Seç",
+      "staff": "Uzmanı Seç",
+      "datetime": "Tarih & Saat Seç",
+      "details": "Bilgileriniz",
+      "confirmed": "Randevu Onaylandı",
+      "progress": "Adım {step} / 5"
+    },
+    "staff": {
+      "role": "Uzman"
+    },
+    "datetime": {
+      "availableSlots": "Uygun Saatler",
+      "noSlots": "Bu tarih için uygun saat bulunmuyor."
+    },
+    "summary": {
+      "title": "Randevu Özeti",
+      "service": "Hizmet:",
+      "professional": "Uzman:",
+      "date": "Tarih:",
+      "time": "Saat:",
+      "price": "Ücret:"
+    },
+    "form": {
+      "fullName": "Ad Soyad",
+      "email": "E-posta",
+      "phone": "Telefon Numarası"
+    },
+    "success": {
+      "title": "Randevu Onaylandı!",
+      "description": "Randevunuz başarıyla oluşturuldu. {email} adresine bir onay e-postası gönderdik.",
+      "bookAnother": "Yeni Randevu Al"
+    },
+    "actions": {
+      "back": "Geri",
+      "continue": "Devam",
+      "confirm": "Randevuyu Onayla"
+    },
+    "errors": {
+      "loadStaff": "Uzmanlar yüklenemedi",
+      "loadSlots": "Zaman aralıkları yüklenemedi",
+      "bookError": "Randevu oluşturulamadı. Lütfen tekrar deneyin."
+    },
+    "toasts": {
+      "success": "Randevu başarıyla oluşturuldu!"
+    }
   }
 }

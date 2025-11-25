@@ -8,6 +8,7 @@ import {
   StaffMember,
   TimeSlot,
 } from "@/actions/booking";
+import { useTranslations } from "next-intl";
 import { Service } from "@/types/service";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -30,6 +31,7 @@ export default function BookingWizard({
   services,
   preSelectedServiceId,
 }: BookingWizardProps) {
+  const t = useTranslations("BookingWizard");
   const [step, setStep] = useState(1);
   const [direction, setDirection] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -59,16 +61,15 @@ export default function BookingWizard({
         try {
           const staff = await getOrganizationStaff(organizationId);
           setStaffMembers(staff);
-          // If only one staff, auto-select? Maybe not, let user choose.
         } catch {
-          toast.error("Failed to load staff members");
+          toast.error(t("errors.loadStaff"));
         } finally {
           setLoading(false);
         }
       };
       fetchStaff();
     }
-  }, [selectedService, step, organizationId]);
+  }, [selectedService, step, organizationId, t]);
 
   // Fetch Slots when Staff & Date are selected
   useEffect(() => {
@@ -83,14 +84,14 @@ export default function BookingWizard({
           );
           setTimeSlots(slots);
         } catch {
-          toast.error("Failed to load time slots");
+          toast.error(t("errors.loadSlots"));
         } finally {
           setLoading(false);
         }
       };
       fetchSlots();
     }
-  }, [selectedStaff, selectedDate, step, selectedService]);
+  }, [selectedStaff, selectedDate, step, selectedService, t]);
 
   const nextStep = () => {
     setDirection(1);
@@ -117,10 +118,10 @@ export default function BookingWizard({
         customerPhone: customerDetails.phone,
         price: selectedService.price,
       });
-      toast.success("Appointment booked successfully!");
+      toast.success(t("toasts.success"));
       nextStep(); // Go to success step
     } catch {
-      toast.error("Failed to book appointment. Please try again.");
+      toast.error(t("errors.bookError"));
     } finally {
       setLoading(false);
     }
@@ -147,14 +148,14 @@ export default function BookingWizard({
       <div className="bg-slate-50 p-6 border-b border-slate-100">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-bold text-slate-800">
-            {step === 1 && "Select Service"}
-            {step === 2 && "Choose Professional"}
-            {step === 3 && "Select Date & Time"}
-            {step === 4 && "Your Details"}
-            {step === 5 && "Booking Confirmed"}
+            {step === 1 && t("steps.service")}
+            {step === 2 && t("steps.staff")}
+            {step === 3 && t("steps.datetime")}
+            {step === 4 && t("steps.details")}
+            {step === 5 && t("steps.confirmed")}
           </h2>
           <div className="text-sm text-slate-500 font-medium">
-            Step {step} of 5
+            {t("steps.progress", { step })}
           </div>
         </div>
         <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
@@ -249,7 +250,9 @@ export default function BookingWizard({
                         <h3 className="font-semibold text-lg">
                           {staff.fullName}
                         </h3>
-                        <p className="text-slate-500 text-sm">Professional</p>
+                        <p className="text-slate-500 text-sm">
+                          {t("staff.role")}
+                        </p>
                       </CardContent>
                     </Card>
                   ))
@@ -290,7 +293,7 @@ export default function BookingWizard({
                 <div className="flex-1">
                   <h3 className="font-semibold mb-4 flex items-center gap-2">
                     <Clock size={18} className="text-blue-600" />
-                    Available Slots
+                    {t("datetime.availableSlots")}
                   </h3>
                   {loading ? (
                     <div className="flex justify-center py-12">
@@ -301,29 +304,31 @@ export default function BookingWizard({
                     </div>
                   ) : timeSlots.length === 0 ? (
                     <div className="text-center py-12 text-slate-500 bg-slate-50 rounded-xl border border-dashed border-slate-200">
-                      No slots available for this date.
+                      {t("datetime.noSlots")}
                     </div>
                   ) : (
-                    <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-                      {timeSlots.map((slot) => (
-                        <Button
-                          key={slot.startTime}
-                          variant={
-                            selectedTime === slot.startTime
-                              ? "default"
-                              : "outline"
-                          }
-                          className={`w-full ${
-                            !slot.available
-                              ? "opacity-50 cursor-not-allowed"
-                              : ""
-                          }`}
-                          disabled={!slot.available}
-                          onClick={() => setSelectedTime(slot.startTime)}
-                        >
-                          {format(parseISO(slot.startTime), "HH:mm")}
-                        </Button>
-                      ))}
+                    <div className="max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
+                      <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+                        {timeSlots.map((slot) => (
+                          <Button
+                            key={slot.startTime}
+                            variant={
+                              selectedTime === slot.startTime
+                                ? "default"
+                                : "outline"
+                            }
+                            className={`w-full ${
+                              !slot.available
+                                ? "opacity-50 cursor-not-allowed"
+                                : ""
+                            }`}
+                            disabled={!slot.available}
+                            onClick={() => setSelectedTime(slot.startTime)}
+                          >
+                            {format(parseISO(slot.startTime), "HH:mm")}
+                          </Button>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>
@@ -335,36 +340,36 @@ export default function BookingWizard({
               <div className="max-w-md mx-auto space-y-4">
                 <div className="bg-blue-50 p-4 rounded-lg mb-6 border border-blue-100">
                   <h3 className="font-semibold text-blue-900 mb-2">
-                    Booking Summary
+                    {t("summary.title")}
                   </h3>
                   <div className="space-y-1 text-sm text-blue-800">
                     <div className="flex justify-between">
-                      <span>Service:</span>
+                      <span>{t("summary.service")}</span>
                       <span className="font-medium">
                         {selectedService?.name}
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Professional:</span>
+                      <span>{t("summary.professional")}</span>
                       <span className="font-medium">
                         {selectedStaff?.fullName}
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Date:</span>
+                      <span>{t("summary.date")}</span>
                       <span className="font-medium">
                         {format(selectedDate, "PPP")}
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Time:</span>
+                      <span>{t("summary.time")}</span>
                       <span className="font-medium">
                         {selectedTime &&
                           format(parseISO(selectedTime), "HH:mm")}
                       </span>
                     </div>
                     <div className="flex justify-between pt-2 border-t border-blue-200 mt-2">
-                      <span>Price:</span>
+                      <span>{t("summary.price")}</span>
                       <span className="font-bold">
                         {selectedService?.price} {selectedService?.currency}
                       </span>
@@ -374,7 +379,7 @@ export default function BookingWizard({
 
                 <div className="space-y-4">
                   <div className="space-y-2">
-                    <Label>Full Name</Label>
+                    <Label>{t("form.fullName")}</Label>
                     <Input
                       placeholder="John Doe"
                       value={customerDetails.name}
@@ -387,7 +392,7 @@ export default function BookingWizard({
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label>Email</Label>
+                    <Label>{t("form.email")}</Label>
                     <Input
                       type="email"
                       placeholder="john@example.com"
@@ -401,7 +406,7 @@ export default function BookingWizard({
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label>Phone Number</Label>
+                    <Label>{t("form.phone")}</Label>
                     <Input
                       placeholder="+1 234 567 890"
                       value={customerDetails.phone}
@@ -424,14 +429,13 @@ export default function BookingWizard({
                   <Check size={40} />
                 </div>
                 <h2 className="text-2xl font-bold text-slate-900 mb-2">
-                  Booking Confirmed!
+                  {t("success.title")}
                 </h2>
                 <p className="text-slate-500 max-w-md mb-8">
-                  Your appointment has been successfully scheduled. We have sent
-                  a confirmation email to {customerDetails.email}.
+                  {t("success.description", { email: customerDetails.email })}
                 </p>
                 <Button onClick={() => window.location.reload()}>
-                  Book Another Appointment
+                  {t("success.bookAnother")}
                 </Button>
               </div>
             )}
@@ -448,7 +452,7 @@ export default function BookingWizard({
             disabled={step === 1 || loading}
             className="text-slate-500"
           >
-            <ChevronLeft size={18} className="mr-1" /> Back
+            <ChevronLeft size={18} className="mr-1" /> {t("actions.back")}
           </Button>
 
           {step === 3 && (
@@ -457,7 +461,8 @@ export default function BookingWizard({
               disabled={!selectedTime || loading}
               className="bg-blue-600 hover:bg-blue-700"
             >
-              Continue <ChevronRight size={18} className="ml-1" />
+              {t("actions.continue")}{" "}
+              <ChevronRight size={18} className="ml-1" />
             </Button>
           )}
 
@@ -472,7 +477,7 @@ export default function BookingWizard({
               {loading ? (
                 <Loader2 className="animate-spin" size={18} />
               ) : (
-                "Confirm Booking"
+                t("actions.confirm")
               )}
             </Button>
           )}

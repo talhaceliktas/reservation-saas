@@ -127,7 +127,7 @@ export async function getAvailableSlots(
       available: !isBooked,
     });
 
-    currentSlot = addMinutes(currentSlot, 30); // 30 min intervals
+    currentSlot = addMinutes(currentSlot, 15); // 15 min intervals
   }
 
   return slots;
