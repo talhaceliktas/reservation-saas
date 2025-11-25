@@ -23,7 +23,8 @@ export async function getOrganizationBySlug(
         description,
         duration_min,
         price,
-        currency
+        currency,
+        is_active
       ),
       availability (
         day_of_week,
@@ -46,25 +47,27 @@ export async function getOrganizationBySlug(
     slug: org.slug,
     logoUrl: org.logo_url,
     createdAt: new Date(org.created_at),
-    services: org.services.map(
-      (s: {
-        id: string;
-        name: string;
-        description: string | null;
-        duration_min: number;
-        price: number;
-        currency: string;
-      }) => ({
-        id: s.id,
-        name: s.name,
-        description: s.description || undefined,
-        duration: s.duration_min,
-        price: Number(s.price),
-        currency: s.currency,
-        createdAt: new Date(), // Using current date as fallback since it wasn't selected
-        updatedAt: new Date(),
-      })
-    ),
+    services: org.services
+      .filter((s: { is_active: boolean }) => s.is_active !== false)
+      .map(
+        (s: {
+          id: string;
+          name: string;
+          description: string | null;
+          duration_min: number;
+          price: number;
+          currency: string;
+        }) => ({
+          id: s.id,
+          name: s.name,
+          description: s.description || undefined,
+          duration: s.duration_min,
+          price: Number(s.price),
+          currency: s.currency,
+          createdAt: new Date(), // Using current date as fallback since it wasn't selected
+          updatedAt: new Date(),
+        })
+      ),
     availability: org.availability.map(
       (a: { day_of_week: number; start_time: string; end_time: string }) => ({
         dayOfWeek: a.day_of_week,
