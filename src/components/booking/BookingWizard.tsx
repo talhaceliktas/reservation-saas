@@ -169,7 +169,7 @@ export default function BookingWizard({
       </div>
 
       {/* Content */}
-      <div className="flex-1 p-6 relative overflow-y-auto">
+      <div className="flex-1 p-6 relative overflow-y-auto max-h-[calc(100dvh-300px)]">
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={step}
